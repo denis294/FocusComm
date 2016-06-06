@@ -28,6 +28,6 @@ class CreateUserQuizzTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_donne_reponse');
+        Schema::drop('user_quizz');
     }
 }
