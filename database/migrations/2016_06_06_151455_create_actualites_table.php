@@ -19,6 +19,8 @@ class CreateActualitesTable extends Migration
             $table->unique(['titre', 'dateCreation']);
             $table->text('texte');
             $table->string('image');
+            $table->integer('actualiteLiee_id')->unsigned()->nullable();
+            $table->foreign('actualiteLiee_id')->references('id')->on('actualites');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('updated_by')->unsigned()->nullable();
