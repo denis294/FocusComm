@@ -10,13 +10,13 @@ class Reponse extends Model
 	
     public function question()
     {
-        return $this->belongsTo('Question');
+        return $this->belongsTo('App\Models\Question');
     }
     
     public function users()
     {
         return $this
-            ->belongsToMany('User')
+            ->belongsToMany('App\Models\User')
             ->withPivot('user_donne_reponse')
             ->withTimestamps();
     }

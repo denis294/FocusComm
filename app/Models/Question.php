@@ -10,10 +10,10 @@ class Question extends Model
 	
     public function quizz()
     {
-       return $this->belongsTo('Quizz');
+       return $this->belongsTo('App\Models\Quizz');
     }
     public function reponses()
     {
-       return $this->hasMany('Reponse');
+       return $this->hasMany('App\Models\Reponse');
     }
 }

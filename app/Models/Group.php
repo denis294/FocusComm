@@ -9,13 +9,13 @@ class Group extends Model
 	public $timestamps = false;
 	
 	public function users(){
-        return $this->belongsToMany('User', 'group_user');
+        return $this->belongsToMany('App\Models\User', 'group_user');
 	}
 	
     public function servicesapplicatifs()
     {
         return $this
-            ->belongsToMany('ServiceApplicatif')
+            ->belongsToMany('App\Models\ServiceApplicatif')
             ->withPivot('roles')
             ->withTimestamps();
     }

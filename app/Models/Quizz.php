@@ -9,18 +9,18 @@ class Quizz extends Model
 
     public function users()
     {
-    	return $this->belongsToMany('User', 'user_quizz')->withTimestamps();
+    	return $this->belongsToMany('App\Models\User', 'user_quizz')->withTimestamps();
     }
 	
 	public function badge(){
-    	return $this->hasOne('Badge');
+    	return $this->hasOne('App\Models\Badge');
 	}
 	
 	public function categorie(){
-    	return $this->belongsTo('Categorie');
+    	return $this->belongsTo('App\Models\Categorie');
 	}
 	
 	public function questions(){
-    	return $this->hasMany('Question');
+    	return $this->hasMany('App\Models\Question');
 	}
 }
