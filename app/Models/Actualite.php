@@ -7,19 +7,19 @@ class Actualite extends Model
 
 	
 	public function actualiteParent(){
-		return $this->belongsTo('Actualite');
+		return $this->belongsTo('App\Models\Actualite');
 	}
 	
 	public function actualiteEnfant(){
-		return $this->hasMany('Actualite');
+		return $this->hasMany('App\Models\Actualite');
 	}
 	
 	public function users(){
-      return $this->belongsTo('User');
+      return $this->belongsTo('App\Models\User');
 	}
 	
 	public function categories(){
-        return $this->belongsToMany('Categorie', 'actualite_categorie')->withTimestamps();
+        return $this->belongsToMany('App\Models\Categorie', 'actualite_categorie')->withTimestamps();
 	}
 	
 }

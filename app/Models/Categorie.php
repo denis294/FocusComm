@@ -9,19 +9,19 @@ class Categorie extends Model
 	public $timestamps = false;
 	
 	public function categorieParent(){
-		return $this->belongsTo('Categorie');
+		return $this->belongsTo('App\Models\Categorie');
 	}
 	
 	public function categorieEnfant(){
-		return $this->hasMany('Categorie');
+		return $this->hasMany('App\Models\Categorie');
 	}
 	
 	public function actualites(){
-        return $this->belongsToMany('Actualite', 'actualite_categorie')->withTimestamps();
+        return $this->belongsToMany('App\Models\Actualite', 'actualite_categorie')->withTimestamps();
 	}
 	
 	public function quizzs(){
-		return $this->belongsToMany('Quizz');
+		return $this->belongsToMany('App\Models\Quizz');
 	}
 }
 
