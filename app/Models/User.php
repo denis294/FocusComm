@@ -9,7 +9,7 @@ class User extends Model
 	
     public function groups()
     {
-        return $this->belongsToMany('App\Models\Group');
+        return $this->belongsToMany('App\Models\Group', 'group_user')->withTimestamps();
     }
      
     public function region()
