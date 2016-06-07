@@ -15,7 +15,7 @@ class Categorie extends Model
 	}
 	
 	public function actualites{
-		return $this->belongsToMany('Actualite');
+        return $this->belongsToMany('Actualite', 'actualite_categorie')->withTimestamps();
 	}
 	
 	public function quizzs{
