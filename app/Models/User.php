@@ -24,7 +24,11 @@ class User extends Model
     
     public function quizzs()
     {
-        return $this->belongsToMany('App\Models\Quizz', 'user_quizz')->withTimestamps();
+        return $this->hasMany('App\Models\Quizz');
+    }
+
+    public function quizzsParticipations(){
+        return $this->belongsToMany('App\Models\Quizz', 'user_quizz');
     }
    
     public function badges()
@@ -36,7 +40,6 @@ class User extends Model
     {
         return $this
             ->belongsToMany('App\Models\Reponse', 'user_donne_reponse')
-            ->withPivot('estJuste')
-            ->withTimestamps();
+            ->withPivot('estJuste');
     }
 }
