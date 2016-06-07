@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceApplicatif extends Model
 {
 	public $timestamps = false;
+	protected $table = 'serviceapplicatifs';
 	
     public function groups()
     {
