@@ -13,6 +13,6 @@ class Badge extends Model
     
     public function users()
     {
-      return $this->belongsToMany('User');
+        return $this->belongsToMany('User', 'badge_user')->withTimestamps();
     }
 }
