@@ -13,6 +13,6 @@ class ServiceApplicatif extends Model
     {
         return $this
             ->belongsToMany('App\Models\Group')
-            ->withPivot('nom')
+            ->withPivot('nom');
     }
 }
