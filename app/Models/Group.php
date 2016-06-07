@@ -9,7 +9,7 @@ class Group extends Model
 	public $timestamps = false;
 	
 	public function users(){
-        return $this->belongsToMany('App\Models\User', 'group_user');
+        return $this->belongsToMany('App\Models\User', 'group_user')->withTimestamps();
 	}
 	
     public function servicesapplicatifs()
