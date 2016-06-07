@@ -29,7 +29,7 @@ class User extends Model
    
     public function badges()
     {
-        return $this->belongsToMany('Badge');
+        return $this->belongsToMany('Badge', 'badge_user')->withTimestamps();
     }
     
     public function reponses()
