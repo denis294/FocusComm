@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("fonts/Flaticon.eot");
+  src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("fonts/Flaticon.woff") format("woff"),
+       url("fonts/Flaticon.ttf") format("truetype"),
+       url("fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+ .iconf108:before{
+content: '\f108';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf100:before{
+content: '\f100';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf101:before{
+content: '\f101';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf102:before{
+content: '\f102';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf103:before{
+content: '\f103';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf105:before{
+content: '\f105';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf106:before{
+content: '\f106';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+}
+
+ .iconf107:before{
+content: '\f107';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+text-align: center!important;
+}
+
+ .iconf10A:before{
+content: '\f10a';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+text-align: center!important;
+}
+
+ .iconf10C:before{
+content: '\f10c';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+text-align: center!important;
+}
+
+ .iconf10D:before{
+content: '\f10d';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+text-align: center!important;
+}
+
+ .iconf10E:before{
+content: '\f10e';
+font-family: "Flaticon";
+color:#123552;
+font-size: 2em;text-align: center!important;
+text-align: center!important;
+}
+
+#icon{
+    text-align: center!important;
+}
+
+body{
+    font-family: Gill Sans, sans-serif;
+    background-color: red;
+}
+
+#categories{
+
+}
+
+.block  h1{
+    text-align: center;
+    color:white;
+    font-size: 15px;
+    margin-top: 10%;
+    font-weight: lighter;
+    line-height: 2.5em;
+}
+
+.tit{
+    margin-top:0;
+    background-color:#0580a3;
+    height:5%;
+}
+
+.block{
+    width:80%!important;
+    height:35%!important;
+    background-color: white;
+}
