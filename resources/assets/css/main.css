@@ -36,6 +36,9 @@ font-size: 3em;
 body{
   font-family: Gill Sans, sans-serif;
   background-image: url("../img/ciao_hp2012_visuel.jpg");
+  background-position: fixed; 
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; 
 }
 
 .block  h1{
@@ -227,6 +230,12 @@ bottom:0;
 margin-bottom: 3%;
 }
 
+.ici {
+
+  background-color: rgba(0, 0, 0, 0.4);
+  height:120px;
+}
+
 nav li {
   text-decoration: none;
   display:inline;
@@ -356,8 +365,28 @@ body{
     background-color:#0580a3;
     height:5%;
 }
+
+#categorie{
+  margin-left: 8%
+}
+
+.row .col.s4a {
+  width: 33.3333333333%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+
 .block{
-    width:80%!important;
-    height:35%!important;
+    width:55%!important;
+    height:40%!important;
     background-color: white;
+    margin-left:30%;
+    margin-top: 10%;
+}
+
+.s4{
+
+  margin-left:-10%!important;
 }
