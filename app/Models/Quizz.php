@@ -12,15 +12,15 @@ class Quizz extends Model
     	return $this->belongsToMany('User', 'user_quizz')->withTimestamps();
     }
 	
-	public function badge{
+	public function badge(){
     	return $this->hasOne('Badge');
 	}
 	
-	public function categorie{
+	public function categorie(){
     	return $this->belongsTo('Categorie');
 	}
 	
-	public function questions{
+	public function questions(){
     	return $this->hasMany('Question');
 	}
 }

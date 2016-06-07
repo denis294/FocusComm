@@ -4,19 +4,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actualite extends Model
 {
-	public function actualiteParent{
+	public function actualiteParent(){
 		return $this->belongsTo('Actualite');
 	}
 	
-	public function actualiteEnfant{
+	public function actualiteEnfant(){
 		return $this->hasMany('Actualite');
 	}
 	
-	public function users{
+	public function users(){
       return $this->belongsTo('User');
 	}
 	
-	public function categories{
+	public function categories(){
         return $this->belongsToMany('Categorie', 'actualite_categorie')->withTimestamps();
 	}
 	
