@@ -15,7 +15,7 @@ class Group extends Model
     public function servicesapplicatifs()
     {
         return $this
-            ->belongsToMany('App\Models\ServiceApplicatif')
+            ->belongsToMany('App\Models\ServiceApplicatif', 'roles')
             ->withPivot('nom');
     }
     public function hasRole($role, $resrc)

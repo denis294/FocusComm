@@ -12,7 +12,7 @@ class ServiceApplicatif extends Model
     public function groups()
     {
         return $this
-            ->belongsToMany('App\Models\Group')
+            ->belongsToMany('App\Models\Group', 'roles')
             ->withPivot('nom');
     }
 }
