@@ -17,7 +17,7 @@ class Reponse extends Model
     {
         return $this
             ->belongsToMany('App\Models\User')
-            ->withPivot('user_donne_reponse')
+            ->withPivot('user_donne_reponse' ,'estJuste')
             ->withTimestamps();
     }
 }

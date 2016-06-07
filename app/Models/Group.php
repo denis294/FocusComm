@@ -16,7 +16,7 @@ class Group extends Model
     {
         return $this
             ->belongsToMany('App\Models\ServiceApplicatif')
-            ->withPivot('roles')
+            ->withPivot('roles', 'nom')
             ->withTimestamps();
     }
     public function hasRole($role, $resrc)
