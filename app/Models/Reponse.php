@@ -13,6 +13,9 @@ class Reponse extends Model
     
     public function users()
     {
-        return $this->belongsToMany('User');
+        return $this
+            ->belongsToMany('User')
+            ->withPivot('user_donne_reponse')
+            ->withTimestamps();
     }
 }
