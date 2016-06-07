@@ -43,6 +43,9 @@ Categorie Liste menu
 
 //------vues du contenu-------------------------------------------------------
 
+// var content =
+//var stress = new ModelContenus(content);
+
     var stress = new ModelContenus(STRESS);
 
     var v_stress = new ViewContenus({
@@ -156,27 +159,93 @@ Categorie Liste menu
     var dom = v_discrimination.render();
     $("#racisme-discrimination").append(dom);
 
+//----------------------QUIZ--------------------------------------------------------------
+
+ var categoriesQuiz = new ModelCategories(CATEGORIES);
+
+
+    var v_categoriesQuiz = new ViewCategories({
+        collection: categoriesQuiz
+    });
+    //$("#categories").append(v_categories.render());
+    // $("section .contents").hide()
+    var dom = v_categoriesQuiz.renderCategorieQuiz();
+    $("#categoriesQuiz").append(dom);
+
+
+
+
+//---------------------------------------
+
+
+
+    var quizStress = new ModelQuizs(QuizStress);
+
+    var v_quizStress = new ViewQuizs({
+        collection: quizStress
+    });
+    var dom = v_quizStress.render();
+    $("#quiz-stress").append(dom);
+
+//---------------------------------------
+
+    var quizEstime = new ModelQuizs(QuizEstime);
+
+    var v_quizEstime = new ViewQuizs({
+        collection: quizEstime
+    });
+    var dom = v_quizEstime.render();
+    $("#quiz-estime-de-soi").append(dom);
+
+//---------------------------------------
+
+    var quizSexualite = new ModelQuizs(QuizEstime);
+
+    var v_quizSexualite = new ViewQuizs({
+        collection: quizEstime
+    });
+    var dom = v_quizSexualite.render();
+    $("#quiz-sexualite").append(dom);
+
+
+
+
+
 //------------------------------------------------------------------------------------
+
 
 
 $(".content").on("click", switchSection(location.hash));
 
+$(".contentQuiz").on("click", switchSection(location.hash));
+
 
 
     $(window).on("popstate", function(e) {
-        $("section").hide();
+        //$("section").hide();
+        $(".accueil").hide();
+        $(".content").hide();
+        $(".contentQuiz").hide();
+        $("#news").hide();
+        //$(".catQuiz").hide();
+
+
+
+
         var section = location.hash;
         if ($(section).length == 0) {
             section = "#categories";
+
         }
         $(section).show();
     });
     $(window).trigger('popstate');
 
 
-    if (location.hash !=('#' || "#categories")) {
-        $("#CategorieListe").show();
-    };
+
+    // if (location.hash !="#categories") {
+    //     $("#CategorieListe").show();
+    // };
 
 
 });

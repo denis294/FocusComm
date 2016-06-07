@@ -3,8 +3,12 @@
     <head>
     <title>Ciao.ch</title>
     <meta charset="utf-8">
-    <script src="js/packJs.php"></script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="../assets/js/jquery.js"></script>
+        <script src="../assets/js/modernizr.js"></script>
+        <script src="../assets/js/jsonStorage.js"></script>
+     <script src="../assets/js/packJs.php"></script>
+       <link rel="stylesheet" href="../assets/css/materialize.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
     </head>
     <body>
         <header>
@@ -38,7 +42,7 @@
 <form method="post" action="">
     <h2>Création d'un nouveau compte d'utilisateur</h2>
     <p>Créer un compte sur Ciao.ch te permet de ...</p>
-        <fieldset>
+        <fieldset class="containerform">
            <label for="username">Nom d'utilisateur</label>
            <input type="text" name="username" id="username" />
            <p>
@@ -70,11 +74,11 @@
            <button type="submit" value="Submit">Valider</button>
            </p>
         </fieldset>
-
-
-
 </form>
 
+<section id="confirmation">
+
+</section>
 
             </main>
 

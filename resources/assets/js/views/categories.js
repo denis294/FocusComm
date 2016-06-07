@@ -15,13 +15,23 @@ var ViewCategories = Pclia.ViewCollection.extend({
         });
         return container;
     },
-        renderListCategorie: function () {
+    renderListCategorie: function () {
         var container = this.$el;
         container.html(Tmpl.categoriesListe());
         _.each(this.collection.models, function (model) {
             var view = new ViewCategorie({model: model});
             var dom = view.renderListCategorie();
             $("#CategorieList", container).append(dom);
+        });
+        return container;
+    },
+    renderCategorieQuiz: function () {
+        var container = this.$el;
+        container.html(Tmpl.categoriesQuiz());
+        _.each(this.collection.models, function (model) {
+            var view = new ViewCategorie({model: model});
+            var dom = view.renderCategorieQuiz();
+            $(".categoriesList", container).append(dom);
         });
         return container;
     }
