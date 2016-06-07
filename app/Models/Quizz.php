@@ -7,19 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Quizz extends Model
 {
 
-	public function users{
-      return $this->belongsToMany('User');
-	}
+    public function users()
+    {
+    	return $this->belongsToMany('User', 'user_quizz')->withTimestamps();
+    }
 	
 	public function badge{
-      return $this->hasOne('Badge');
+    	return $this->hasOne('Badge');
 	}
 	
 	public function categorie{
-      return $this->belongsTo('Categorie');
+    	return $this->belongsTo('Categorie');
 	}
 	
 	public function questions{
-      return $this->hasMany('Question');
+    	return $this->hasMany('Question');
 	}
 }
