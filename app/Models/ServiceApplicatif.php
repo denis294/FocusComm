@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ServiceApplicatif extends Model
 {
+	public $timestamps = false;
+	
     public function groups()
     {
         return $this
