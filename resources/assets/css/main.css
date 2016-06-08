@@ -202,6 +202,7 @@ footer{
   position: relative;
   width: 100%;
   bottom:0;
+  padding-top: 10px;
 }
 
 .logo{
@@ -505,7 +506,19 @@ footer{
     margin-top: 10%;
 }
 
+.block:hover{
+    width:55%!important;
+    height:40%!important;
+    background-color: white;
+    margin-left:10%;
+    margin-top: 10%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.6), 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+
 .s4.c{
 
   margin-left:-10%!important;
 }
+
+
