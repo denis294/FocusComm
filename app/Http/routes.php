@@ -45,6 +45,12 @@ Route::delete('/quizzs/{id}', 'QuizzController@destroy');
 // Régions
 Route::get('/regions/', 'RegionController@index');
 Route::get('/regions/pays/{id}', 'RegionController@indexPays');
+Route::get('/regions/create', 'RegionController@create'); 
+Route::post('/regions/', 'RegionController@store');            
+Route::get('/regions/{id}', 'RegionController@show');
+Route::get('/regions/{id}/edit', 'RegionController@edit');
+Route::put('/regions/{id}', 'RegionController@update');
+Route::delete('/regions/{id}', 'RegionController@destroy');
 
 // Login et logout
 Route::get('/auth/login', 'AuthController@login'); 
