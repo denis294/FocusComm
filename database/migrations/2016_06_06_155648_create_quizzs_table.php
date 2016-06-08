@@ -19,7 +19,7 @@ class CreateQuizzsTable extends Migration
             $table->unique(['titre', 'date']);
             $table->enum('etat', ['publie', 'cache','aValider']);
             $table->integer('user_id')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('badge_id')->unsigned()->nullable();
             $table->integer('categorie_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

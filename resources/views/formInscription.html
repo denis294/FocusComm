@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    <title>Ciao.ch</title>
+    <meta charset="utf-8">
+    <script src="js/packJs.php"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+        <header>
+           <h1 id="logo">Ciao.ch</h1>
+                <nav class="menu">
+                    <ul>
+                        <li>Accueil</li>
+                        <li>Actualité</li>
+                        <li>Adresse</li>
+                        <li>Pose ta question</li>
+                        <li>Forum</li>
+                        <li>Urgence</li>
+                        <li>Quiz</li>
+                    </ul>
+                </nav>
+                <div id="login">
+                    <label></label>
+                    <input value="E-Mail" />
+                    <input value="Mot de passe" />
+                    <a href="">Créer un compte</a>
+                </div>
+                <div id="research">
+                    <input value="Recherche" />
+                </div>
+        </header>
+            <main>
+
+
+
+
+<form method="post" action="">
+    <h2>Création d'un nouveau compte d'utilisateur</h2>
+    <p>Créer un compte sur Ciao.ch te permet de ...</p>
+        <fieldset>
+           <label for="username">Nom d'utilisateur</label>
+           <input type="text" name="username" id="username" />
+           <p>
+           <label for="email">Adresse E-Mail</label>
+           <input type="email" name="email" id="email" />
+            </p>
+            <p>
+           <label for="password">Mot de passe</label>
+           <input type="password" name="password" id="password" />
+           </p>
+            <p>
+           <label for="password">Confirmez votre mot de passe</label>
+           <input type="password" name="password" id="password" />
+           </p>
+           <p>
+           <label for="pays">Pays</label>
+            <select name="pays">
+                <option> --- </option>
+           </select>
+           <label for="region">Région</label>
+           <select name="region">
+                <option> --- </option>
+           </select>
+           <p>
+            <input id="garcon" type="radio" name="gender" value="garcon"><label for="garcon">Garçon</label>
+            <input id="fille" type="radio" name="gender" value="fille"><label for="fille">Fille</label>
+           </p>
+           <p>
+           <button type="submit" value="Submit">Valider</button>
+           </p>
+        </fieldset>
+
+
+
+</form>
+
+
+            </main>
+
+        <footer>
+            <div id="partners"></div>
+            <div id="infoAssociation"></div>
+        </footer>
+    </body>
+</html>
