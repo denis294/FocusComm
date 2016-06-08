@@ -1,134 +1,226 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-	<title>Ciao.ch</title>
-	<meta charset="utf-8">
-        <script src="../assets/js/jquery.js"></script>
-        <script src="../assets/js/modernizr.js"></script>
-        <script src="../assets/js/jsonStorage.js"></script>
-	   <script src="../assets/js/packJs.php"></script>
-       <link rel="stylesheet" href="../assets/css/materialize.css">
-	<link rel="stylesheet" href="../assets/css/main.css">
-
+    <title>Ciao.ch</title>
+    <meta charset="utf-8">
+    <script src="assets/js/packJs.php"></script>
+    <link rel="stylesheet" href="../assets/css/materialize.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+     <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <header>
-           <h1 id="logo">Ciao.ch</h1>
-                <nav class="menu">
-                    <div class="nav-wrapper">
-                    <a href="#" class="brand-logo"><img class="logo"src="assets/img/logo_ciao_rvb.png"></a>
-                    <ul>
-                        <li>
-                            <a href="index.html">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="#news">Actualité</a>
-                        </li>
-                        <li>
-                            <a href="#adresses">Adresses</a>
-                        </li>
-                        <li>
-                            <a href="#question">Pose ta question</a>
-                        </li>
-                        <li>
-                            <a href="#forum">Forum</a>
-                        </li>
-                        <li>
-                            <a href="#urgence">Urgence</a>
-                        </li>
-                        <li>
-                            <a href="#quiz">Quiz</a>
-                        </li>
-                        <li>
-                            <a href="#quiz">Quiz</a>
-                        </li>
-                    </ul>
-                    </div>
-                </nav>
-               <div id="log">
-                        <input id="pseudo" type="text" required placeholder="Pseudo &#128125;">
-                        <input id="mdp" type="text" required placeholder="Mot de passe &#128272;">
-                        <input id="search" type="search" required placeholder="Recherche &#128269;">
+        <header class="row">
 
+             <nav class="col s8">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo"><img class="logo"src="../assets/img/logo_ciao_rvb.png"> <h5 class="donde">Sexualité</h5></a>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li><a class="ici" href="sass.html">Accueil</a></li>
+                        <li class=""><a href="badges.html">Actualité</a></li>
+                        <li class=""><a href="collapsible.html">Adresse</a></li>
+                        <li class=""><a href="collapsible.html">Pose ta question</a></li>
+                        <li class=""><a href="mobile.html">Forum</a></li>
+                        <li class=""><a href="mobile.html">Urgence</a></li>
+                        <li class=""><a href="mobile.html">Quiz</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="log" class="col s4a">
+
+                        <span><h6 class="logg">Login :</h6>
+                        <input id="pseudo" type="text" required placeholder=" Pseudo &#128587;">
+                        <input id="mdp" type="text" required placeholder=" Mot de passe &#128272;">
+                        <a id="btn_login"class="waves-effect waves-light btn"> login</a><br/>
+                        <a id="sign">&#128203; Créer un compte</a>
+                        <input id="search" type="search" required placeholder=" Recherche &#128269;"></span>
             </div>
         </header>
             <main class="main">
                 <section id="intro">
-                    <h3 id="titleIntro">Ciao.ch est destiné à ...</h3>
-                    <p id="introDescription">Ciao.ch c'est ....</p>
-                </section>
-                <section id="categories" class="row">
                 </section>
 
-                <section id="stress" class="content">
+                <section id="categorie" class="row">
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Stress</h1>
+                                    </div>
+                            <h2 class="iconf100" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Estime de soi</h1>
+                                    </div>
+                            <h2 class="iconf10C" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Sexualité</h1>
+                                    </div>
+                            <h2 class="iconf107" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Boire, fumer, se droguer</h1>
+                                    </div>
+                            <h2 class="iconf10A" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Santé</h1>
+                                    </div>
+                            <h2 class="iconf105" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Manger - bouger</h1>
+                                    </div>
+                            <h2 class="iconf108" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Moi, toi et les autres</h1>
+                                    </div>
+                            <h2 class="iconf10D" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Violence</h1>
+                                    </div>
+                            <h2 class="iconf10E" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Formation & Travail</h1>
+                                    </div>
+                            <h2 class="iconf103" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Argent</h1>
+                                    </div>
+                            <h2 class="iconf106" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Religion & Croyance</h1>
+                                    </div>
+                            <h2 class="iconf102" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
+
+                    <div class="col s4 c">
+                    <a href="">
+                            <article class="block">
+                                    <div class="tit">
+                                        <h1>Discrimination & Racisme</h1>
+                                    </div>
+                            <h2 class="iconf101" id="icon"></h2>
+                        </article>
+                    </a>
+                    </div>
 
                 </section>
 
-                <section id="estime-de-soi" class="content">
-
-                </section>
-                <section id="sexualite" class="content">
-
-                </section>
-                <section id="boire-fumer-se-droguer" class="content">
-
-                </section>
-                <section id="sante" class="content">
-
-                </section>
-                <section id="manger-bouger" class="content">
-
-                </section>
-                <section id="moi-toi-et-les-autres" class="content">
-
-                </section>
-                <section id="violence" class="content">
-
-                </section>
-                <section id="formation-travail" class="content">
-
-                </section>
-                <section id="argent" class="content">
-
-                </section>
-                <section id="religion-croyance" class="content">
-
-                </section>
-                <section id="racisme-discrimination" class="content">
-
-                </section>
-
-                 <nav id ="CategorieListe">
-                </nav>
-
-                <section id ="news">
-
-                </section>
-
-                <nav id="sideMenu">
-
-                </nav>
             </main>
 
-
-
-
-
-<footer class="page-footer">
-          <div class="container">
+        <footer class="page-footer">
+          <div class="container foot">
             <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
+            <div class=" sectionSoutien col s6b">
+            <h6 class="row">Avec le soutien de </br></br>
+            <span class="lesSoutiens col s12">
+                <span class="row" >
+                    <img class="col s4" src="../assets/img/mecenes_logo_loro.gif"> 
+                    <img class="col s4" src="../assets/img/mecenes_logo_oakfoundation.gif">
+                    <span class="col s4"> 
+                        <span class="row ccp" >
+                        Soutenez CIAO </br>CCP-10-5261-6
+                        </span>
+                    </span>
+                    </span>
+                </span>
+            </h6>
+            <h6 class="row parr">
+                PARRAINS : Fondation Otto Beishein - Vaudoise Assurance
+
+            </h6>
+            </div>
+              <div class="sectionDispo col s2b">
+                <h6 class="white-text">Application Ciao.ch disponible sur 
+            </br></br>
+            <span class="lesSoutiens">
+                <a href="https://play.google.com/store/apps/details?id=com.BleuVert.Ciao"><img src="../assets/img/google-play-badge.png"></a>
+            </span>
+              </br></h6></div>
+              <div class="col s4e">
+                <h6>
+                <span>
+                    CIAO c'est...</br>
+                    Une association</br>
+                    Un site internet créé en 1997, certifié accessible et HON</br>
+                    Une collaboration avec 15 institutions partenaires</br>
+                    Des sites partenaires : feelok.ch et tschau.ch</br>
+                    En 2015 plus de 13 000 visiteurs par semaine en moyenne, 2000 000 de pages vues et 2848 questions posées
+                </span>
+                </h6>
+
               </div>
             </div>
           </div>
