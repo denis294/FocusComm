@@ -4,21 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Region;
 use App\Models\Pays;
+use App\Models\User;
+use Session;
 use DB;
 use Request;
 
 class RegionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+	// Affiche toutes les régions
     public function index()
     {
         return Region::all();
     }
-
+	
+	// Affiche les régions propres à un pays
     public function indexPays($pays_id){
         $pays = Pays::find($pays_id);
         if(!isset($pays)){
@@ -31,69 +30,68 @@ class RegionController extends Controller
         return $regions;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+	// Crée une nouvelle région
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+	// Enregistre une nouvelle région dans la base de données (pas check)
+    public function store()
     {
-        //
+       $fields = Request::only('nom', 'pays_id');
+       if (!Region::validate($fields)) {
+           return response('Fields error', 400);
+       }
+       $pays = Pays::find($fields['pays_id']);
+       if (!isset($pays)){
+       	   return response ('Pays non trouvée', 404);
+       }
+       $region = new Region($fields);
+       $user = User::find(Session::get('user_id'));
+       $user->region()->save($region);
+       return $region;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+	// Affiche une région spécifique
     public function show($id)
     {
-        //
+       $region = Region::find($id);
+       if (!isset($region)) {
+           return response('Not found', 404);
+       }
+       return $region;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+	// Edite une région
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    // Met à jour une région
+    public function update($id)
     {
-        //
+       $region = Region::find($id);
+       if (!isset($region)) {
+           return response('Not found', 404);
+       }
+       $fields = Request::all();
+       if (!Region::validate($fields)) {
+           return response('Fields error', 400);
+       }
+       $region->update($fields);
+       return $region;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+	// Supprime la région
     public function destroy($id)
     {
-        //
+       $region = Region::find($id);
+       if (!isset($actu)) {
+           return response('Not found', 404);
+       }
+       $region->delete();
+       return $region;
     }
 }
