@@ -2,10 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 class User extends Model
 {
+    protected $fillable = ['pseudo','email','motDePasse','age','sexe','region_id'];
+    protected static $rules = [
+        'pseudo' => 'String|max:80|required',
+        'email' => 'E-mail|required',
+        'motDePasse' => 'String|min:6|required',
+        'age' => 'Integer|required',
+        'sexe' => 'String|required|max:1',
+        'region_id' => 'Integer|required',
+    ];
 	
     public function groups()
     {

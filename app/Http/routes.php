@@ -29,3 +29,9 @@ Route::get('/auth/login', 'AuthController@login');
 Route::group(['middleware' => ['auth']], function () {    
         Route::get('/auth/logout', 'AuthController@logout');
 });
+Route::get('/user/', 'UserController@index');            
+Route::get('/user/{id}', 'UserController@show');
+Route::post('/user/', 'UserController@store');
+Route::put('/user/{id}', 'UserController@update');
+Route::delete('/user/{id}', 'UserController@destroy');  
+
