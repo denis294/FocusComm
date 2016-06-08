@@ -15,7 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('actualites', 'ActualiteController');
+// Actualité
+Route::get('/actualites/', 'ActualiteController@index');
+Route::get('/actualites/create', 'ActualiteController@create'); 
+Route::post('/actualites/', 'ActualiteController@store');            
+Route::get('/actualites/{id}', 'ActualiteController@show');
+Route::get('/actualites/{id}/edit', 'ActualiteController@edit');
+Route::put('/actualites/{id}', 'ActualiteController@update');
+Route::delete('/actualites/{id}', 'ActualiteController@destroy');
 
 Route::get('/auth/login', 'AuthController@login'); 
 
