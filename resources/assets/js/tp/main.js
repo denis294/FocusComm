@@ -5,7 +5,6 @@ $(function (){
 
     var categories = new ModelCategories(CATEGORIES);
 
-
     var v_categories = new ViewCategories({
         collection: categories
     });
@@ -14,9 +13,59 @@ $(function (){
     var dom = v_categories.render();
     $("#categories").append(dom);
 
-/*****************************************************
-Actualites
-******************************************************/
+
+
+
+// // //------vues du contenu-------------------------------------------------------
+
+        $('.lienCat').on('click', function() {
+
+            $("#contenu").empty();
+
+            //$("#categories").hide();
+             var id = $(this).attr('id');
+
+             var contenu = new ModelContenus(window[id]);
+            var v_contenu= new ViewContenus({
+                collection: contenu
+            });
+            var dom = v_contenu.render();
+            $("#contenu").append(dom);
+
+//------affichage navigation latérale qui ne marche pas-------------------------------------------------------
+
+            var v_categoriesListe = new ViewCategories({
+                collection: categories
+            });
+
+            var categorieListe = v_categoriesListe.renderListCategorie();
+            $("#CategorieListe").append(categorieListe);
+
+
+            switchSection("#contenu");
+
+        });
+
+
+
+// //------gestion historique---------
+        $(window).on("popstate", function(e) {
+                $("#categories").hide();
+                $(".content").hide();
+                $("#news").hide()
+                var section = location.hash;
+                if ($(section).length == 0) {
+                    section = "#categories";
+                }
+                $(section).show();
+            });
+
+        $(window).trigger('popstate');
+
+
+
+
+//------affichage news---------
 
     var actualites = new ModelActualites(ACTUALITES);
 
@@ -26,143 +75,20 @@ Actualites
     var domNews = v_actualites.render();
     $("#news").append(domNews);
 
-    //console.log(actualites);
-
-/*****************************************************
-Categorie Liste menu
-******************************************************/
-    var v_categoriesListe = new ViewCategories({
-        collection: categories
-    });
-
-    var categorieListe = v_categoriesListe.renderListCategorie();
-    $("#CategorieListe").append(categorieListe);
-
-    $("#CategorieListe").hide();
 
 
-//------vues du contenu-------------------------------------------------------
-
-// var content =
-//var stress = new ModelContenus(content);
-
-    var stress = new ModelContenus(STRESS);
-
-    var v_stress = new ViewContenus({
-        collection: stress
-    });
-    var dom = v_stress.render();
-    $("#stress").append(dom);
-
-//---------------------------------------
-    var estime = new ModelContenus(ESTIME);
-
-    var v_estime = new ViewContenus({
-        collection: estime
-    });
-    var dom = v_estime.render();
-    $("#estime-de-soi").append(dom);
-//---------------------------------------
-
-
-    var sexualite = new ModelContenus(SEXUALITE);
-
-    var v_sexualite = new ViewContenus({
-        collection: sexualite
-    });
-    var dom = v_sexualite.render();
-    $("#sexualite").append(dom);
-
-//---------------------------------------
-    var boire = new ModelContenus(BOIRE);
-
-    var v_boire = new ViewContenus({
-        collection: boire
-    });
-    var dom = v_boire.render();
-    $("#boire-fumer-se-droguer").append(dom);
-
-//---------------------------------------
-
-    var sante = new ModelContenus(SANTE);
-
-    var v_sante = new ViewContenus({
-        collection: sante
-    });
-    var dom = v_sante.render();
-    $("#sante").append(dom);
-
-//---------------------------------------
-    var manger = new ModelContenus(MANGER);
-
-    var v_manger = new ViewContenus({
-        collection: sante
-    });
-    var dom = v_manger.render();
-    $("#manger-bouger").append(dom);
-
-//---------------------------------------
-    var moi = new ModelContenus(MOI);
-
-    var v_moi = new ViewContenus({
-        collection: moi
-    });
-    var dom = v_moi.render();
-    $("#moi-toi-et-les-autres").append(dom);
-
-//---------------------------------------
-
-    var violence = new ModelContenus(VIOLENCE);
-
-    var v_violence = new ViewContenus({
-        collection: violence
-    });
-    var dom = v_violence.render();
-    $("#violence").append(dom);
-
-//---------------------------------------
-    var formation = new ModelContenus(FORMATION);
-
-    var v_formation = new ViewContenus({
-        collection: formation
-    });
-    var dom = v_formation.render();
-    $("#formation-travail").append(dom);
-
-//---------------------------------------
-
-    var argent = new ModelContenus(ARGENT);
-
-    var v_argent = new ViewContenus({
-        collection: argent
-    });
-    var dom = v_argent.render();
-    $("#argent").append(dom);
-
-//---------------------------------------
-
-    var religion = new ModelContenus(RELIGION);
-
-    var v_religion = new ViewContenus({
-        collection: religion
-    });
-    var dom = v_religion.render();
-    $("#religion-croyance").append(dom);
-
-//---------------------------------------
-
-    var discrimination = new ModelContenus(DISCRIMINATION);
-
-    var v_discrimination = new ViewContenus({
-        collection: discrimination
-    });
-    var dom = v_discrimination.render();
-    $("#racisme-discrimination").append(dom);
 
 //----------------------QUIZ--------------------------------------------------------------
 
- var categoriesQuiz = new ModelCategories(CATEGORIES);
+    $("#quiz").hide();
 
+    $('#quiz').on('click', function() {
+            $("#quiz").show();
+        });
+
+
+//------affichage categorie quiz------
+    var categoriesQuiz = new ModelCategories(CATEGORIES);
 
     var v_categoriesQuiz = new ViewCategories({
         collection: categoriesQuiz
@@ -174,84 +100,20 @@ Categorie Liste menu
 
 
 
-
-//---------------------------------------
-
-
-
-    var quizStress = new ModelQuizs(QuizStress);
-
-    var v_quizStress = new ViewQuizs({
-        collection: quizStress
-    });
-    var dom = v_quizStress.render();
-    $("#quiz-stress").append(dom);
-
-//---------------------------------------
-
-    var quizEstime = new ModelQuizs(QuizEstime);
-
-    var v_quizEstime = new ViewQuizs({
-        collection: quizEstime
-    });
-    var dom = v_quizEstime.render();
-    $("#quiz-estime-de-soi").append(dom);
-
-//---------------------------------------
-
-    var quizSexualite = new ModelQuizs(QuizEstime);
-
-    var v_quizSexualite = new ViewQuizs({
-        collection: quizEstime
-    });
-    var dom = v_quizSexualite.render();
-    $("#quiz-sexualite").append(dom);
-
-
-
-
-
-//------------------------------------------------------------------------------------
-
-
-
-$(".content").on("click", switchSection(location.hash));
-
-$(".contentQuiz").on("click", switchSection(location.hash));
-
-
-
-    $(window).on("popstate", function(e) {
-        //$("section").hide();
-        $(".accueil").hide();
-        $(".content").hide();
-        $(".contentQuiz").hide();
-        $("#news").hide();
-        //$(".catQuiz").hide();
-
-
-
-
-        var section = location.hash;
-        if ($(section).length == 0) {
-            section = "#categories";
-
-        }
-        $(section).show();
-    });
-    $(window).trigger('popstate');
-
-
-
-    // if (location.hash !="#categories") {
-    //     $("#CategorieListe").show();
-    // };
-
+    //-------affichage contenu des quiz
 
 });
+
+
+//------gestion historique---------
 
 function switchSection(section) {
     history.pushState(null, null, section);
     $(window).trigger('popstate');
 }
+
+
+
+
+
 

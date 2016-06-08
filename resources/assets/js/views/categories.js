@@ -36,5 +36,6 @@ var ViewCategories = Pclia.ViewCollection.extend({
         return container;
     }
 
+
 });
 

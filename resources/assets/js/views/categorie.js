@@ -19,4 +19,5 @@ var ViewCategorie = Pclia.View.extend({
         return this.$el;
     }
 
+
 });
