@@ -52,6 +52,15 @@ Route::get('/regions/{id}/edit', 'RegionController@edit');
 Route::put('/regions/{id}', 'RegionController@update');
 Route::delete('/regions/{id}', 'RegionController@destroy');
 
+// Badges
+Route::get('/badges/', 'BadgeController@index');
+Route::get('/badges/create', 'BadgeController@create'); 
+Route::post('/badges/', 'BadgeController@store');            
+Route::get('/badges/{id}', 'BadgeController@show');
+Route::get('/badges/{id}/edit', 'BadgeController@edit');
+Route::put('/badges/{id}', 'BadgeController@update');
+Route::delete('/badges/{id}', 'BadgeController@destroy');
+
 // Login et logout
 Route::get('/auth/login', 'AuthController@login'); 
 Route::group(['middleware' => ['auth']], function () {    
