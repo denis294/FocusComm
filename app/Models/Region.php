@@ -18,10 +18,5 @@ class Region extends Model
 	public function pays(){
       return $this->belongsTo('App\Models\Pays');
 	}
-	public static function isValid($data = array())
-    {
-        return Validator::make($data, array(
-            'id' => 'exists:regions|sometimes|required',
-        ))->passes();
-    }
+	
 }

@@ -36,7 +36,7 @@ class RegionController extends Controller
         //
     }
 
-	// Enregistre une nouvelle région dans la base de données (pas check)
+	// Enregistre une nouvelle région dans la base de données
     public function store()
     {
        $fields = Request::only('nom', 'pays_id');
@@ -45,11 +45,10 @@ class RegionController extends Controller
        }
        $pays = Pays::find($fields['pays_id']);
        if (!isset($pays)){
-       	   return response ('Pays non trouvée', 404);
+       	   return response ('Pays non trouvé', 404);
        }
        $region = new Region($fields);
-       $user = User::find(Session::get('user_id'));
-       $user->region()->save($region);
+       $region->save();
        return $region;
     }
 
