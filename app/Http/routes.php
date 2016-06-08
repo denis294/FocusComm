@@ -42,6 +42,10 @@ Route::get('/quizzs/{id}/edit', 'QuizzController@edit');
 Route::put('/quizzs/{id}', 'QuizzController@update');
 Route::delete('/quizzs/{id}', 'QuizzController@destroy');
 
+// Régions
+Route::get('/regions/', 'RegionController@index');
+Route::get('/regions/pays/{id}', 'RegionController@indexPays');
+
 // Login et logout
 Route::get('/auth/login', 'AuthController@login'); 
 Route::group(['middleware' => ['auth']], function () {    
