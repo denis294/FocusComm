@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
 use Request;
 use App\Models\User;
@@ -12,7 +11,7 @@ use Session;
 class AuthController extends Controller
 {
 	public function login(){
-  		$password = Request::input('password', '');
+  		$password = Request::input('motDePasse', '');
   		$email = Request::input('email', '');
   		$pseudo = User::where("email", $email)->first();
   		
@@ -22,7 +21,7 @@ class AuthController extends Controller
   		}
   		
   		// Vérifie le password et le hash
-  		if (!Hash::check($password, $pseudo->password)) {
+  		if (!Hash::check($password, $pseudo->motDePasse)) {
       		return 'Connexion échouée, mauvais password';
   		}
   		
