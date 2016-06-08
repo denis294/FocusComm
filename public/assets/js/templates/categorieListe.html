@@ -1,0 +1,15 @@
+<article>
+    <h2>{{title}}</h2>
+    <nav>
+        {{#each niveau2}}
+        <ul>
+            {{niveau2}}
+            {{#each niveau3}}
+                <li>
+                    {{niveau3}}
+                </li>
+            {{/each}}
+        </ul>
+        {{/each}}
+    </nav>
+</article>
