@@ -33,18 +33,133 @@ font-size: 3em;
   text-align: center;
 }
 
+.row.parr{
+
+  margin-top: -10%;
+  height:1em;
+}
+
+
+.container.foot{
+
+  height: 100%;
+  background-color: #0580a2;
+}
+
+.sectionSoutien{
+border-right: solid 1px white ;
+height: auto;
+margin-top: -11px;
+}
+
+.sectionDispo{
+
+border-right: solid 1px white ;
+margin-top: -11px;
+
+}
+
+.sectionDispo img{
+
+width:65%;
+height:35%;
+display: inline;
+}
+
+.finan{
+
+  margin-top: -10%;
+}
+.s6b{
+  left:0;
+  margin-left: 2%;
+  position: absolute;
+  color:white;
+  width:30%;
+
+}
+
+.s2b{
+
+  width:30%;
+
+}
+
+.s4e{
+
+  width:42%;
+  margin-top: -10px;
+  position: absolute;
+  right: 0;
+  margin
+
+}
+
+h1 {
+    font-size: 4.2rem;
+    line-height: 110%;
+    margin: 4.1rem 0 0.68rem 0 !important;
+}
+
+.s4e h6{
+font-size: 13px!important;
+}
+
+.financeSoutien{
+
+  height:10px;
+}
+
+.lesSoutiens{
+
+  display: inline;
+  margin-top: 10px;
+  position: relative;
+}
+
+.soutien{
+
+  display: inline;
+}
+
+.sb5 img{
+
+  display: inline;
+}
+
+.s2b{
+
+  margin-left: 30%;
+}
+
+.s2b img{
+
+  display: inline;
+}
+
+.container .row{
+
+margin-left: 0rem !important; 
+}
+
+
 body{
   font-family: Gill Sans, sans-serif;
   background-image: url("../img/ciao_hp2012_visuel.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }
 
 .block  h1{
   text-align: center;
   color:white;
-  font-size: 15px;
-  margin-top: 10%;
+  font-size: 16px!important;
+  margin-top: 16%!important;
   font-weight: lighter;
   line-height: 2.5em;
+  padding-top: 4%;
 }
 
 .tit{
@@ -84,8 +199,9 @@ header{
 }
 
 footer{
-  position: absolute;
+  position: relative;
   width: 100%;
+  bottom:0;
 }
 
 .logo{
@@ -139,7 +255,7 @@ nav ul {
 
 }
 nav li a{
-  line-height: 120px;
+  line-height: 74px;
 }
 
 }
@@ -179,6 +295,7 @@ div #log{
 #sign{
   /*text-decoration: underline;*/
   cursor: pointer;
+  margin-top: 3%;
 }
 
 #sign:hover{
@@ -212,10 +329,24 @@ div #log{
   right: 0;
   margin-right :1.8%;
   position:absolute;
+  margin-top: 1%;
+}
+nav ul a {
+
+  padding: 50px 15px !important;
+  transition: background-color .0s;
 }
 
-nav li a:hover{
-  line-height: 160px;
+.donde{
+position: absolute;
+bottom:0;
+margin-bottom: 3%;
+}
+
+.ici {
+
+  background-color: rgba(0, 0, 0, 0.4);
+  height:120px;
 }
 
 nav li {
@@ -255,77 +386,77 @@ a:hover{text-decoration: none;}
 content: '\f108';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf100:before{
 content: '\f100';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf101:before{
 content: '\f101';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf102:before{
 content: '\f102';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf103:before{
 content: '\f103';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf105:before{
 content: '\f105';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf106:before{
 content: '\f106';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 }
  .iconf107:before{
 content: '\f107';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 text-align: center!important;
 }
  .iconf10A:before{
 content: '\f10a';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 text-align: center!important;
 }
  .iconf10C:before{
 content: '\f10c';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 text-align: center!important;
 }
  .iconf10D:before{
 content: '\f10d';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 text-align: center!important;
 }
  .iconf10E:before{
 content: '\f10e';
 font-family: "Flaticon";
 color:#123552;
-font-size: 2em;text-align: center!important;
+font-size: 1.2em;text-align: center!important;
 text-align: center!important;
 }
 #icon{
@@ -337,7 +468,7 @@ body{
 .block  h1{
     text-align: center;
     color:white;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 10%;
     font-weight: lighter;
     line-height: 2.5em;
@@ -347,8 +478,34 @@ body{
     background-color:#0580a3;
     height:5%;
 }
+
+footer{
+
+  color:white;
+  height: auto;
+}
+
+#categorie{
+  margin-left: 20%
+}
+
+.row .col.s4a {
+  width: 33.3333333333%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+
 .block{
-    width:80%!important;
-    height:35%!important;
+    width:55%!important;
+    height:40%!important;
     background-color: white;
+    margin-left:10%;
+    margin-top: 10%;
+}
+
+.s4.c{
+
+  margin-left:-10%!important;
 }
