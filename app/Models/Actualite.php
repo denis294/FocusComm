@@ -30,11 +30,4 @@ class Actualite extends Model
         return $this->belongsToMany('App\Models\Categorie', 'actualite_categorie')->withTimestamps();
 	}
 	
-	public static function isValid($data = array())
-    {
-        return Validator::make($data, array(
-            'id' => 'exists:actualites|sometimes|required',
-        ))->passes();
-    }
-	
 }

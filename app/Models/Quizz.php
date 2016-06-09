@@ -34,11 +34,5 @@ class Quizz extends Model
 	public function usersParticipations(){
         return $this->belongsToMany('App\Models\User', 'user_quizz');
     }
-	
-	public static function isValid($data = array())
-    {
-        return Validator::make($data, array(
-            'id' => 'exists:quizzs|sometimes|required',
-        ))->passes();
-    }
+
 }
