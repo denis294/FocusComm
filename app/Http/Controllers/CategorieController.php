@@ -37,7 +37,7 @@ class CategorieController extends Controller
     // Enregistre une catégorie dans la base de données
     public function store()
     {
-       $fields = Request::only('nom', 'categorieParente_id');
+       $fields = Request::only('nom', 'icone', 'description','categorieParente_id');
        if (!Categorie::validate($fields)) {
            return response('Fields error', 400);
        }
@@ -73,7 +73,7 @@ class CategorieController extends Controller
     // Met à jour une catégorie
     public function update($id)
     {
-       $actu = Categorie::find($id);
+       $categorie = Categorie::find($id);
        if (!isset($actu)) {
            return response('Not found', 404);
        }
@@ -81,19 +81,19 @@ class CategorieController extends Controller
        if (!Categorie::validate($fields)) {
            return response('Fields error', 400);
        }
-       $actu->update($fields);
-       return $actu;
+       $categorie->update($fields);
+       return $categorie;
     }
     
     // Supprime une catégorie
     public function destroy($id)
     {
-       $actu = Categorie::find($id);
+       $categorie = Categorie::find($id);
        if (!isset($actu)) {
            return response('Not found', 404);
        }
-       $actu->delete();
-       return $actu;
+       $categorie->delete();
+       return $categorie;
     }
     
     
