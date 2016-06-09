@@ -11,7 +11,7 @@ $(function (){
     //$("#categories").append(v_categories.render());
     $("section .contents").hide()
     var dom = v_categories.render();
-    $("#categories").append(dom);
+    $(".test").append(dom);
 
 
 
