@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->text('texte');
             $table->string('illustration')->nullable();
             $table->integer('quizz_id')->unsigned();
-            $table->foreign('quizz_id')->references('id')->on('quizzs');
+            $table->foreign('quizz_id')->references('id')->on('quizzs')->onDelete('cascade');
         });
     }
 

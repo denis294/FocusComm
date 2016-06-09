@@ -17,7 +17,7 @@ class CreateUserQuizzTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('quizz_id')->unsigned();
-            $table->foreign('quizz_id')->references('id')->on('quizzs');
+            $table->foreign('quizz_id')->references('id')->on('quizzs')->onDelete('cascade');
         });
     }
 
