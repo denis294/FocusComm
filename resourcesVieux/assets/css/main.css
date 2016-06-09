@@ -207,25 +207,10 @@ header{
 }
 
 footer{
-
-  margin-bottom: 0%;
+  position: relative;
   width: 100%;
   bottom:0;
-  position: relative;
   padding-top: 10px;
-
-}
-
-#intro{
-
-  color:black;
-}
-
-#intro h3 {
-
-  color:#1F397B;
-  font-weight: bold;
-  font-size: 25px;
 }
 
 .logo{
@@ -507,8 +492,6 @@ footer{
 
   color:white;
   height: auto;
-  z-index: 1;
-  bottom:0;
 }
 
 #categorie{
