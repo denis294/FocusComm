@@ -24,7 +24,7 @@ class CreateQuizzsTable extends Migration
             $table->integer('categorie_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
-            $table->foreign('badge_id')->references('id')->on('badges');
+            $table->foreign('badge_id')->references('id')->on('badges')->onDelete('cascade');
             $table->foreign('categorie_id')->references('id')->on('categories');
             $table->timestamps();
 

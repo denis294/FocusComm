@@ -17,7 +17,7 @@ class CreateBadgeUserTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('badge_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('badge_id')->references('id')->on('badges');
+            $table->foreign('badge_id')->references('id')->on('badges')->onDelete('cascade');
         });
     }
 

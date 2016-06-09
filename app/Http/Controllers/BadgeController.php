@@ -53,14 +53,14 @@ class BadgeController extends Controller
         //
     }
 
-    // Met à jour un badge (pas check)
+    // Met à jour un badge
     public function update($id)
     {
        $badge = Badge::find($id);
        if (!isset($badge)) {
            return response('Not found', 404);
        }
-       $badge = Request::all();
+       $fields = Request::all();
        if (!Badge::validate($fields)) {
            return response('Fields error', 400);
        }
@@ -68,7 +68,7 @@ class BadgeController extends Controller
        return $badge;
     }
 
-	// Supprime le badge (pas check)
+	// Supprime le badge
     public function destroy($id)
     {
        $badge = Badge::find($id);
