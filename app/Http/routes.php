@@ -52,6 +52,9 @@ Route::get('/regions/{id}/edit', 'RegionController@edit');
 Route::put('/regions/{id}', 'RegionController@update');
 Route::delete('/regions/{id}', 'RegionController@destroy');
 
+// Pays
+Route::get('/pays/', 'PaysController@index');
+
 // Badges
 Route::get('/badges/', 'BadgeController@index');
 Route::get('/badges/create', 'BadgeController@create'); 
