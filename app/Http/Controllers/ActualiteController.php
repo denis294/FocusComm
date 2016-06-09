@@ -40,7 +40,7 @@ class ActualiteController extends Controller
        return $actu;
     }
 	
-	// Liste toutes les actualités
+	// Affiche une actualité précise
     public function show($id)
     {
        $actus = Actualite::find($id);
