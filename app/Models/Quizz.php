@@ -8,9 +8,9 @@ class Quizz extends Model
     protected static $rules = [
         'titre' => 'min:5|max:100|sometimes|required',
         'date' => 'date|date_format:Y-m-d',
-        'etat' => 'in:publie', 'cache', 'aValider',
+        'etat' => 'in:publie,cache,aValider',
         'badge_id' => 'integer|min:1',
-        'categorie_id' => 'required|integer|min:1',
+        'categorie_id' => 'integer|min:1',
         
     ];
     
