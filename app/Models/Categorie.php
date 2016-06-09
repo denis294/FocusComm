@@ -4,6 +4,14 @@ namespace App\Models;
 
 class Categorie extends Model
 {
+	protected $fillable = array('nom','icone','description','categorieParente_id');
+    protected static $rules = [
+        'nom' => 'min:3|max:50|sometimes|required',
+        'icone' => 'string',
+        'description' => 'string',
+        'categorieParente_id' => 'integer|min:1',
+    ];
+    
 	public $timestamps = false;
 	
 	public function categorieParent(){

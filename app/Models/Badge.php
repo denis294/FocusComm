@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 class Badge extends Model
 {
+
 	public $timestamps = false;
+	protected $fillable = array('titre', 'image');
+    protected static $rules = [
+        'titre' => 'min:5|max:100|sometimes|required',
+        'image' => 'string',    
+    ];
 	
     public function quizz()
     {
@@ -17,4 +21,5 @@ class Badge extends Model
     {
         return $this->belongsToMany('App\Models\User', 'badge_user')->withTimestamps();
     }
+    
 }

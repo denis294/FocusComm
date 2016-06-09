@@ -91,10 +91,14 @@ class RegionPaysSeeder extends Seeder
 
         $sante = Categorie::create([
         	'nom' => 'sante',
+        	'icone' => 'sante.jpg',
+        	'description' => 'Comment mieux vivre plus sainement.',
         ]);
 
         $manger = Categorie::create([
         	'nom' => 'manger',
+        	'icone' => 'manger.jpg',
+        	'description' => 'Manger est important, bouger aussi.',
         ]);
         // Sida sous-catégorie de Santé
         $sida = Categorie::create([

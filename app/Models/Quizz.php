@@ -2,11 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 class Quizz extends Model
 {
-
+	protected $fillable = array('titre', 'date', 'etat', 'badge_id', 'categorie_id');
+    protected static $rules = [
+        'titre' => 'min:5|max:100|sometimes|required',
+        'date' => 'date|date_format:Y-m-d',
+        'etat' => 'in:publie', 'cache', 'aValider',
+        'badge_id' => 'integer|min:1',
+        'categorie_id' => 'required|integer|min:1',
+        
+    ];
+    
     public function users()
     {
     	return $this->belongsTo('App\Models\User');
@@ -27,4 +34,5 @@ class Quizz extends Model
 	public function usersParticipations(){
         return $this->belongsToMany('App\Models\User', 'user_quizz');
     }
+
 }

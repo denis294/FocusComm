@@ -1,6 +1,23 @@
-<article>
-    <h2>{{title}}</h2>
-    <p>{{description}}</p>
-    <p>{{date}}</p>
-    <img src="assets/img/{{media}}">
-</article>
+
+    <div class="pin">
+        <div class="card">
+            <div class="card-image">
+                <!--image-->
+                <img src="assets/img/{{media}}">
+                <!--Titre-->
+                <span class="card-title">{{title}}</span>
+            </div>
+            <div class="card-content">
+                <!--Description-->
+                
+                <p>
+                    {{description}}
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#">Lire l'article</a>
+                <!--date de cr�ation-->
+                <span class="dateActu">{{date}}</span>
+            </div>
+        </div>
+    </div>

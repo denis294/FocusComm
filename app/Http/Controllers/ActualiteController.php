@@ -13,7 +13,9 @@ class ActualiteController extends Controller
 	// Liste toutes les actualités
     public function index()
     {        
-       return Actualite::all();
+       $news = Actualite::all();
+       $news = json_encode($news, JSON_UNESCAPED_UNICODE );
+       return view('actualites/index')->with('news', $news);
     }
    
 	 public function create()
@@ -38,7 +40,7 @@ class ActualiteController extends Controller
        return $actu;
     }
 	
-	// Liste toutes les actualités
+	// Affiche une actualité précise
     public function show($id)
     {
        $actus = Actualite::find($id);

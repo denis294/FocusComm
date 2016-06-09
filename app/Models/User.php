@@ -40,7 +40,7 @@ class User extends Model
    
     public function badges()
     {
-        return $this->belongsToMany('App\Models\Badge', 'badge_user')->withTimestamps();
+        return $this->belongsToMany('App\Models\Badge', 'badge_user');
     }
     
     public function reponses()
