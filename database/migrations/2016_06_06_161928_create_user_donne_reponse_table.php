@@ -18,7 +18,7 @@ class CreateUserDonneReponseTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('reponse_id')->unsigned();
-            $table->foreign('reponse_id')->references('id')->on('reponses');
+            $table->foreign('reponse_id')->references('id')->on('reponses')->onDelete('cascade');;
         });
     }
 
