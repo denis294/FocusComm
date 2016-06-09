@@ -52,9 +52,6 @@ Route::get('/regions/{id}/edit', 'RegionController@edit');
 Route::put('/regions/{id}', 'RegionController@update');
 Route::delete('/regions/{id}', 'RegionController@destroy');
 
-// Pays
-Route::get('/pays/', 'PaysController@index');
-
 // Badges
 Route::get('/badges/', 'BadgeController@index');
 Route::get('/badges/create', 'BadgeController@create'); 
@@ -63,6 +60,19 @@ Route::get('/badges/{id}', 'BadgeController@show');
 Route::get('/badges/{id}/edit', 'BadgeController@edit');
 Route::put('/badges/{id}', 'BadgeController@update');
 Route::delete('/badges/{id}', 'BadgeController@destroy');
+
+// Pays
+Route::get('/pays/', 'PaysController@index');
+
+// Catégories
+Route::get('/categories/', 'CategorieController@index');
+Route::get('/categories/{id}/sous-categorie', 'CategorieController@indexEnfant');
+Route::get('/categories/create', 'CategorieController@create'); 
+Route::post('/categories/', 'CategorieController@store');            
+Route::get('/categories/{id}', 'CategorieController@show');
+Route::get('/categories/{id}/edit', 'CategorieController@edit');
+Route::put('/categories/{id}', 'CategorieController@update');
+Route::delete('/categories/{id}', 'CategorieController@destroy');
 
 // Login et logout
 Route::get('/auth/login', 'AuthController@login'); 
