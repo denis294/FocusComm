@@ -32,12 +32,26 @@ class QuizzController extends Controller
         //
     }
     
-    // Enregistre un quizz dans la base de données (pas check)
+    // Enregistre un quizz dans la base de données
     public function store()
     {
-       $fields = Request::only('titre', 'date', 'texte', 'etat', 'badge_id', 'categorie_id');
+       $fields = Request::only('titre', 'date', 'etat', 'badge_id', 'categorie_id');
+       
        if (!Quizz::validate($fields)) {
            return response('Fields error', 400);
+       }
+       
+       // Vérifie la non existance du quizz
+       $titreInput = Request::only('titre');
+       $dateInput = Request::only('date');
+       
+       $quizz = DB::table('quizzs')
+        	->where('titre', '=', $titreInput)
+        	->where('date', '=', $dateInput)
+        	->get();
+        	
+       if (!empty($quizz)){
+       	   return response ('Quizz déja existant');
        }
        
        // Vérifie que la catégorie spécifie existe
@@ -61,7 +75,7 @@ class QuizzController extends Controller
        
     }
 	
-	// Liste tous les quizs (pas check)
+	// Affiche un quizz spécifique
     public function show($id)
     {
        $quizzs = Quizz::find($id);
@@ -75,19 +89,19 @@ class QuizzController extends Controller
         //
     }
     
-    // Met à jour un quizz (pas check)
+    // Met à jour un quizz
     public function update($id)
     {
-       $quizz = Quizz::find($id);
-       if (!isset($quizz)) {
+       $badge = Quizz::find($id);
+       if (!isset($badge)) {
            return response('Not found', 404);
        }
        $fields = Request::all();
        if (!Quizz::validate($fields)) {
            return response('Fields error', 400);
        }
-       $quizz->update($fields);
-       return $quizz;
+       $badge->update($fields);
+       return $badge;
     }
     
     // Supprime un quizz
