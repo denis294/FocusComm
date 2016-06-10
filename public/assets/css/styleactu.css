@@ -1,6 +1,24 @@
 /*******************************
 Actualité
 ******************************/
+.fondnoir{
+    background: rgba(0,0,0, .8) !important;
+    position: fixed;
+     top: 0;
+    bottom: 0;
+    right:0;
+    left: 0;
+    z-index:3;
+    padding: 10px;
+   
+}
+
+.actualite .card{
+
+}
+
+
+
 /**pousser la date de l'actualité à droite**/
 .card-action .dateActu{
     float:right;
@@ -15,7 +33,7 @@ Actualité
     right:0;
     left: 0;
     display: block;
-    z-index:3;    
+    z-index:4;    
     max-width:70em;
     margin: 0 auto;
 }
@@ -49,6 +67,11 @@ Actualité
     float:right;
     width:2em;
 }
+
+/*******************************
+Board Actualités
+******************************/
+
 
 #wrapper {
         display:block;

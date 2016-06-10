@@ -9,7 +9,11 @@ var NEWS = {!! $news !!};
 </script>
 
 <section id ="news">
-                    
+    <div id="wrapper">
+        <div id ="columns">
+            
+        </div>
+    </div>                
 </section>
 
 @endsection

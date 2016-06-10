@@ -1,6 +1,6 @@
 var ViewActualite = Pclia.View.extend({
     events: {
-
+          
     },
     initialize: function () {
         this.listenTo(this.model, "change", this.render);
