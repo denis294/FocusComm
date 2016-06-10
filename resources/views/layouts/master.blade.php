@@ -3,7 +3,7 @@
     <head>
     <title>@yield('title')</title>
     <meta charset="utf-8">
-    <script src="assets/js/packJs.php"></script>
+    <script src="{{asset('assets/js/packJs.php')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
      <!--Import Google Icon Font-->
@@ -17,7 +17,7 @@
                     <a href="#" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">Sexualité</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
                         <li><a class="ici" href="sass.html">Accueil</a></li>
-                        <li class=""><a href="badges.html">Actualité</a></li>
+                        <li class=""><a href="actualites">Actualité</a></li>
                         <li class=""><a href="collapsible.html">Adresse</a></li>
                         <li class=""><a href="collapsible.html">Pose ta question</a></li>
                         <li class=""><a href="mobile.html">Forum</a></li>
