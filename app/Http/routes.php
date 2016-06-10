@@ -15,6 +15,7 @@
 Route::get('/', function () {
     return view('home/index');
 });
+// Admin
 Route::get('/', function () {
     return view('admin/index');
 });
@@ -66,6 +67,9 @@ Route::delete('/badges/{id}', 'BadgeController@destroy');
 
 // Pays
 Route::get('/pays/', 'PaysController@index');
+
+// Role
+Route::get('/role/', 'RoleController@index');
 
 // Catégories
 Route::get('/categories/', 'CategorieController@index');
