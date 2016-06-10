@@ -31,6 +31,7 @@ $(function (){
             });
             var dom = v_contenu.render();
             $("#contenu").append(dom);
+            console.log("coucou");
 
 //------affichage navigation latérale qui ne marche pas-------------------------------------------------------
 

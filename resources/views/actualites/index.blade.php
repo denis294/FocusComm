@@ -1,9 +1,15 @@
 @extends('layouts.master')
 @section('title', 'Actualités')
-
+<link rel="stylesheet" href="{{asset('assets/css/styleactu.css')}}">
 @section('content')
 <h1>Actualtés</h1>
+
 <script>
-var news = {!! $news !!};
+var NEWS = {!! $news !!};
 </script>
+
+<section id ="news">
+                    
+</section>
+
 @endsection
