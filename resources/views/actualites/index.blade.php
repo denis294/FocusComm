@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('title', 'Actualités')
 <link rel="stylesheet" href="{{asset('assets/css/styleactu.css')}}">
 @section('content')

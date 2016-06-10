@@ -47,9 +47,9 @@
             <h6 class="row">Avec le soutien de </br></br>
             <span class="lesSoutiens col s12">
                 <span class="row" >
-                    <img class="col s4" src="{{asset('assets/img/mecenes_logo_loro.gif')}}"> 
+                    <img class="col s4" src="{{asset('assets/img/mecenes_logo_loro.gif')}}">
                     <img class="col s4" src="{{asset('assets/img/mecenes_logo_oakfoundation.gif')}}">
-                    <span class="col s4"> 
+                    <span class="col s4">
                         <span class="row ccp" >
                         Soutenez CIAO </br>CCP-10-5261-6
                         </span>
@@ -63,7 +63,7 @@
             </h6>
             </div>
               <div class="sectionDispo col s2b">
-                <h6 class="white-text">Application Ciao.ch disponible sur 
+                <h6 class="white-text">Application Ciao.ch disponible sur
             </br></br>
             <span class="lesSoutiens">
                 <a href="https://play.google.com/store/apps/details?id=com.BleuVert.Ciao"><img src="{{asset('assets/img/google-play-badge.png')}}"></a>
