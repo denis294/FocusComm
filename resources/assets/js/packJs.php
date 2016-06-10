@@ -32,12 +32,13 @@ header("Content-type: application/javascript");
         'views/actualites.js',
 
         // TP
-        'tp/main.js',
+        'tp/mainActu.js',
+
 
         // AUTRES
         'contents/categories.js',
         'contents/contenus.js',
-        'contents/actualites.js'
+        'contents/actualites.js',
     ];
 
     $js = '';
