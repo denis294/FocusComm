@@ -11,7 +11,14 @@ class Quizz extends Model
         'etat' => 'in:publie,cache,aValider',
         'badge_id' => 'integer|min:1',
         'categorie_id' => 'integer|min:1',
-        
+        'question.0.texte' => ['required','string', 'min:3'],
+        'question.0.illustration' => ['string'],
+        'question.0.reponse.0.texte' => ['required','string','min:2'],
+        'question.0.reponse.0.estJuste' => ['required','string'],
+        'question.*.texte' => ['required','string', 'min:3'],
+        'question.*.illustration' => ['string'],
+        'question.*.reponse.0.texte' => ['required','string','min:2'],
+        'question.*.reponse.0.estJuste' => ['required','string'],
     ];
     
     public function users()
