@@ -31,6 +31,7 @@ $(function (){
             });
             var dom = v_contenu.render();
             $("#contenu").append(dom);
+            console.log("coucou");
 
 //------affichage navigation latérale qui ne marche pas-------------------------------------------------------
 
@@ -52,7 +53,7 @@ $(function (){
         $(window).on("popstate", function(e) {
                 $("#categories").hide();
                 $(".content").hide();
-                $("#news").hide()
+                
                 var section = location.hash;
                 if ($(section).length == 0) {
                     section = "#categories";
@@ -67,7 +68,7 @@ $(function (){
 
 //------affichage news---------
 
-    var actualites = new ModelActualites(ACTUALITES);
+    var actualites = new ModelActualites(NEWS);
 
     var v_actualites = new ViewActualites({
         collection: actualites
