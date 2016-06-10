@@ -88,15 +88,15 @@ $(function (){
 
 
 //------affichage categorie quiz------
-    var categoriesQuiz = new ModelCategories(CATEGORIES);
+    // var categoriesQuiz = new ModelCategories(CATEGORIES);
 
-    var v_categoriesQuiz = new ViewCategories({
-        collection: categoriesQuiz
-    });
-    //$("#categories").append(v_categories.render());
-    // $("section .contents").hide()
-    var dom = v_categoriesQuiz.renderCategorieQuiz();
-    $("#categoriesQuiz").append(dom);
+    // var v_categoriesQuiz = new ViewCategories({
+    //     collection: categoriesQuiz
+    // });
+    // //$("#categories").append(v_categories.render());
+    // // $("section .contents").hide()
+    // var dom = v_categoriesQuiz.renderCategorieQuiz();
+    // $("#categoriesQuiz").append(dom);
 
 
 
