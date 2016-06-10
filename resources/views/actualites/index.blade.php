@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('title', 'Actualités')
 
 @section('content')
