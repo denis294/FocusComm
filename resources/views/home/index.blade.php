@@ -5,12 +5,10 @@
 
 
                 <section id="categories" class="row accueil categories">
-                    <article id="intro">
-                    <h3 id="titleIntro">Ciao.ch est destiné aux jeunes romands de 11 à 20 ans </h3>
-                    <p id="introDescription"> - Il présente des informations rédigées par des experts.</p>
-<p>- Il permet de poser des questions anonymement et gratuitement à des spécialistes qui répondent dans les deux jours ouvrables.</p>
-<p>- Il donne des informations nécessaires en cas d’urgence et des adresses utiles.</p>
-<p>- Il offre un espace interactif de forums, tchats et témoignages.</p>
+                                        <article id="intro">
+                    <h3 id="titleIntro">Qu'est ce que Ciao.ch ?</h3>
+                    <p id="introDescription"> ciao.ch est destiné aux jeunes romands de 11 à 20 ans.</p><p>
+12 rubriques et plus de 1700 fiches d’information rédigées pour toi sur des thématiques qui t’intéressent (clique sur les onglets du menu pour y accéder).</p>
                     </article>
                 </section>
 
