@@ -69,8 +69,8 @@ margin-top: -11px;
 
 .sectionDispo img{
 
-width:65%;
-height:35%;
+width:200px;
+height:100px;
 display: inline;
 }
 
@@ -218,6 +218,7 @@ footer{
 #intro{
 
   color:black;
+  font-weight: bold;
 }
 
 #intro h3 {
@@ -537,6 +538,34 @@ footer{
   margin-left:-10%!important;
 }
 
+
+@media screen and (max-width: 640px) {
+   body{
+    background-color: white;
+    background-image: url("");
+  }
+
+  #intro p{
+
+width:80%;
+display: inline;
+text-align: justify;
+}
+
+.menuLateral{
+
+  height:100%;
+  width:85%;
+  background-color: #586366;
+  z-index:2;
+}
+
+#log{
+
+  display: none;
+}
+
+}
 
 /*******************************
 Actualité
