@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Quizz;
 use App\Models\Categorie;
 use App\Models\Badge;
+use App\Models\Question;
+use App\Models\Reponse;
 use Session;
 use Request;
 use DB;
@@ -29,13 +31,13 @@ class QuizzController extends Controller
     }
 	 public function create()
     {
-        //
+        return view('quizz/create');
     }
     
     // Enregistre un quizz dans la base de données
     public function store()
     {
-       $fields = Request::only('titre', 'date', 'etat', 'badge_id', 'categorie_id');
+       $fields = Request::all();
        
        if (!Quizz::validate($fields)) {
            return response('Fields error', 400);
@@ -70,7 +72,17 @@ class QuizzController extends Controller
        
        $quizz = new Quizz($fields);
        $user = User::find(Session::get('user_id'));
+
        $user->quizzs()->save($quizz);
+
+       foreach ($fields['question'] as $question) {
+          $q = new Question($question);
+          $quizz->questions()->save($q);
+          foreach ($question['reponse'] as $reponse) {
+            $rep = new Reponse($reponse);
+            $q->reponses()->save($rep);
+          }
+       }
        return $quizz;
        
     }
