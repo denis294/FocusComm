@@ -29,11 +29,11 @@
             <div id="log" class="col s4a">
 
                         <span><h6 class="logg">Login :</h6>
-                        <input id="pseudo" type="text" required placeholder=" Pseudo &#128587;">
-                        <input id="mdp" type="text" required placeholder=" Mot de passe &#128272;">
+                        <input id="pseudo" type="text" required placeholder=" Pseudo">
+                        <input id="mdp" type="text" required placeholder=" Mot de passe">
                         <a id="btn_login"class="waves-effect waves-light btn"> login</a><br/>
-                        <a id="sign">&#128203; Créer un compte</a>
-                        <input id="search" type="search" required placeholder=" Recherche &#128269;"></span>
+                        <a id="sign">Créer un compte</a>
+                        <input id="search" type="search" required placeholder=" Recherche"></span>
             </div>
         </header>
         <main class="main">
