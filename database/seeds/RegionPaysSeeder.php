@@ -109,8 +109,8 @@ class RegionPaysSeeder extends Seeder
         $actu1 = new Actualite([
         	'titre' => 'Le sida en régression',
         	'dateCreation' => date('Y-m-d H:i:s'),
-        	'texte' => 'Blablablbllalalalbllblalalallbllalallalaalllblblallalalalallalala',
-        	'image' => 'none.jpg',
+        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi.',
+        	'image' => 'media1.png',
         	'categorie_id' => $sida->id,
         ]);
 
@@ -118,12 +118,32 @@ class RegionPaysSeeder extends Seeder
         $actu2 = new Actualite([
         	'titre' => 'Le sida en Afrique',
         	'dateCreation' => date('Y-m-d'),
-        	'texte' => 'Le sida africain lunaire',
+        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi. ',
         	'image' => 'none.jpg',
         	'actualiteLiee_id' => $actu1->id,
         	'categorie_id' => $sida->id,
         ]);
         $admin->actualites()->save($actu2);
+        
+        $actu3 = new Actualite([
+        	'titre' => 'Le sida en Europe',
+        	'dateCreation' => date('Y-m-d'),
+        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi. ',
+        	'image' => 'none.jpg',
+        	'actualiteLiee_id' => $actu1->id,
+        	'categorie_id' => $sida->id,
+        ]);
+        $admin->actualites()->save($actu3);
+        
+        $actu4 = new Actualite([
+        	'titre' => 'Le sida au Canada',
+        	'dateCreation' => date('Y-m-d'),
+        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi. ',
+        	'image' => 'none.jpg',
+        	'actualiteLiee_id' => $actu1->id,
+        	'categorie_id' => $sida->id,
+        ]);
+        $admin->actualites()->save($actu4);
 
         /**
 		* Seeding Quizz + Badge

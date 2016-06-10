@@ -16,7 +16,7 @@
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">Sexualité</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a class="ici" href="sass.html">Accueil</a></li>
+                        <li><a class="ici" href="home">Accueil</a></li>
                         <li class=""><a href="actualites">Actualité</a></li>
                         <li class=""><a href="collapsible.html">Adresse</a></li>
                         <li class=""><a href="collapsible.html">Pose ta question</a></li>
@@ -47,9 +47,9 @@
             <h6 class="row">Avec le soutien de </br></br>
             <span class="lesSoutiens col s12">
                 <span class="row" >
-                    <img class="col s4" src="{{asset('assets/img/mecenes_logo_loro.gif')}}"> 
+                    <img class="col s4" src="{{asset('assets/img/mecenes_logo_loro.gif')}}">
                     <img class="col s4" src="{{asset('assets/img/mecenes_logo_oakfoundation.gif')}}">
-                    <span class="col s4"> 
+                    <span class="col s4">
                         <span class="row ccp" >
                         Soutenez CIAO </br>CCP-10-5261-6
                         </span>
@@ -63,7 +63,7 @@
             </h6>
             </div>
               <div class="sectionDispo col s2b">
-                <h6 class="white-text">Application Ciao.ch disponible sur 
+                <h6 class="white-text">Application Ciao.ch disponible sur
             </br></br>
             <span class="lesSoutiens">
                 <a href="https://play.google.com/store/apps/details?id=com.BleuVert.Ciao"><img src="{{asset('assets/img/google-play-badge.png')}}"></a>

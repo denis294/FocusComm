@@ -1,0 +1,156 @@
+/*********************/
+/* body Admin */
+
+body, html {
+    height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0 ;
+  font-family:Arial;
+}
+
+.container .row{
+
+margin-left: 0rem !important;
+}
+
+
+body{
+  font-family: Gill Sans, sans-serif;
+}
+
+/*********************/
+/* header Admin*/
+
+header{
+  background:#0580a3;
+  color:white;
+  width:100%;
+    margin-top:0%;
+    padding: 0;
+    height:120px;
+}
+
+.logo {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.loginAdmTitre {
+  margin-top: 0px;
+  margin-left: 25px;
+  color:rgb(253,254,250);
+}
+
+
+/*********************/
+/* Login plateforme Admin*/
+
+#loginPlateForme {
+  display: inline-block;
+  position: relative;
+  margin-left: 35%;
+  margin-top:5%;
+}
+
+.labelLoginAdm {
+  font-size: 13px;
+}
+
+#mdtOublie {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+input[placeholder="mot de passe"], input[placeholder="nom d'utilisateur ou e-mail"] {
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+a#mdtOublie {
+  color:rgb(200,200,200);
+  font-size: 13px;
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+a#mdtOublie:hover{
+  color:rgb(5,128,163);
+}
+
+@media screen and (max-width: 768px){
+  #loginPlateForme {
+    display: inline-block;
+    position: relative;
+    margin-left: 10%;
+    margin-top:10%;
+  }
+}
+
+
+/*********************/
+/* Accueil espace plateforme Admin */
+
+.boite{
+  background-color:rgb(5,128,163);
+  height:200px;
+  width: 200px;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 31%;
+}
+
+#titreCategorieAdm {
+  position: center;
+  font-size: 30px;
+  text-align: center;
+  color:rgb(253,254,250);
+  padding-top: 42.5%;
+}
+
+#categorieAdm {
+  display: inline-block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px){
+  #categorieAdm {
+  margin-left: 120%;
+  margin-right: 120%;
+  }
+}
+
+@media screen and (min-width: 1170px){
+  #categorieAdm {
+  margin-left: 160%;
+  }
+}
+
+
+/*********************/
+/* Actualite Admin */
+
+@media screen and (min-width: 1170px){
+  #categorieAdm {
+  margin-left: 160%;
+  }
+}
+
+#tableActu {
+  margin: 30%;
+}
+
+#actualiteAdm {
+  width: 65%;
+}
+
+
