@@ -15,24 +15,32 @@ use DB;
 class QuizzController extends Controller
 {
 	// Liste tous les quizzs
-    public function index()
-    {        
-       return Quizz::all();
-    }
+  public function index()
+  {        
+    $quizz = Quizz::all();
+    $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
+    return view('quizz/index')->with('quizz', $quizz);
+  }
+
+  public function indexAdmin()
+  {
+    
+  }
 	
 	//Liste tous les quizzs propres à une catégorie
 	public function indexQuizz($categorie_id){
-        $categories = Categorie::find($categorie_id);
-        if(!isset($categories)){
-            return response('Catégorie inexistante.', 404);
-        }
-        $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
-        return $quizzs;
+    $categories = Categorie::find($categorie_id);
+    if(!isset($categories)){
+      return response('Catégorie inexistante.', 404);
     }
-	 public function create()
-    {
-        return view('quizz/create');
-    }
+    $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
+    return $quizzs;
+  }
+
+	public function create()
+  {
+    return view('quizz/create');
+  }
     
     // Enregistre un quizz dans la base de données
     public function store()

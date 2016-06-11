@@ -58,5 +58,35 @@ class AuthController extends Controller
     	Session::forget('user_id');
     	return 'Déconnexion réussie';
 	}
+  // Contrôle la connexion au panneau d'administration
+  public function loginAdmin(){
+    $fields = Request::only('pseudo', 'motDePasse');
+    $user = User::where('pseudo',$fields['pseudo'])->first();
+    if (!isset($user)) {
+           return 'Aucun user existant avec ce Pseudo';
+    }
+    // Vérifie le password et le hash
+    if (!Hash::check($fields['motDePasse'], $user->motDePasse)) {
+      return 'Connexion échouée, mauvais password';
+    }
 
+    $groups = $user->groups;
+    foreach ($groups as $group) {
+      if($group->nom == 'admin'){
+        Session::put('user_id', $user->id);
+        Session::put('group', $group->nom);
+        return 'Connexion admin réussie';
+      }
+      else{
+        return "Vous n'avez pas accès à l'interface admin";
+      }
+    }
+
+  }
+  public function logoutAdmin()
+  {
+      Session::forget('user_id');
+      Session::forget('group');
+      return 'Déconnexion réussie';
+  }
 }
