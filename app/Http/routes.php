@@ -27,7 +27,8 @@
 	// Quizz
 	Route::get('/quizzs/', 'QuizzController@index');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
-	Route::get('/quizzs/{id}', 'QuizzController@show');
+	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
+	
 
 	// Login
 	Route::get('/login', 'AuthController@login')->name('login');
@@ -62,6 +63,7 @@
 */
 	Route::group(['middleware' => ['authAdmin']], function () {
 		// Quizz
+		Route::get('/admin/quizzs/{id}', 'QuizzController@show');
 		Route::get('/admin/quizzs/create', 'QuizzController@create');
 		Route::post('/admin/quizzs/', 'QuizzController@store');
 		Route::get('/admin/quizzs/{id}/edit', 'QuizzController@edit');
