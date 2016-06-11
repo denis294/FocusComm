@@ -4,6 +4,7 @@ namespace App\Models;
 
 class Reponse extends Model
 {
+    protected $fillable = ['texte','estJuste','question_id'];
 	public $timestamps = false;
 	
     public function question()
