@@ -17,11 +17,17 @@ class ActualiteController extends Controller
        $news = json_encode($news, JSON_UNESCAPED_UNICODE );
        return view('actualites/index')->with('news', $news);
     }
+
+  public function indexAdmin(){
+    $news = Actualite::all();
+    $news = json_encode($news, JSON_UNESCAPED_UNICODE );
+    return view ('admin/actualites/index');
+  }
    
-	 public function create()
-    {
-        //
-    }
+	public function create()
+  {
+    return view ('admin/actualites/create');
+  }
     
     // Enregistre une actualité dans la base de données
     public function store()
@@ -51,7 +57,7 @@ class ActualiteController extends Controller
     }
     public function edit($id)
     {
-        //
+        return view('admin/actualites/edit');
     }
     
     // Met à jour une actualité
