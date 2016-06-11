@@ -135,6 +135,16 @@ class QuizzController extends Controller
        return $quizz;
     }
     
+    public function playQuizz($id){
+      $quizz = Quizz::find($id);
+      if(!isset($quizz)){
+        return response ('Not found', 404);
+      }
+      if ($quizz->etat != 'publie'){
+        return response ('Pas publié !');
+      }
+      return view ('quizz/play')->with('quizz', $quizz)->with('questions',$quizz->questions()->with('reponses')->get());
+    }
 
     
 }
