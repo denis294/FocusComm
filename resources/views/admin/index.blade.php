@@ -2,7 +2,21 @@
 @section('title', 'Admin')
 
 @section('content')
+@if(Session::has('group'))
+<h1>Vous êtes connecté en tant qu'admin !</h1>
+
+@else
 <main class="main">
+@if(Session::has('success'))
+<div style="color:green">
+    <h5>{{Session::get('success')}}</h5>
+</div>
+@endif
+@if(Session::has('error'))
+<div style="color:red">
+    <h5>{{Session::get('error')}}</h5>
+</div>
+@endif
 <section id ="loginPlateForme" class="row">
     <form method="POST">
         <div id="nomUtilisateur" class="loginPlateForm row">
@@ -27,4 +41,5 @@
 </section>
 
 </main>
+@endif
 @endsection
