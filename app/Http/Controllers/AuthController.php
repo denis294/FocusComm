@@ -7,6 +7,8 @@ use Request;
 use App\Models\User;
 use Hash;
 use Session;
+use Redirect;
+use App\Lib\Message;
 
 class AuthController extends Controller
 {
@@ -63,11 +65,13 @@ class AuthController extends Controller
     $fields = Request::only('pseudo', 'motDePasse');
     $user = User::where('pseudo',$fields['pseudo'])->first();
     if (!isset($user)) {
-           return 'Aucun user existant avec ce Pseudo';
+      Message::error('user.missing');
+      return redirect()->back()->withInput();
     }
     // Vérifie le password et le hash
     if (!Hash::check($fields['motDePasse'], $user->motDePasse)) {
-      return 'Connexion échouée, mauvais password';
+      Message::error('user.mauvaisMDP');
+      return redirect()->back()->withInput();
     }
 
     $groups = $user->groups;
@@ -75,10 +79,11 @@ class AuthController extends Controller
       if($group->nom == 'admin'){
         Session::put('user_id', $user->id);
         Session::put('group', $group->nom);
-        return 'Connexion admin réussie';
+        return view('admin/index');
       }
       else{
-        return "Vous n'avez pas accès à l'interface admin";
+        Message::error('user.noAdminAccess');
+        return redirect()->back()->withInput();
       }
     }
 
@@ -87,6 +92,6 @@ class AuthController extends Controller
   {
       Session::forget('user_id');
       Session::forget('group');
-      return 'Déconnexion réussie';
+      return Redirect::to('admin')->with('success','Déconnexion réussie');
   }
 }
