@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin/index');
 });
+Route::post('/admin', 'AuthController@loginAdmin');
 
 // User
 Route::get('/user/', 'UserController@index');
@@ -37,14 +38,21 @@ Route::put('/actualites/{id}', 'ActualiteController@update');
 Route::delete('/actualites/{id}', 'ActualiteController@destroy');
 
 // Quizz
+/* Admin */
+Route::group(['middleware' => ['authAdmin']], function () {
+	Route::get('/admin/quizzs/create', 'QuizzController@create');
+	Route::post('/admin/quizzs/', 'QuizzController@store');
+	Route::get('/admin/quizzs/{id}/edit', 'QuizzController@edit');
+	Route::put('/admin/quizzs/{id}', 'QuizzController@update');
+	Route::delete('/admin/quizzs/{id}', 'QuizzController@destroy');
+	Route::get('/admin/logout', 'AuthController@logoutAdmin');
+});
+
+/* Public */
 Route::get('/quizzs/', 'QuizzController@index');
 Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
-Route::get('/quizzs/create', 'QuizzController@create');
-Route::post('/quizzs/', 'QuizzController@store');
 Route::get('/quizzs/{id}', 'QuizzController@show');
-Route::get('/quizzs/{id}/edit', 'QuizzController@edit');
-Route::put('/quizzs/{id}', 'QuizzController@update');
-Route::delete('/quizzs/{id}', 'QuizzController@destroy');
+
 
 // Régions
 Route::get('/regions/', 'RegionController@index');
