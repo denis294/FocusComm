@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Region;
 use Session;
 use Request;
+use Redirect;
+use App\Lib\Message;
 
 class UserController extends Controller
 {
@@ -19,6 +21,12 @@ class UserController extends Controller
         return User::all();
     }
 
+    public function monCompte(){
+        $user_id = Session::get('user_id');
+        $user = User::find($user_id);
+        return view('user/index')->with('user',$user)->with('badges',$user->badges)->with('region', $user->region);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +34,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -102,6 +110,14 @@ class UserController extends Controller
         $fields['motDePasse'] = bcrypt($fields['motDePasse']);
         $user->update($fields);
         return $user;
+    }
+
+    public function updateMonCompte(Request $request){
+        $fields = Request::all();
+        if(!User::validate($fields)){
+            return redirect()->back()->withInput();
+        }
+        $user->update($fields);
     }
 
     /**

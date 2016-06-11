@@ -19,7 +19,8 @@ return [
     'user' => [
     	'missing' => "Aucun utilisateur avec ce pseudo n'est enregistré",
         'mauvaisMDP' => "Le mot de passe entré n'est pas le bon.",
-        'noAdminAccess' => "Vous n'avez pas accès à l'interface administrateur !"
+        'noAdminAccess' => "Vous n'avez pas accès à l'interface administrateur !",
+        'notLogin' => "Vous devez être connecté pour accéder à cette page.",
     ],
 
     'contrat' => [

@@ -21,7 +21,7 @@ class User extends Model
      
     public function region()
     {
-        return $this->hasOne('App\Models\Region');
+        return $this->belongsTo('App\Models\Region');
     }
     
     public function actualites()

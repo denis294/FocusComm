@@ -24,15 +24,17 @@ class AuthController extends Controller
   			
   			// Vérifie que le pseudo existe dans la BD
   			if (!isset($user)) {
-  			   return 'Connexion échouée, pseudo inexistant';
+  			   Message::error('user.missing');
+          return redirect()->back()->withInput();
   			}
   			
   			// Vérifie le password et le hash
   			if (!Hash::check($password, $user->motDePasse)) {
-      			return 'Connexion échouée, mauvais password';
+      		Message::error('user.mauvaisMDP');
+          return redirect()->back()->withInput();
   			}
   			Session::put('user_id', $user->id);
-  			return 'Connexion réussie';
+  			return Redirect::to('/')->with('success','Connexion réussie');
        }
        
   		// Sinon, si l'utilisateur renseigne son email
@@ -42,15 +44,17 @@ class AuthController extends Controller
   			
   			// Vérifie que l'e-mail existe dans la BD
   			if (!isset($user)) {
-  			   return 'Connexion échouée, email inexistant';
+          Message::error('user.missing');
+          return redirect()->back()->withInput();
   			}
   			
   			// Vérifie le password et le hash
   			if (!Hash::check($password, $user->motDePasse)) {
-      			return 'Connexion échouée, mauvais password';
+          Message::error('user.mauvaisMDP');
+          return redirect()->back()->withInput();
   			}
   			Session::put('user_id', $user->id);
-  			return 'Connexion réussie';
+  			return Redirect::to('/')->with('success','Connexion réussie');
        }
 
 	}

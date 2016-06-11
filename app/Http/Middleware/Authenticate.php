@@ -5,7 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Lib\Message;
 use Request;
+use Redirect;
 use Session;
 
 class Authenticate
@@ -26,8 +28,9 @@ class Authenticate
 
 		// Si la variable n’est pas set, alors l’accès est refusé
       	if (!isset($userId)) {
-      		return response('Non autorisé', 403);
-       }
+      		Message::error('user.notLogin');
+          return redirect()->route('login');
+        }
 		
 		// Sinon on laisse passer
       	return $next($request);
