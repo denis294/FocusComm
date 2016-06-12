@@ -47,11 +47,13 @@ class UserController extends Controller
     {       
         $fields = Request::only('pseudo', 'email', 'motDePasse', 'age', 'sexe', 'region_id');
         if (!User::validate($fields)) {
-            return response('Fields error', 400);
+  			Message::error('form.fieldsError');
+          	return redirect()->back()->withInput();
         }
         $region = Region::find($fields['region_id']);
         if(!isset($region)){
-            return response('Region not found', 404);
+  			Message::error('region.missing');
+          	return redirect()->back()->withInput();
         }
         $user = new User($fields);
         $user->motDePasse = bcrypt($user->motDePasse);
@@ -69,7 +71,8 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (!isset($user)) {
-           return response('Not found', 404);
+  			Message::error('user.missing');
+          	return redirect()->back()->withInput();
         }
         return $user;
     }
@@ -97,15 +100,18 @@ class UserController extends Controller
 
         $user = User::find($id);
         if (!isset($user)) {
-           return response('Not found', 404);
+  			Message::error('user.missing');
+          	return redirect()->back()->withInput();
         }
         $fields = Request::all();
         if (!User::validate($fields)) {
-           return response('Fields error', 400);
+  			Message::error('form.fieldsError');
+          	return redirect()->back()->withInput();
         }
         $region = Region::find($fields['region_id']);
         if(!isset($region)){
-            return response('Region not found', 404);
+  			Message::error('region.missing');
+          	return redirect()->back()->withInput();
         }
         $fields['motDePasse'] = bcrypt($fields['motDePasse']);
         $user->update($fields);
@@ -130,7 +136,8 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (!isset($user)) {
-           return response('Not found', 404);
+  			Message::error('user.missing');
+          	return redirect()->back()->withInput();
         }
         $user->delete();
         return $user;

@@ -34,11 +34,13 @@ class ActualiteController extends Controller
     {
        $fields = Request::only('titre', 'dateCreation', 'texte', 'image', 'actualiteLiee_id', 'categorie_id');
        if (!Actualite::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        $categorie = Categorie::find($fields['categorie_id']);
        if (!isset($categorie)){
-       	   return response ('Catégorie non trouvée', 404);
+           Message::error('categorie.missing');
+           return redirect()->back()->withInput();
        }
        $actu = new Actualite($fields);
        $user = User::find(Session::get('user_id'));
@@ -51,7 +53,8 @@ class ActualiteController extends Controller
     {
        $actus = Actualite::find($id);
        if (!isset($actus)) {
-           return response('Not found', 404);
+           Message::error('actu.missing');
+           return redirect()->back()->withInput();
        }
        return $actus;
     }
@@ -65,11 +68,13 @@ class ActualiteController extends Controller
     {
        $actu = Actualite::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+           Message::error('actu.missing');
+           return redirect()->back()->withInput();
        }
        $fields = Request::all();
        if (!Actualite::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        $actu->update($fields);
        return $actu;
@@ -80,7 +85,8 @@ class ActualiteController extends Controller
     {
        $actu = Actualite::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+           Message::error('actu.missing');
+           return redirect()->back()->withInput();
        }
        $actu->delete();
        return $actu;
