@@ -25,7 +25,7 @@ class AuthController extends Controller
   			// Vérifie que le pseudo existe dans la BD
   			if (!isset($user)) {
   			   Message::error('user.missing');
-          return redirect()->back()->withInput();
+          		return redirect()->back()->withInput();
   			}
   			
   			// Vérifie le password et le hash

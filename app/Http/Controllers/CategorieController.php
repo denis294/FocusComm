@@ -20,11 +20,13 @@ class CategorieController extends Controller
     public function indexEnfant($categorie_id){
         $categorie = Categorie::find($categorie_id);
         if(!isset($categorie)){
-            return response('Catégorie inexistante', 404);
+      		Message::error('categorie.missing');
+      		return redirect()->back()->withInput();
         }
         $result = DB::table('categories')->where('categorieParente_id', '=', $categorie_id)->get();
         if(empty($result)){
-            return response ('Aucune sous-catégorie pour cette catégorie');
+      		Message::error('categorie.sousCategorieMissing');
+      		return redirect()->back()->withInput();
         }
         return $result;
     }
@@ -39,14 +41,16 @@ class CategorieController extends Controller
     {
        $fields = Request::only('nom', 'icone', 'description','categorieParente_id');
        if (!Categorie::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        
        // Vérifie que la catégorie parente existe
        $categorie = Categorie::find($fields['categorieParente_id']);
        if (!empty($categorie)){
        		if (!isset($categorie)){
-       	   		return response ('Categorie non trouvée', 404);
+      		Message::error('categorie.missing');
+      		return redirect()->back()->withInput();
        		}
        }
        $categorie = new Categorie($fields);
@@ -61,7 +65,8 @@ class CategorieController extends Controller
     {
        $categorie = Categorie::find($id);
        if (!isset($categorie)) {
-           return response('Catégorie inexistante', 404);
+      		Message::error('categorie.missing');
+      		return redirect()->back()->withInput();
        }
        return $categorie;
     }
@@ -75,11 +80,13 @@ class CategorieController extends Controller
     {
        $categorie = Categorie::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+      		Message::error('categorie.missing');
+      		return redirect()->back()->withInput();
        }
        $fields = Request::all();
        if (!Categorie::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        $categorie->update($fields);
        return $categorie;
@@ -90,7 +97,8 @@ class CategorieController extends Controller
     {
        $categorie = Categorie::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+      		Message::error('categorie.missing');
+      		return redirect()->back()->withInput();
        }
        $categorie->delete();
        return $categorie;
