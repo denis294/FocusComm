@@ -17,22 +17,30 @@ class ActualiteController extends Controller
        $news = json_encode($news, JSON_UNESCAPED_UNICODE );
        return view('actualites/index')->with('news', $news);
     }
+
+  public function indexAdmin(){
+    $news = Actualite::all();
+    $news = json_encode($news, JSON_UNESCAPED_UNICODE );
+    return view ('admin/actualites/index');
+  }
    
-	 public function create()
-    {
-        //
-    }
+	public function create()
+  {
+    return view ('admin/actualites/create');
+  }
     
     // Enregistre une actualité dans la base de données
     public function store()
     {
        $fields = Request::only('titre', 'dateCreation', 'texte', 'image', 'actualiteLiee_id', 'categorie_id');
        if (!Actualite::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        $categorie = Categorie::find($fields['categorie_id']);
        if (!isset($categorie)){
-       	   return response ('Catégorie non trouvée', 404);
+           Message::error('categorie.missing');
+           return redirect()->back()->withInput();
        }
        $actu = new Actualite($fields);
        $user = User::find(Session::get('user_id'));
@@ -45,13 +53,14 @@ class ActualiteController extends Controller
     {
        $actus = Actualite::find($id);
        if (!isset($actus)) {
-           return response('Not found', 404);
+           Message::error('actu.missing');
+           return redirect()->back()->withInput();
        }
        return $actus;
     }
     public function edit($id)
     {
-        //
+        return view('admin/actualites/edit');
     }
     
     // Met à jour une actualité
@@ -59,11 +68,13 @@ class ActualiteController extends Controller
     {
        $actu = Actualite::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+           Message::error('actu.missing');
+           return redirect()->back()->withInput();
        }
        $fields = Request::all();
        if (!Actualite::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        $actu->update($fields);
        return $actu;
@@ -74,7 +85,8 @@ class ActualiteController extends Controller
     {
        $actu = Actualite::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+           Message::error('actu.missing');
+           return redirect()->back()->withInput();
        }
        $actu->delete();
        return $actu;

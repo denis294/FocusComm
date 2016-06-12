@@ -15,24 +15,33 @@ use DB;
 class QuizzController extends Controller
 {
 	// Liste tous les quizzs
-    public function index()
-    {        
-       return Quizz::all();
-    }
+  public function index()
+  {        
+    $quizz = Quizz::all();
+    $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
+    return view('quizz/index')->with('quizz', $quizz);
+  }
+
+  public function indexAdmin()
+  {
+    
+  }
 	
 	//Liste tous les quizzs propres à une catégorie
 	public function indexQuizz($categorie_id){
-        $categories = Categorie::find($categorie_id);
-        if(!isset($categories)){
-            return response('Catégorie inexistante.', 404);
-        }
-        $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
-        return $quizzs;
+    $categories = Categorie::find($categorie_id);
+    if(!isset($categories)){
+      Message::error('categorie.missing');
+      return redirect()->back()->withInput();
     }
-	 public function create()
-    {
-        return view('quizz/create');
-    }
+    $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
+    return $quizzs;
+  }
+
+	public function create()
+  {
+    return view('quizz/create');
+  }
     
     // Enregistre un quizz dans la base de données
     public function store()
@@ -40,7 +49,8 @@ class QuizzController extends Controller
        $fields = Request::all();
        
        if (!Quizz::validate($fields)) {
-           return response('Fields error', 400);
+      Message::error('form.fieldsError');
+      return redirect()->back()->withInput();
        }
        
        // Vérifie la non existance du quizz
@@ -53,20 +63,23 @@ class QuizzController extends Controller
         	->get();
         	
        if (!empty($quizz)){
-       	   return response ('Quizz déja existant');
+      	Message::error('quizz.alreadyExists');
+      	return redirect()->back()->withInput();
        }
        
        // Vérifie que la catégorie spécifie existe
        $categorie = Categorie::find($fields['categorie_id']);
        if (!isset($categorie)){
-       	   return response ('Catégorie non trouvée', 404);
+      	Message::error('categorie.missing');
+      	return redirect()->back()->withInput();
        }
        
        // Vérifie que le badge spécifié existe
        $badge = Badge::find($fields['badge_id']);
        if (!empty($badge)){
        		if (!isset($badge)){
-       	   		return response ('Badge non trouvé', 404);
+      			Message::error('badge.missing');
+      			return redirect()->back()->withInput();
        		}
        }
        
@@ -92,7 +105,8 @@ class QuizzController extends Controller
     {
        $quizzs = Quizz::find($id);
        if (!isset($quizzs)) {
-           return response('Not found', 404);
+      	Message::error('quizz.missing');
+      	return redirect()->back()->withInput();
        }
        return $quizzs;
     }
@@ -106,11 +120,13 @@ class QuizzController extends Controller
     {
        $badge = Quizz::find($id);
        if (!isset($badge)) {
-           return response('Not found', 404);
+      	Message::error('quizz.missing');
+      	return redirect()->back()->withInput();
        }
        $fields = Request::all();
        if (!Quizz::validate($fields)) {
-           return response('Fields error', 400);
+      	Message::error('form.fieldsError');
+      	return redirect()->back()->withInput();
        }
        $badge->update($fields);
        return $badge;
@@ -121,12 +137,25 @@ class QuizzController extends Controller
     {
        $quizz = Quizz::find($id);
        if (!isset($quizz)) {
-           return response('Not found', 404);
+      		Message::error('quizz.missing');
+      		return redirect()->back()->withInput();
        }
        $quizz->delete();
        return $quizz;
     }
     
+    public function playQuizz($id){
+      $quizz = Quizz::find($id);
+      if(!isset($quizz)){
+      		Message::error('quizz.missing');
+      		return redirect()->back()->withInput();
+      }
+      if ($quizz->etat != 'publie'){
+      		Message::error('quizz.notPublished');
+      		return redirect()->back()->withInput();
+      }
+      return view ('quizz/play')->with('quizz', $quizz)->with('questions',$quizz->questions()->with('reponses')->get());
+    }
 
     
 }
