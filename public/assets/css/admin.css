@@ -45,6 +45,14 @@ header{
   color:rgb(253,254,250);
 }
 
+#boutonDeconnexion {
+  display: inline-block;
+  position: absolute;
+  margin-left: 80%;
+  margin-top:-80px;
+}
+
+
 
 /*********************/
 /* Login plateforme Admin*/
@@ -94,6 +102,10 @@ a#mdtOublie:hover{
 /*********************/
 /* Accueil espace plateforme Admin */
 
+.categoriesAdmList {
+cursor: pointer;
+}
+
 .boite{
   background-color:rgb(5,128,163);
   height:200px;
@@ -107,7 +119,7 @@ a#mdtOublie:hover{
   margin-left: 31%;
 }
 
-#titreCategorieAdm {
+.titreCategorieAdm {
   position: center;
   font-size: 30px;
   text-align: center;
@@ -115,26 +127,40 @@ a#mdtOublie:hover{
   padding-top: 42.5%;
 }
 
-#categorieAdm {
+.categorieAdm {
   display: inline-block;
   position: relative;
   margin-left: auto;
   margin-right: auto;
 }
 
+
+#accueilEspaceAdm {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+#contenuDiv, #utilisateursDiv{
+  text-align: right;
+}
+
+#quizDiv, #autreDiv {
+  text-align: left;
+}
+
 @media screen and (min-width: 768px){
-  #categorieAdm {
-  margin-left: 120%;
-  margin-right: 120%;
+  #accueilEspaceAdm {
+  margin-left: 5%;
+  margin-right: 5%;
   }
 }
 
 @media screen and (min-width: 1170px){
-  #categorieAdm {
-  margin-left: 160%;
+  #accueilEspaceAdm {
+  margin-left: 4%;
   }
 }
-
 
 /*********************/
 /* Actualite Admin */
@@ -146,11 +172,100 @@ a#mdtOublie:hover{
 }
 
 #tableActu {
-  margin: 30%;
+  margin-left: 30%;
+  margin-top:10%;
+
 }
 
 #actualiteAdm {
   width: 65%;
 }
 
+.buttonAdd {
+  display: block;
+  position: absolute;
+  margin-top:-52.5px;
+  margin-left: 80%;
+}
+
+#listeActu {
+  font-size: 25px;
+  color:rgb(5,128,163);
+  margin-left: 30%;
+}
+
+/*********************/
+/* Ajouter actualite Admin */
+
+#ajouterActualiteAdmForm {
+  margin-left:50%;
+}
+
+#progPubli {
+  margin-top: -0px;
+}
+
+#choixMedia {
+  margin-right: -270px;
+}
+
+#titreInput {
+  margin-left: 10px;
+}
+
+#placeholderDescription, #placeholderArticle {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+
+
+/*********************/
+/* Bouton modifié actu */
+
+#modArticle {
+  font-size: 14px;
+  font-style: normal;
+}
+
+/*********************/
+/* breadcrumbs */
+
+#breadcrumbs {
+  display: inline-block;
+  position: relative;
+  width: 40%;
+  text-align: center;
+  left: 20%;
+}
+
+#titreAjouterActu {
+  font-size: 25px;
+  color:rgb(5,128,163);
+  margin-left: 20%;
+}
+
+#titreVisualisation {
+  font-size: 25px;
+  color:rgb(5,128,163);
+}
+
+#boutonPrecedent {
+  display: inline-block;
+  position: relative;
+  left: 30%;
+}
+
+#actualiteInfos {
+  display: inline-block;
+  position: relative;
+  width: 105%;
+}
+
+#articleAVisualise {
+  display: block;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 50%;
+}
 
