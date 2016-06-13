@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use Session;
 use Request;
 use DB;
+use App\Lib\Message;
 
 class CategorieController extends Controller
 {

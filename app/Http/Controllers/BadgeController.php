@@ -7,6 +7,7 @@ use App\Models\User;
 use Session;
 use DB;
 use Request;
+use App\Lib\Message;
 
 class BadgeController extends Controller
 {

@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\Actualite;
 use Session;
 use Request;
+use App\Lib\Message;
 
 class ActualiteController extends Controller
 {
@@ -21,12 +22,12 @@ class ActualiteController extends Controller
   public function indexAdmin(){
     $news = Actualite::all();
     $news = json_encode($news, JSON_UNESCAPED_UNICODE );
-    return view ('admin/actualites/index');
+    return view ('admin/actualite/liste')->with('news', $news);
   }
    
 	public function create()
   {
-    return view ('admin/actualites/create');
+    return view ('admin/actualite/formulaire');
   }
     
     // Enregistre une actualité dans la base de données

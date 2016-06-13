@@ -8,9 +8,11 @@ use App\Models\Categorie;
 use App\Models\Badge;
 use App\Models\Question;
 use App\Models\Reponse;
+use App\Lib\Message;
 use Session;
 use Request;
 use DB;
+use App\Lib\Message;
 
 class QuizzController extends Controller
 {

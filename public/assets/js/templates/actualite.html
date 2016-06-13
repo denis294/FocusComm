@@ -1,13 +1,15 @@
 
-    <div class="pin">
+    <div class="col l3 m4 s6">
         <div class="card">
             <div class="card-image">
                 <!--image-->
                 <img src="../assets/img/{{image}}">
                 <!--Titre-->
-                <span class="card-title">{{titre}}</span>
+                
             </div>
+            
             <div class="card-content">
+                <span class="card-title">{{titre}}</span>
                 <!--Description-->
                 
                 <p>
@@ -15,7 +17,7 @@
                 </p>
             </div>
             <div class="card-action">
-                <a>Lire l'article</a>
+                <a href="#{{dateCreation}}{{titre}}">Lire l'article</a>
                 <!--date de cr�ation-->
                 <span class="dateActu">{{dateCreation}}</span>
             </div>
