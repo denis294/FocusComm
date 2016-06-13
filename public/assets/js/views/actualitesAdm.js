@@ -11,6 +11,10 @@ var ViewActualiteAdm = Pclia.View.extend({
         this.$el.html(Tmpl.actualiteAdm(this.model.attributes));
         return this.$el;
     },
+    renderZoom: function () {
+        this.$el.html(Tmpl.actualiteZoomAdm(this.model.attributes));
+        return this.$el;
+    },
     del: function () {
         if (confirm("Are you sure ?")) {
             this.model.destroy();

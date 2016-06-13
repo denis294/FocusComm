@@ -39,8 +39,9 @@ header("Content-type: application/javascript");
 
         // TP
         'tp/mainActu.js',
-        'tp/main.js',
-        'tp/mainAdm.js',
+        //'tp/main.js',
+        //'tp/mainAdm.js',
+        //'tp/actionActu.js',
 
         // AUTRES
         'contents/categories.js',
