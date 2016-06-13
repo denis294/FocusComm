@@ -12,7 +12,7 @@
             </article>
         </div>
         <div class="col m4" id="actualiteDiv">
-            <a href="actualite/liste.blade.php">
+            <a href="/admin/actualites/">
                 <article class="categoriesAdmList categorieAdm" id="actualite">
                     <div class="boite">
                         <h1 class="titreCategorieAdm">Actualité</h1>

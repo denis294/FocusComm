@@ -62,6 +62,10 @@
 |------------------------------------------------------------
 */
 	Route::group(['middleware' => ['authAdmin']], function () {
+
+		Route::get('/admin/accueil', function () {
+    		return view('admin/accueil');
+		});
 		// Quizz
 		Route::get('/admin/quizzs/{id}', 'QuizzController@show');
 		Route::get('/admin/quizzs/create', 'QuizzController@create');
