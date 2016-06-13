@@ -11,6 +11,7 @@ use App\Models\Reponse;
 use Session;
 use Request;
 use DB;
+use App\Lib\Message;
 
 class QuizzController extends Controller
 {

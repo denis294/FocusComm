@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\Actualite;
 use Session;
 use Request;
+use App\Lib\Message;
 
 class ActualiteController extends Controller
 {
