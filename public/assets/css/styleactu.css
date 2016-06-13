@@ -42,16 +42,14 @@ Card Actualité
 }
 
 .card .card-image  {
-   
+ height: 15em;
  overflow: hidden; 
- height: 300px; 
  display: block;
  margin: 0 auto;
 }
 .card .card-image img{  
-    border-radius: 2px 2px 0 0;
-    display: block;
     margin: 0 auto;
+    
 }
 
 
