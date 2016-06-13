@@ -34,9 +34,9 @@ class ActualiteController extends Controller
     public function store()
     {
        $fields = Request::only('titre', 'dateCreation', 'texte', 'image', 'actualiteLiee_id', 'categorie_id');
-       if (!Actualite::validate($fields)) {
-           Message::error('form.fieldsError');
-           return redirect()->back()->withInput();
+       $validate = Actualite::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
        $categorie = Categorie::find($fields['categorie_id']);
        if (!isset($categorie)){
@@ -73,9 +73,9 @@ class ActualiteController extends Controller
            return redirect()->back()->withInput();
        }
        $fields = Request::all();
-       if (!Actualite::validate($fields)) {
-           Message::error('form.fieldsError');
-           return redirect()->back()->withInput();
+        $validate = Actualite::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
        $actu->update($fields);
        return $actu;

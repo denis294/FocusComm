@@ -172,13 +172,13 @@ cursor: pointer;
 }
 
 #tableActu {
-  margin-left: 30%;
+  margin-left: 20%;
   margin-top:10%;
 
 }
 
 #actualiteAdm {
-  width: 65%;
+  margin-left: -40%;
 }
 
 .buttonAdd {
@@ -191,14 +191,24 @@ cursor: pointer;
 #listeActu {
   font-size: 25px;
   color:rgb(5,128,163);
-  margin-left: 30%;
+  margin-left: 20%;
+}
+
+#libeles {
+  display: inline-block;
+  position: relative;
+  width: 50%;
 }
 
 /*********************/
 /* Ajouter actualite Admin */
 
 #ajouterActualiteAdmForm {
-  margin-left:50%;
+  margin-left:30%;
+}
+
+#buttons {
+  margin-left: -5%;
 }
 
 #progPubli {
@@ -234,7 +244,7 @@ cursor: pointer;
 #breadcrumbs {
   display: inline-block;
   position: relative;
-  width: 40%;
+  width: 27%;
   text-align: center;
   left: 20%;
 }
@@ -242,7 +252,7 @@ cursor: pointer;
 #titreAjouterActu {
   font-size: 25px;
   color:rgb(5,128,163);
-  margin-left: 20%;
+  margin-left: 0%;
 }
 
 #titreVisualisation {
@@ -256,10 +266,15 @@ cursor: pointer;
   left: 30%;
 }
 
-#actualiteInfos {
+#boutonConfirmer {
   display: inline-block;
   position: relative;
-  width: 105%;
+  right: 25%;
+}
+
+#actualiteInfos {
+  display: inline-block;
+  position: absolute;
 }
 
 #articleAVisualise {

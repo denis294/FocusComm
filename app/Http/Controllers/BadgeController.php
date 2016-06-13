@@ -27,11 +27,10 @@ class BadgeController extends Controller
     public function store()
     {
        $fields = Request::only('titre', 'image');
-       if (!Badge::validate($fields)) {
-           Message::error('form.fieldsError');
-           return redirect()->back()->withInput();
+       $validate = Badge::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
-
        $badge = new Badge($fields);
        $user = User::find(Session::get('user_id'));
        $user->badges()->save($badge);
@@ -65,9 +64,9 @@ class BadgeController extends Controller
            return redirect()->back()->withInput();
        }
        $fields = Request::all();
-       if (!Badge::validate($fields)) {
-           Message::error('form.fieldsError');
-           return redirect()->back()->withInput();
+        $validate = Badge::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
        $badge->update($fields);
        return $badge;

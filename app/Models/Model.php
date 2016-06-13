@@ -9,7 +9,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
     public static function validate($fields)
     {
         $validator = \Validator::make($fields, static::$rules);
-        return $validator->passes();
+        return $validator;
     }
 
 }
