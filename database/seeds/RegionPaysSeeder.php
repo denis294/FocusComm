@@ -61,7 +61,7 @@ class RegionPaysSeeder extends Seeder
             'pseudo' => 'admin',
             'email' => 'admin@example.com',
             'motDePasse' => bcrypt('admin'),
-            'age' => '45',
+            'dateNaissance' => '1985-06-04',
             'sexe' => 'M',
             'region_id' => $cantonVaud->id,
         ]);
@@ -69,7 +69,7 @@ class RegionPaysSeeder extends Seeder
             'pseudo' => 'user',
             'email' => 'user@example.com',
             'motDePasse' => bcrypt('user'),
-            'age' => '16',
+            'dateNaissance' => '1997-04-09',
             'sexe' => 'M',
             'region_id' => $cantonVaud->id,
         ]);
