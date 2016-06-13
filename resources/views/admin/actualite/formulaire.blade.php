@@ -6,32 +6,24 @@
         <div id="ajouterActualiteAdmForm">
             <form>
                 <div id="titre" class="loginPlateForm row">
-                    <label id="placeholderTitre" class="labelLoginAdm col s12 m6" name="titreLabel">Titre</label> <br>
-                    <input class ="inputLoginAdm col s12 m6" id="titreInput" name="titreInput" type="text" placeholder="titre">
+                    <label id="placeholderTitre" class="labelLoginAdm col s12 m6" name="titre">Titre</label> <br>
+                    <input class ="inputLoginAdm col s12 m6" id="titreInput" name="titre" type="text" placeholder="titre">
                 </div>
                 <div class="row">
                     <div id ="mdt" class="loginPlateForm col s12 l6">
                         <label class="labelLoginAdm" name="mdtLabel">Article</label>
-                        <textarea id="placeholderArticle" name="mdtInput" type="texta" placeholder="article..."></textarea><br>
-                    </div>
-                    <div id ="mdt" class="loginPlateForm col s12 l6">
-                        <label class="labelLoginAdm" name="mdtLabel">Breve description</label>
-                        <textarea id="placeholderDescription" name="mdtInput" type="texta" placeholder="description..."></textarea><br>
+                        <textarea id="placeholderArticle" name="texte" type="texta" placeholder="article..."></textarea><br>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 ls6" id ="progPubli">
-                        <input type="checkbox" id="test5" class="ajouterActuFormInput"/>
-                        <label class="ajouterActuFormLabel" for="test5">programmer publication</label>
-                    </div>
                     <div class="input-field col s12 l6">
-                        <input id="dateArticleAAjouter" type="date" class="ajouterActuFormInput ajouterActuFormLabel">
+                        <input id="dateArticleAAjouter" type="dateCreation" class="ajouterActuFormInput ajouterActuFormLabel">
                     </div>
                 </div>
                 <div class="row">
                     <label class="ajouterActuFormLabel col s12 l3" id ="choixMedia" for="test5">Choisir un média</label>
-                    <div id ="choixFile"class="input-field col s12 l3">
-                        <input type="file">
+                    <div id ="choixFile" class="input-field col s12 l3">
+                        <input type="file" name="image">
                     </div>
                 </div>
                 <div class="row">
