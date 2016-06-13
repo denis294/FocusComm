@@ -4,7 +4,7 @@
 <h1>Quizz</h1>
 
 <script>
-var quizz = {!! $quizz !!};
+var categories = {!! $categories !!};
 </script>
 
 <section id ="quizz">

@@ -8,7 +8,6 @@ use App\Models\Categorie;
 use App\Models\Badge;
 use App\Models\Question;
 use App\Models\Reponse;
-use App\Lib\Message;
 use Session;
 use Request;
 use DB;
@@ -24,6 +23,31 @@ class QuizzController extends Controller
     return view('quizz/index')->with('quizz', $quizz);
   }
 
+  public function categoriesHasQuizz(){
+    echo '<pre>';
+    $categories = Categorie::has('quizzs')->with('categorieParent')->get();
+    /*DB::table('categories')->distinct()->join('quizzs', 'categories.id', '=', 'quizzs.categorie_id')
+    ->select('categories.*')
+    ->get();*/
+    //$categories = json_encode($categories);
+    $cat = [];
+    $c = 0;
+    foreach ($categories as $categorie){
+      if($categorie->categorieParent !== null){
+        $cat[$categorie->categorieParent->id]['id'] = $categorie->categorieParent->id;
+        $cat[$categorie->categorieParent->id]['nom'] = $categorie->categorieParent->nom;
+        $c++;
+      }
+      else{
+        $cat[$categorie->id]['id'] = $categorie->id;
+        $cat[$categorie->id]['nom'] = $categorie->nom;
+        $c++;
+      }
+    } 
+    $cat = json_encode($cat);
+    return view('quizz/index')->with('categories', $cat);
+  }
+
   public function indexAdmin()
   {
     
@@ -36,8 +60,11 @@ class QuizzController extends Controller
       Message::error('categorie.missing');
       return redirect()->back()->withInput();
     }
+    // File moi les quizz dont categorie_id vaut $id ou les quizz dont categorie_id fait référence à une catégorie qui a 
+    // $id en categorieParente_id
     $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
-    return $quizzs;
+    $quizzs = json_encode($quizzs);
+    return view('quizz/categorie')->with('quizz', $quizzs);
   }
 
 	public function create()
