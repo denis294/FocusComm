@@ -25,7 +25,7 @@
 	Route::get('/actualites/', 'ActualiteController@index');
 
 	// Quizz
-	Route::get('/quizzs/', 'QuizzController@index');
+	Route::get('/quizzs/', 'QuizzController@categoriesHasQuizz');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
 	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
 	
