@@ -83,7 +83,7 @@ class AuthController extends Controller
       if($group->nom == 'admin'){
         Session::put('user_id', $user->id);
         Session::put('group', $group->nom);
-        return view('admin/index');
+        return view('admin/accueil');
       }
       else{
         Message::error('user.noAdminAccess');
