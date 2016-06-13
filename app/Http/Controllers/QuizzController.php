@@ -25,23 +25,15 @@ class QuizzController extends Controller
 
   public function categoriesHasQuizz(){
     echo '<pre>';
-    $categories = Categorie::has('quizzs')->with('categorieParent')->get();
-    /*DB::table('categories')->distinct()->join('quizzs', 'categories.id', '=', 'quizzs.categorie_id')
-    ->select('categories.*')
-    ->get();*/
-    //$categories = json_encode($categories);
     $cat = [];
-    $c = 0;
     foreach ($categories as $categorie){
       if($categorie->categorieParent !== null){
         $cat[$categorie->categorieParent->id]['id'] = $categorie->categorieParent->id;
         $cat[$categorie->categorieParent->id]['nom'] = $categorie->categorieParent->nom;
-        $c++;
       }
       else{
         $cat[$categorie->id]['id'] = $categorie->id;
         $cat[$categorie->id]['nom'] = $categorie->nom;
-        $c++;
       }
     } 
     $cat = json_encode($cat);
@@ -76,10 +68,9 @@ class QuizzController extends Controller
     public function store()
     {
        $fields = Request::all();
-       
-       if (!Quizz::validate($fields)) {
-      Message::error('form.fieldsError');
-      return redirect()->back()->withInput();
+        $validate = Quizz::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
        
        // Vérifie la non existance du quizz
