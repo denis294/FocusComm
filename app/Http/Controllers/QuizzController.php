@@ -8,7 +8,6 @@ use App\Models\Categorie;
 use App\Models\Badge;
 use App\Models\Question;
 use App\Models\Reponse;
-use App\Lib\Message;
 use Session;
 use Request;
 use DB;
@@ -22,6 +21,12 @@ class QuizzController extends Controller
     $quizz = Quizz::all();
     $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
     return view('quizz/index')->with('quizz', $quizz);
+  }
+
+  public function categoriesHasQuizz(){
+    $quizzs = Quizz::has('categorie')->get();
+    $quizzs = json_encode($quizzs);
+    var_dump($quizzs);
   }
 
   public function indexAdmin()
