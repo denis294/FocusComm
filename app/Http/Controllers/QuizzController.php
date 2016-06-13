@@ -60,8 +60,11 @@ class QuizzController extends Controller
       Message::error('categorie.missing');
       return redirect()->back()->withInput();
     }
+    // File moi les quizz dont categorie_id vaut $id ou les quizz dont categorie_id fait référence à une catégorie qui a 
+    // $id en categorieParente_id
     $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
-    return $quizzs;
+    $quizzs = json_encode($quizzs);
+    return view('quizz/categorie')->with('quizz', $quizzs);
   }
 
 	public function create()
