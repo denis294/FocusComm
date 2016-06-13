@@ -10,8 +10,17 @@ $(document).ready(function() {
 });
 </script>
 <main class="main">
+@if(count($errors) > 0)
+<div>
+<ul>
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+</div>
+@endif
         <div id="ajouterActualiteAdmForm">
-            <form>
+            <form method="POST" action="{{url('/admin/actualites')}}">
                 <h2 id="titreAjouterActu">
                     Ajouter une actualité
                 </h2>
@@ -43,6 +52,9 @@ $(document).ready(function() {
                     <div class="col s12 l4">
                         <a href="#!" id="boutonAjouter" class="waves-effect waves-light btn">Terminer</a>
                     </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
                 </div>
             </form>
         </div>

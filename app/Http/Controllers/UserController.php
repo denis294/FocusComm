@@ -46,9 +46,9 @@ class UserController extends Controller
     public function store(Request $request)
     {       
         $fields = Request::only('pseudo', 'email', 'motDePasse', 'age', 'sexe', 'region_id');
-        if (!User::validate($fields)) {
-  			Message::error('form.fieldsError');
-          	return redirect()->back()->withInput();
+        $validate = User::validate($fields);
+        if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
         }
         $region = Region::find($fields['region_id']);
         if(!isset($region)){
@@ -104,9 +104,9 @@ class UserController extends Controller
           	return redirect()->back()->withInput();
         }
         $fields = Request::all();
-        if (!User::validate($fields)) {
-  			Message::error('form.fieldsError');
-          	return redirect()->back()->withInput();
+        $validate = User::validate($fields);
+        if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
         }
         $region = Region::find($fields['region_id']);
         if(!isset($region)){
