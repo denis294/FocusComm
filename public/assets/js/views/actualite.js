@@ -8,9 +8,11 @@ var ViewActualite = Pclia.View.extend({
     render: function () {
         this.$el.html(Tmpl.actualite(this.model.attributes));
         return this.$el;
+        
     },
     viewActu: function(){
         $(".fondnoir").fadeIn();
         $(".actualite", this.$el).fadeIn();
+        console.log($(".articleliee", this.$el).data("actualiteLiee_id"));
     }
 });
