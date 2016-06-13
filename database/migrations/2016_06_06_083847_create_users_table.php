@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('pseudo', 20)->unique();
             $table->string('email', 255)->unique();
             $table->string('motDePasse', 255);
-            $table->tinyInteger('age');
+            $table->date('dateNaissance');
             $table->enum('sexe', ['M', 'F']);
             $table->timestamps();
         });

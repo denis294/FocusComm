@@ -16,14 +16,14 @@ class Group extends Model
             ->belongsToMany('App\Models\ServiceApplicatif', 'roles', 'group_id', 'serviceApplicatif_id')
             ->withPivot('nom');
     }
-    public function hasRole($role, $resrc)
+    public function hasRole($role, $serapp)
     {
-        if ($resrc instanceof ServiceApplicatif) {
-            $resrc = $resrc->name;
+        if ($serapp instanceof ServiceApplicatif) {
+            $serapp = $resrc->nom;
         }
-        $ressources = $this->ressources->where('nom', $resrc);
-        foreach ($ressources as $ressource) {
-            if ($ressource->pivot->roles== $role) {
+        $servicesapplicatifs = $this->servicesapplicatifs->where('nom', $serapp);
+        foreach ($servicesapplicatifs as $serviceapplicatif) {
+            if ($serviceapplicatif->pivot->roles == $role) {
                 return true;
             }
         }

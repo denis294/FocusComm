@@ -8,6 +8,7 @@ use App\Models\User;
 use Session;
 use DB;
 use Request;
+use App\Lib\Message;
 
 class RegionController extends Controller
 {
@@ -21,11 +22,13 @@ class RegionController extends Controller
     public function indexPays($pays_id){
         $pays = Pays::find($pays_id);
         if(!isset($pays)){
-            return response('Pays not found', 404);
+  			Message::error('pays.missing');
+          	return redirect()->back()->withInput();
         }
         $regions = DB::table('regions')->where('pays_id', '=', $pays_id)->get();
         if(empty($regions)){
-            return response ('Aucune région pour ce pays');
+  			Message::error('pays.noRegion');
+          	return redirect()->back()->withInput();
         }
         return $regions;
     }
@@ -41,11 +44,13 @@ class RegionController extends Controller
     {
        $fields = Request::only('nom', 'pays_id');
        if (!Region::validate($fields)) {
-           return response('Fields error', 400);
+  			Message::error('form.fieldsError');
+          	return redirect()->back()->withInput();
        }
        $pays = Pays::find($fields['pays_id']);
        if (!isset($pays)){
-       	   return response ('Pays non trouvé', 404);
+  			Message::error('pays.missing');
+          	return redirect()->back()->withInput();
        }
        $region = new Region($fields);
        $region->save();
@@ -57,7 +62,8 @@ class RegionController extends Controller
     {
        $region = Region::find($id);
        if (!isset($region)) {
-           return response('Not found', 404);
+  			Message::error('region.missing');
+          	return redirect()->back()->withInput();
        }
        return $region;
     }
@@ -73,11 +79,13 @@ class RegionController extends Controller
     {
        $region = Region::find($id);
        if (!isset($region)) {
-           return response('Not found', 404);
+  			Message::error('region.missing');
+          	return redirect()->back()->withInput();
        }
        $fields = Request::all();
        if (!Region::validate($fields)) {
-           return response('Fields error', 400);
+  			Message::error('form.fieldsError');
+          	return redirect()->back()->withInput();
        }
        $region->update($fields);
        return $region;
@@ -88,7 +96,8 @@ class RegionController extends Controller
     {
        $region = Region::find($id);
        if (!isset($actu)) {
-           return response('Not found', 404);
+  			Message::error('region.missing');
+          	return redirect()->back()->withInput();
        }
        $region->delete();
        return $region;

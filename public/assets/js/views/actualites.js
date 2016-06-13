@@ -1,6 +1,6 @@
 var ViewActualites = Pclia.ViewCollection.extend({
     events: {
-
+        "click .fondnoir": "cacherViewActu"
     },
     initialize: function () {
         this.listenTo(this.collection, "add remove", this.render);
@@ -14,5 +14,10 @@ var ViewActualites = Pclia.ViewCollection.extend({
             $("#actualitesList", container).append(dom);
         });
         return container;
+    },
+    
+    cacherViewActu: function(){
+        $(".fondnoir").fadeOut();
+        $(".actualite").fadeOut();
     }
 });

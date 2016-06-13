@@ -1,2 +1,28 @@
+<td>
+    <a class="zoom btn-floating btn-large waves-effect waves-light">
+        <i class="material-icons">zoom_in</i>
+    </a>
+</td>
 <td>{{title}}</td>
 <td>{{date}}</td>
+<td>
+    <a class="btn-floating btn-large">
+      <i id="actionMod" class="large material-icons">mode_edit</i>
+    </a>
+</td>
+<td>
+ <a class="btn-floating btn-large waves-effect waves-light red">
+    <i class="removeArticle material-icons">remove</i>
+ </a>
+</td>
+<td>
+    <div class="formMod row">
+        <label class="labelLoginAdm col s12 m1" name="newTitreLabel">Titre</label>
+        <input class ="inputLoginAdm col s12 m4" id="newTitreInput" type="text" placeholder="titre">
+        <label class="labelLoginAdm col s12 m1" name="newDateLabel">Date</label>
+        <input type="date" id="newDateInput" class="inputLoginAdm col s12 m4">
+        <a class="btn waves-effect waves-light col s12 m2">
+            <i class="modArticle" id="modArticle">Modifier</i>
+        </a>
+    </div>
+</td>

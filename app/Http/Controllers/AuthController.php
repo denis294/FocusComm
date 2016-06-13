@@ -7,6 +7,8 @@ use Request;
 use App\Models\User;
 use Hash;
 use Session;
+use Redirect;
+use App\Lib\Message;
 
 class AuthController extends Controller
 {
@@ -22,15 +24,17 @@ class AuthController extends Controller
   			
   			// Vérifie que le pseudo existe dans la BD
   			if (!isset($user)) {
-  			   return 'Connexion échouée, pseudo inexistant';
+  			   Message::error('user.missing');
+          		return redirect()->back()->withInput();
   			}
   			
   			// Vérifie le password et le hash
   			if (!Hash::check($password, $user->motDePasse)) {
-      			return 'Connexion échouée, mauvais password';
+      		Message::error('user.mauvaisMDP');
+          return redirect()->back()->withInput();
   			}
   			Session::put('user_id', $user->id);
-  			return 'Connexion réussie';
+  			return Redirect::to('/')->with('success','Connexion réussie');
        }
        
   		// Sinon, si l'utilisateur renseigne son email
@@ -40,15 +44,17 @@ class AuthController extends Controller
   			
   			// Vérifie que l'e-mail existe dans la BD
   			if (!isset($user)) {
-  			   return 'Connexion échouée, email inexistant';
+          Message::error('user.missing');
+          return redirect()->back()->withInput();
   			}
   			
   			// Vérifie le password et le hash
   			if (!Hash::check($password, $user->motDePasse)) {
-      			return 'Connexion échouée, mauvais password';
+          Message::error('user.mauvaisMDP');
+          return redirect()->back()->withInput();
   			}
   			Session::put('user_id', $user->id);
-  			return 'Connexion réussie';
+  			return Redirect::to('/')->with('success','Connexion réussie');
        }
 
 	}
@@ -58,5 +64,38 @@ class AuthController extends Controller
     	Session::forget('user_id');
     	return 'Déconnexion réussie';
 	}
+  // Contrôle la connexion au panneau d'administration
+  public function loginAdmin(){
+    $fields = Request::only('pseudo', 'motDePasse');
+    $user = User::where('pseudo',$fields['pseudo'])->first();
+    if (!isset($user)) {
+      Message::error('user.missing');
+      return redirect()->back()->withInput();
+    }
+    // Vérifie le password et le hash
+    if (!Hash::check($fields['motDePasse'], $user->motDePasse)) {
+      Message::error('user.mauvaisMDP');
+      return redirect()->back()->withInput();
+    }
 
+    $groups = $user->groups;
+    foreach ($groups as $group) {
+      if($group->nom == 'admin'){
+        Session::put('user_id', $user->id);
+        Session::put('group', $group->nom);
+        return view('admin/accueil');
+      }
+      else{
+        Message::error('user.noAdminAccess');
+        return redirect()->back()->withInput();
+      }
+    }
+
+  }
+  public function logoutAdmin()
+  {
+      Session::forget('user_id');
+      Session::forget('group');
+      return Redirect::to('admin')->with('success','Déconnexion réussie');
+  }
 }

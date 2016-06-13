@@ -14,26 +14,26 @@
 
              <nav class="col s8">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">Sexualité</h5></a>
+                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">Sexualité</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a class="ici" href="home">Accueil</a></li>
+                        <li><a class="ici" href="/">Accueil</a></li>
                         <li class=""><a href="actualites">Actualité</a></li>
-                        <li class=""><a href="collapsible.html">Adresse</a></li>
-                        <li class=""><a href="collapsible.html">Pose ta question</a></li>
-                        <li class=""><a href="mobile.html">Forum</a></li>
-                        <li class=""><a href="mobile.html">Urgence</a></li>
-                        <li class=""><a href="mobile.html">Quiz</a></li>
+                        <li class=""><a href="#">Adresse</a></li>
+                        <li class=""><a href="#">Pose ta question</a></li>
+                        <li class=""><a href="#">Forum</a></li>
+                        <li class=""><a href="#">Urgence</a></li>
+                        <li class=""><a href="quizzs">Quizzs</a></li>
                     </ul>
                 </div>
             </nav>
             <div id="log" class="col s4a">
 
                         <span><h6 class="logg">Login :</h6>
-                        <input id="pseudo" type="text" required placeholder=" Pseudo &#128587;">
-                        <input id="mdp" type="text" required placeholder=" Mot de passe &#128272;">
+                        <input id="pseudo" type="text" required placeholder=" Pseudo">
+                        <input id="mdp" type="text" required placeholder=" Mot de passe">
                         <a id="btn_login"class="waves-effect waves-light btn"> login</a><br/>
-                        <a id="sign">&#128203; Créer un compte</a>
-                        <input id="search" type="search" required placeholder=" Recherche &#128269;"></span>
+                        <a id="sign">Créer un compte</a>
+                        <input id="search" type="search" required placeholder=" Recherche"></span>
             </div>
         </header>
         <main class="main">

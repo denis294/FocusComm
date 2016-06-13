@@ -11,80 +11,122 @@
 |
 */
 
-// Accueil
-Route::get('/', function () {
-    return view('home/index');
-});
-// Administration
-Route::get('/admin', function () {
-    return view('admin/index');
-});
+/*
+|-------------------------------------------------------------
+| Routes publiques, accès sans login
+|-------------------------------------------------------------
+*/
+	// Accueil
+	Route::get('/', function () {
+    	return view('home/index');
+	});
 
-// User
-Route::get('/user/', 'UserController@index');
-Route::get('/user/{id}', 'UserController@show');
-Route::post('/user/', 'UserController@store');
-Route::put('/user/{id}', 'UserController@update');
-Route::delete('/user/{id}', 'UserController@destroy');
+	// Actualité
+	Route::get('/actualites/', 'ActualiteController@index');
 
-// Actualité
-Route::get('/actualites/', 'ActualiteController@index');
-Route::get('/actualites/create', 'ActualiteController@create');
-Route::post('/actualites/', 'ActualiteController@store');
-Route::get('/actualites/{id}', 'ActualiteController@show');
-Route::get('/actualites/{id}/edit', 'ActualiteController@edit');
-Route::put('/actualites/{id}', 'ActualiteController@update');
-Route::delete('/actualites/{id}', 'ActualiteController@destroy');
+	// Quizz
+	Route::get('/quizzs/', 'QuizzController@index');
+	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
+	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
+	
 
-// Quizz
-Route::get('/quizzs/', 'QuizzController@index');
-Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
-Route::get('/quizzs/create', 'QuizzController@create');
-Route::post('/quizzs/', 'QuizzController@store');
-Route::get('/quizzs/{id}', 'QuizzController@show');
-Route::get('/quizzs/{id}/edit', 'QuizzController@edit');
-Route::put('/quizzs/{id}', 'QuizzController@update');
-Route::delete('/quizzs/{id}', 'QuizzController@destroy');
+	// Login
+	Route::get('/login', 'AuthController@login')->name('login');
+/*
+|------------------------------------------------------------
+*/
+/*
+|------------------------------------------------------------
+| Routes user, accès avec login
+|------------------------------------------------------------
+*/
+	Route::group(['middleware' => ['auth']], function () {
+		Route::get('/logout', 'AuthController@logout');
 
-// Régions
-Route::get('/regions/', 'RegionController@index');
-Route::get('/regions/pays/{id}', 'RegionController@indexPays');
-Route::get('/regions/create', 'RegionController@create');
-Route::post('/regions/', 'RegionController@store');
-Route::get('/regions/{id}', 'RegionController@show');
-Route::get('/regions/{id}/edit', 'RegionController@edit');
-Route::put('/regions/{id}', 'RegionController@update');
-Route::delete('/regions/{id}', 'RegionController@destroy');
+		// User
+		Route::get('/compte', 'UserController@monCompte');
+		Route::put('/compte', 'UserController@updateMonCompte');
+	});
 
-// Badges
-Route::get('/badges/', 'BadgeController@index');
-Route::get('/badges/create', 'BadgeController@create');
-Route::post('/badges/', 'BadgeController@store');
-Route::get('/badges/{id}', 'BadgeController@show');
-Route::get('/badges/{id}/edit', 'BadgeController@edit');
-Route::put('/badges/{id}', 'BadgeController@update');
-Route::delete('/badges/{id}', 'BadgeController@destroy');
+	// Administration
+	Route::get('/admin', function () {
+    	return view('admin/index');
+	});
+	Route::post('/admin', 'AuthController@loginAdmin');
+/*
+|------------------------------------------------------------
+*/
+/*
+|------------------------------------------------------------
+| Routes administration, accès avec login admin
+|------------------------------------------------------------
+*/
+	Route::group(['middleware' => ['authAdmin']], function () {
 
-// Pays
-Route::get('/pays/', 'PaysController@index');
+		Route::get('/admin/accueil', function () {
+    		return view('admin/accueil');
+		});
+		// Quizz
+		Route::get('/admin/quizzs/{id}', 'QuizzController@show');
+		Route::get('/admin/quizzs/create', 'QuizzController@create');
+		Route::post('/admin/quizzs/', 'QuizzController@store');
+		Route::get('/admin/quizzs/{id}/edit', 'QuizzController@edit');
+		Route::put('/admin/quizzs/{id}', 'QuizzController@update');
+		Route::delete('/admin/quizzs/{id}', 'QuizzController@destroy');
+		Route::get('/admin/logout', 'AuthController@logoutAdmin');
 
-// Role
-Route::get('/role/', 'RoleController@index');
+		// User
+		Route::delete('/user/{id}', 'UserController@destroy');
+		Route::get('/user/{id}', 'UserController@show');
+		Route::post('/user/', 'UserController@store');
+		Route::put('/user/{id}', 'UserController@update');
 
-// Catégories
-Route::get('/categories/', 'CategorieController@index');
-Route::get('/categories/{id}/sous-categorie', 'CategorieController@indexEnfant');
-Route::get('/categories/create', 'CategorieController@create');
-Route::post('/categories/', 'CategorieController@store');
-Route::get('/categories/{id}', 'CategorieController@show');
-Route::get('/categories/{id}/edit', 'CategorieController@edit');
-Route::put('/categories/{id}', 'CategorieController@update');
-Route::delete('/categories/{id}', 'CategorieController@destroy');
+		// Actualités
+		Route::get('/admin/actualites', 'ActualiteController@indexAdmin');
+		Route::get('/admin/actualites/create', 'ActualiteController@create');
+		Route::post('/admin/actualites/', 'ActualiteController@store');
+		Route::get('/admin/actualites/{id}', 'ActualiteController@show');
+		Route::get('/admin/actualites/{id}/edit', 'ActualiteController@edit');
+		Route::put('/admin/actualites/{id}', 'ActualiteController@update');
+		Route::delete('/admin/actualites/{id}', 'ActualiteController@destroy');
 
-// Login et logout
-Route::get('/auth/login', 'AuthController@login');
-Route::group(['middleware' => ['auth']], function () {
-        Route::get('/auth/logout', 'AuthController@logout');
-});
+		// Régions
+		Route::get('/admin/regions/', 'RegionController@index');
+		Route::get('/admin/regions/pays/{id}', 'RegionController@indexPays');
+		Route::get('/admin/regions/create', 'RegionController@create');
+		Route::post('/admin/regions/', 'RegionController@store');
+		Route::get('/admin/regions/{id}', 'RegionController@show');
+		Route::get('/admin/regions/{id}/edit', 'RegionController@edit');
+		Route::put('/admin/regions/{id}', 'RegionController@update');
+		Route::delete('/admin/regions/{id}', 'RegionController@destroy');
+		// Users
+		Route::get('/admin/users/', 'UserController@index');
+
+		// Badges
+		Route::get('/admin/badges/', 'BadgeController@index');
+		Route::get('/admin/badges/create', 'BadgeController@create');
+		Route::post('/admin/badges/', 'BadgeController@store');
+		Route::get('/admin/badges/{id}', 'BadgeController@show');
+		Route::get('/admin/badges/{id}/edit', 'BadgeController@edit');
+		Route::put('/admin/badges/{id}', 'BadgeController@update');
+		Route::delete('/admin/badges/{id}', 'BadgeController@destroy');
+		// Catégories
+		Route::get('/categories/', 'CategorieController@index');
+		Route::get('/categories/{id}/sous-categorie', 'CategorieController@indexEnfant');
+		Route::get('/categories/create', 'CategorieController@create');
+		Route::post('/categories/', 'CategorieController@store');
+		Route::get('/categories/{id}', 'CategorieController@show');
+		Route::get('/categories/{id}/edit', 'CategorieController@edit');
+		Route::put('/categories/{id}', 'CategorieController@update');
+		Route::delete('/categories/{id}', 'CategorieController@destroy');
+		// Pays
+		Route::get('/pays/', 'PaysController@index');
+		// Role
+		Route::get('/role/', 'RoleController@index');
+	});
+/*
+|----------------------------------------------------------------------------------------------
+*/
+
 
 

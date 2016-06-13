@@ -1,13 +1,15 @@
 
-    <div class="pin">
+    <div class="col l3 m4 s6">
         <div class="card">
             <div class="card-image">
                 <!--image-->
-                <!--<img src="../assets/img/{{image}}">-->
+                <img src="../assets/img/{{image}}">
                 <!--Titre-->
-                <span class="card-title">{{titre}}</span>
+                
             </div>
+            
             <div class="card-content">
+                <span class="card-title">{{titre}}</span>
                 <!--Description-->
                 
                 <p>
@@ -15,9 +17,29 @@
                 </p>
             </div>
             <div class="card-action">
-                <a href="#">Lire l'article</a>
+                <a href="#{{dateCreation}}{{titre}}">Lire l'article</a>
                 <!--date de cr�ation-->
                 <span class="dateActu">{{dateCreation}}</span>
             </div>
         </div>
     </div>
+
+<!-- article complet-->
+<div class="actualite">
+    <div class="card">
+        <div class="imageActu">
+          <img src="../assets/img/{{image}}">
+
+        </div>
+        <div class="contenuActu">
+            <span class="card-title">{{titre}}</span>
+                <p>
+                    {{texte}}
+                </p>
+                <div class="footerActu">
+                 <span class="dateActu">{{dateCreation}}</span>
+                 <a href="http://www.facebook.com"><img src="../assets/img/facebook.png"></a>
+                </div>
+        </div>
+    </div>
+</div> 

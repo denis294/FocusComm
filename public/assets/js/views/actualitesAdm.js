@@ -1,18 +1,36 @@
-var ViewActualitesAdm = Pclia.ViewCollection.extend({
+var ViewActualiteAdm = Pclia.View.extend({
     events: {
-
+        "click .removeArticle": "del",
+        "click .actionMod": "modForm",
+        "click .modArticle": "mod",
     },
     initialize: function () {
-        this.listenTo(this.collection, "add remove", this.render);
+        this.listenTo(this.model, "change", this.render);
     },
     render: function () {
-        var container = this.$el;
-        container.html(Tmpl.actualitesAdm());
-        _.each(this.collection.models, function (model) {
-            var view = new ViewActualiteAdm({model: model});
-            var dom = view.render();
-            $("#actualiteAdm", container).append(dom);
+        this.$el.html(Tmpl.actualiteAdm(this.model.attributes));
+        return this.$el;
+    },
+    renderZoom: function () {
+        this.$el.html(Tmpl.actualiteZoomAdm(this.model.attributes));
+        return this.$el;
+    },
+    del: function () {
+        if (confirm("Are you sure ?")) {
+            this.model.destroy();
+        }
+    },
+    modForm: function () {
+        $(".formMod", this.$el).show();
+    },
+    mod: function () {
+        var title = $("#newTitreInput", this.$el).val();
+        var date = $("#newDateInput", this.$el).val();
+        this.model.set({
+            task: title,
+            time: date
         });
-        return container;
+        this.model.save();
+        $(".formMod", this.$el).hide();
     },
 });

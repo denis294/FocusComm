@@ -7,6 +7,7 @@ use App\Models\User;
 use Session;
 use DB;
 use Request;
+use App\Lib\Message;
 
 class BadgeController extends Controller
 {
@@ -27,7 +28,8 @@ class BadgeController extends Controller
     {
        $fields = Request::only('titre', 'image');
        if (!Badge::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
 
        $badge = new Badge($fields);
@@ -42,7 +44,8 @@ class BadgeController extends Controller
     {
        $badge = Badge::find($id);
        if (!isset($badge)) {
-           return response('Not found', 404);
+           Message::error('badge.missing');
+           return redirect()->back()->withInput();
        }
        return $badge;
     }
@@ -58,11 +61,13 @@ class BadgeController extends Controller
     {
        $badge = Badge::find($id);
        if (!isset($badge)) {
-           return response('Not found', 404);
+           Message::error('badge.missing');
+           return redirect()->back()->withInput();
        }
        $fields = Request::all();
        if (!Badge::validate($fields)) {
-           return response('Fields error', 400);
+           Message::error('form.fieldsError');
+           return redirect()->back()->withInput();
        }
        $badge->update($fields);
        return $badge;
@@ -73,7 +78,8 @@ class BadgeController extends Controller
     {
        $badge = Badge::find($id);
        if (!isset($badge)) {
-           return response('Not found', 404);
+           Message::error('badge.missing');
+           return redirect()->back()->withInput();
        }
        $badge->delete();
        return $badge;

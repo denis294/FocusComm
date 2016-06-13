@@ -21,7 +21,7 @@ class User extends Model
      
     public function region()
     {
-        return $this->hasOne('App\Models\Region');
+        return $this->belongsTo('App\Models\Region');
     }
     
     public function actualites()
@@ -48,5 +48,17 @@ class User extends Model
         return $this
             ->belongsToMany('App\Models\Reponse', 'user_donne_reponse')
             ->withPivot('estJuste');
+    }
+    public function hasRole($role, $serapp){
+        if ($serapp instanceof ServiceApplicatif){
+            $serapp = $resrc->nom;
+        }
+        $groups = $this->groups();
+        foreach ($groups as $group) {
+            if($group->hasRole($role, $resrc)){
+                return true;
+            }
+        }
+        return false;
     }
 }
