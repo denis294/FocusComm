@@ -15,11 +15,11 @@ class Categorie extends Model
 	public $timestamps = false;
 	
 	public function categorieParent(){
-		return $this->belongsTo('App\Models\Categorie');
+		return $this->belongsTo('App\Models\Categorie','categorieParente_id');
 	}
 	
 	public function categorieEnfant(){
-		return $this->hasMany('App\Models\Categorie');
+		return $this->hasMany('App\Models\Categorie','categorieParente_id');
 	}
 	
 	public function actualites(){
@@ -27,7 +27,7 @@ class Categorie extends Model
 	}
 	
 	public function quizzs(){
-		return $this->belongsToMany('App\Models\Quizz');
+		return $this->hasMany('App\Models\Quizz');
 	}
 }
 

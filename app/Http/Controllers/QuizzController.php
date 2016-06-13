@@ -24,9 +24,28 @@ class QuizzController extends Controller
   }
 
   public function categoriesHasQuizz(){
-    $quizzs = Quizz::has('categorie')->get();
-    $quizzs = json_encode($quizzs);
-    var_dump($quizzs);
+    echo '<pre>';
+    $categories = Categorie::has('quizzs')->with('categorieParent')->get();
+    /*DB::table('categories')->distinct()->join('quizzs', 'categories.id', '=', 'quizzs.categorie_id')
+    ->select('categories.*')
+    ->get();*/
+    //$categories = json_encode($categories);
+    $cat = [];
+    $c = 0;
+    foreach ($categories as $categorie){
+      if($categorie->categorieParent !== null){
+        $cat[$categorie->categorieParent->id]['id'] = $categorie->categorieParent->id;
+        $cat[$categorie->categorieParent->id]['nom'] = $categorie->categorieParent->nom;
+        $c++;
+      }
+      else{
+        $cat[$categorie->id]['id'] = $categorie->id;
+        $cat[$categorie->id]['nom'] = $categorie->nom;
+        $c++;
+      }
+    } 
+    $cat = json_encode($cat);
+    return view('quizz/index')->with('categories', $cat);
   }
 
   public function indexAdmin()
