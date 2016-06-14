@@ -25,24 +25,26 @@
     </div>
 
 <!-- article complet-->
-<div class="actualite">
-    <div class="card">
-        <div class="imageActu">
-          <img src="../assets/img/{{image}}">
+ <div class="actualite" id="card_{{id}}">
+        <div class="card">
+            <div class="imageActu">
+              <img src="../assets/img/{{image}}">
 
         </div>
         <div class="contenuActu">
-            <span class="card-title">{{titre}}</span>
-            <p>
-                {{texte}}
-            </p>
-            <div class="articleliee" data-actualiteLiee_id="{{actualiteLiee_id}}">  
-                {{actualiteLiee_id}}
-            </div>
-            <div class="footerActu">
-             <span class="dateActu">{{dateCreation}}</span>
-             <a href="http://www.facebook.com"><img src="../assets/img/facebook.png"></a>
-            </div>
-        </div>
+                <span class="card-title">{{titre}}</span>
+                <p>
+                    {{texte}}
+                </p>
+                <div class="footerActu">
+                    <p>Autres article en lien</p>
+                    <div class="articleliee" data-actualiteLiee_id="{{actualiteLiee_id}}" data-actualite_id="{{id}}">  
+                        {{actualiteLiee_id}}
+                    </div>
+                <div>
+                <div class="footerActu">
+                 <span class="dateActu">{{dateCreation}}</span>
+                 <a href="http://www.facebook.com"><img src="../assets/img/facebook.png"></a>
+                </div>
     </div>
 </div> 
