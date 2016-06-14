@@ -3,7 +3,8 @@
 
 @section('content')
 
-
+				<script src="{{asset('assets/js/tp/main.js')}}"></script>
+				
                 <section id="categories" class="row accueil categories">
                                         <article id="intro">
                     <h3 id="titleIntro">Qu'est ce que Ciao.ch ?</h3>

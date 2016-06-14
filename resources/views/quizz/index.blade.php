@@ -4,11 +4,11 @@
 <h1>Quizz</h1>
 
 <script>
-var categories = {!! $categories !!};
+var quizz = {!! $quizz !!};
 </script>
 
-<section id ="quizz">
-              
-</section>
+<div id="liensCatQ">
+
+</div>
 
 @endsection

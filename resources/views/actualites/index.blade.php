@@ -6,6 +6,7 @@
 <script>
 var NEWS = {!! $news !!};
 </script>
+<script src="{{asset('assets/js/mainActu.js')}}"></script>
 <script src="{{asset('assets/js/test.js')}}"></script>
 
 <section id ="news">
