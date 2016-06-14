@@ -84,6 +84,7 @@
 		Route::get('/admin/logout', 'AuthController@logoutAdmin');
 
 		// User
+		Route::get('/admin/users/', 'UserController@index');
 		Route::delete('/user/{id}', 'UserController@destroy');
 		Route::get('/user/{id}', 'UserController@show');
 		Route::post('/user/', 'UserController@store');
