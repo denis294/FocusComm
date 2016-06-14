@@ -125,4 +125,10 @@ class AuthController extends Controller
     }
 
   }
+  public function logoutPartner()
+  {
+      Session::forget('user_id');
+      Session::forget('group');
+      return Redirect::to('partner')->with('success','Déconnexion réussie');
+  }
 }

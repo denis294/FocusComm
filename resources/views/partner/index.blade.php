@@ -20,7 +20,11 @@
     </h6>
 </div>
 @endif
-
+@if(Session::has('success'))
+<div>
+  <h2 class="green-text">Déconecté avec succès</h2>
+</div>
+@endif
 </br>
     <form method="POST">
         <div id="nomUtilisateur" class="loginPlateForm row">
@@ -38,16 +42,13 @@
     <a href="#" id ="mdtOublie">Mot de passe oublié ?</a>
 </section>
 @else
-<section id="listQuiz">
-
-      <a href="/partner/quizz/create/" class="btn-floating btn-large waves-effect waves-light green" id="boutonAjouterQuiz"><i class="material-icons">add</i></a>
-      <div id="quizList">
-
-      </div>
-
-      <a class="waves-effect waves-light btn BtnBackHome"><i class="material-icons left">call_missed</i>Back Home</a>
-
-</section>
+<div class="row">
+<a href="/partner/quizz">
+  <div class=" blue darken-2 col s12">
+    <h2 class="white-text">Quizz</h2>
+  </div>
+  </a>
+</div>
 @endif
 
 
