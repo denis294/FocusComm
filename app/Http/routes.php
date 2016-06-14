@@ -21,6 +21,10 @@
     	return view('home/index');
 	});
 
+	Route::get('/stress', function () {
+    	return view('contenu/index');
+	});
+
 	// Actualité
 	Route::get('/actualites/', 'ActualiteController@index');
 
