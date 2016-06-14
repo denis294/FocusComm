@@ -1,0 +1,56 @@
+#question{
+    margin-left: 27%;
+
+
+}
+
+#valide{
+text-align: center;
+}
+
+body{
+  font-family: Gill Sans, sans-serif;
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+
+#formquiz{
+  width: 800px;
+  border:1px outset;
+  padding: 10px;
+  background-color: #F2F2F2;
+}
+
+.buttonQ{
+    text-align: right;
+}
+
+.button{
+    text-align: center;
+}
+
+
+
+@media (max-width: 58em), (max-device-width: 64em) {
+#quiz{
+    margin-left: 20%;
+}
+
+
+#formquiz{
+  width: 180px;
+  border:1px outset;
+  padding: 10px;
+  background-color: #F2F2F2;
+}
+}
+
+
+
+
+
+
