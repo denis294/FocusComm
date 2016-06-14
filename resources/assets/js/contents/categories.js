@@ -1,9 +1,9 @@
 var CATEGORIES = [
 
     {
-        "title": "Stress",
+        "titre": "Stress",
         "img": "stress.png",
-        "id": "stress",
+        "id": "1",
         "icon": "f100",
         "id_lien": "STRESS",
         niveau2: [
@@ -14,9 +14,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Estime de soi",
+        "titre": "Estime de soi",
         "img": "estime.png",
-        "id": "estime-de-soi",
+        "id": "2",
         "icon": "f10C",
         "id_lien": "ESTIME",
 
@@ -31,9 +31,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Sexualité",
+        "titre": "Sexualité",
         "img": "sexualite.png",
-        "id": "sexualite",
+        "id": "3",
         "icon": "f107",
         "id_lien": "SEXUALITE",
         niveau2: [
@@ -58,9 +58,9 @@ var CATEGORIES = [
         ]
     },
         {
-        "title": "Boire, fumer, se droguer",
+        "titre": "Boire, fumer, se droguer",
         "img": "boire.png",
-        "id": "boire-fumer-se-droguer",
+        "id": "4",
         "icon": "f10A",
         "id_lien": "BOIRE",
         niveau2: [
@@ -71,9 +71,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Santé",
+        "titre": "Santé",
         "img": "sante.png",
-        "id": "sante",
+        "id": "5",
         "icon": "f105",
         "id_lien": "SANTE",
         niveau2: [
@@ -84,9 +84,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Manger-bouger",
+        "titre": "Manger-bouger",
         "img": "manger.png",
-        "id": "manger-bouger",
+        "id": "6",
         "icon": "f108",
         "id_lien": "MANGER",
         niveau2: [
@@ -97,9 +97,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Moi, toi et les autres",
+        "titre": "Moi, toi et les autres",
         "img": "moi.png",
-        "id": "moi-toi-et-les-autres",
+        "id": "7",
         "icon": "f10D",
         "id_lien": "MOI",
         niveau2: [
@@ -110,9 +110,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Violences",
+        "titre": "Violences",
         "img": "violences.png",
-        "id": "violence",
+        "id": "8",
         "icon": "f10E",
         "id_lien": "VIOLENCE",
 
@@ -124,9 +124,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Formation et travail",
+        "titre": "Formation et travail",
         "img": "formation.png",
-        "id": "formation-travail",
+        "id": "9",
         "icon": "f103",
         "id_lien": "FORMATION",
         niveau2: [
@@ -137,9 +137,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Argent",
+        "titre": "Argent",
         "img": "argent.png",
-        "id": "argent",
+        "id": "10",
         "icon": "f106",
         "id_lien": "ARGENT",
         niveau2: [
@@ -150,9 +150,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Religion et croyances",
+        "titre": "Religion et croyances",
         "img": "religion.png",
-        "id": "religion-croyance",
+        "id": "11",
         "icon": "f102",
         "id_lien": "RELIGION",
         niveau2: [
@@ -163,9 +163,9 @@ var CATEGORIES = [
         ],
     },
         {
-        "title": "Discrimination et racisme",
+        "titre": "Discrimination et racisme",
        "img": "racisme.png",
-        "id": "racisme-discrimination",
+        "id": "12",
         "icon": "f101",
         "id_lien": "DISCRIMINATION",
         niveau2: [

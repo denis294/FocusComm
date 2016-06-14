@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Quizzo')
+@section('title', 'Quizz')
 
 @section('content')
 <script src="{{asset('assets/js/tp/mainQuiz.js')}}"></script>
