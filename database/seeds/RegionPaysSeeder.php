@@ -274,6 +274,8 @@ class RegionPaysSeeder extends Seeder
 		$question = Question::create([
 			'texte' => 'Une allocation familiale c\'est quoi ?',
 			'illustration' => 'quizzRevenus.jpg',
+			'texteJuste' => 'Effectivement, cette allocation est versée à tes parents. ',
+			'texteFaux' => 'Malheureusement ce n\' est pas toi qui recevra directement cette allocation ',
 			'quizz_id' => $quizz->id,
 		]);
 
