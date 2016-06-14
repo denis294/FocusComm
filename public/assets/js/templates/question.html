@@ -1,0 +1,26 @@
+<form id="formquiz"  class="questionsQ" action="" method="post">
+
+<div>
+    <h4>{{texte}}</h4>
+
+
+
+    {{#each reponses}}
+        <input id="{{id}}" class="reponse" type="radio" name="reponse" value="{{estJuste}}">
+        <label for="{{id}}">{{texte}}</label><br>
+    {{/each}}
+    <div id="continue" class="buttonQ">
+    <input type="button" value="Valider">
+</div>
+
+</div>
+
+
+</form>
+
+
+
+
+
+
+

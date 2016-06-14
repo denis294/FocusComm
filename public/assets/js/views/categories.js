@@ -24,6 +24,16 @@ var ViewCategories = Pclia.ViewCollection.extend({
             $("#CategorieList", container).append(dom);
         });
         return container;
+    },
+        renderListCategorieQuiz: function () {
+        var container = this.$el;
+        container.html(Tmpl.liensCatQuiz());
+        _.each(this.collection.models, function (model) {
+            var view = new ViewCategorie({model: model});
+            var dom = view.renderListCategorieQuiz();
+            $("#listeLiens", container).append(dom);
+        });
+        return container;
     }
 
 });
