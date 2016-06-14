@@ -36,12 +36,13 @@
                 <p>
                     {{texte}}
                 </p>
-                <div class="footerActu">
-                    <p>Autres article en lien</p>
+                {{#if link.titre}}<p>Autres article en lien</p>
+                <div class="footerActu"> 
                     <div class="articleliee" data-actualiteLiee_id="{{actualiteLiee_id}}" data-actualite_id="{{id}}">  
-                        {{actualiteLiee_id}}
-                    </div>
+                        {{link.titre}}
+                    </div> 
                 <div>
+                {{/if}}
                 <div class="footerActu">
                  <span class="dateActu">{{dateCreation}}</span>
                  <a href="http://www.facebook.com"><img src="../assets/img/facebook.png"></a>
