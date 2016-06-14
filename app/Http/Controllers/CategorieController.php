@@ -41,11 +41,10 @@ class CategorieController extends Controller
     public function store()
     {
        $fields = Request::only('nom', 'icone', 'description','categorieParente_id');
-       if (!Categorie::validate($fields)) {
-           Message::error('form.fieldsError');
-           return redirect()->back()->withInput();
-       }
-       
+        $validate = Categorie::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
+       }       
        // Vérifie que la catégorie parente existe
        $categorie = Categorie::find($fields['categorieParente_id']);
        if (!empty($categorie)){
@@ -85,9 +84,9 @@ class CategorieController extends Controller
       		return redirect()->back()->withInput();
        }
        $fields = Request::all();
-       if (!Categorie::validate($fields)) {
-           Message::error('form.fieldsError');
-           return redirect()->back()->withInput();
+        $validate = Categorie::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
        $categorie->update($fields);
        return $categorie;

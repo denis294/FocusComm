@@ -43,9 +43,9 @@ class RegionController extends Controller
     public function store()
     {
        $fields = Request::only('nom', 'pays_id');
-       if (!Region::validate($fields)) {
-  			Message::error('form.fieldsError');
-          	return redirect()->back()->withInput();
+        $validate = Region::validate($fields);
+       if ($validate->fails()) {
+          return redirect()->back()->withInput()->withErrors($validate);
        }
        $pays = Pays::find($fields['pays_id']);
        if (!isset($pays)){
@@ -83,11 +83,11 @@ class RegionController extends Controller
           	return redirect()->back()->withInput();
        }
        $fields = Request::all();
-       if (!Region::validate($fields)) {
-  			Message::error('form.fieldsError');
-          	return redirect()->back()->withInput();
-       }
-       $region->update($fields);
+      $validate = Region::validate($fields);
+      if ($validate->fails()) {
+        return redirect()->back()->withInput()->withErrors($validate);
+      }
+      $region->update($fields);
        return $region;
     }
 

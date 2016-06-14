@@ -13,6 +13,10 @@ var ViewCategorie = Pclia.View.extend({
     renderListCategorie: function () {
         this.$el.html(Tmpl.categorieListe(this.model.attributes));
         return this.$el;
+    },
+    renderListCategorieQuiz: function () {
+        this.$el.html(Tmpl.lienCatQuiz(this.model.attributes));
+        return this.$el;
     }
 
 });

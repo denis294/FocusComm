@@ -3,6 +3,7 @@
 
 @section('content')
 
+				<script src="{{asset('assets/js/tp/main.js')}}"></script>
 
                 <section id="categories" class="row accueil categories">
                                         <article id="intro">

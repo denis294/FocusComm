@@ -2,9 +2,28 @@
 @section('title', 'Admin')
 
 @section('content')
+<script>
+var news = [];
+$(document).ready(function() {
+    $("#ajouterActualiteAdmForm").show();
+    $("#visualisationArticle").hide();
+});
+</script>
 <main class="main">
+@if(count($errors) > 0)
+<div>
+<ul>
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+</div>
+@endif
         <div id="ajouterActualiteAdmForm">
-            <form>
+            <form method="POST" action="{{url('/admin/actualites')}}">
+                <h2 id="titreAjouterActu">
+                    Ajouter une actualité
+                </h2>
                 <div id="titre" class="loginPlateForm row">
                     <label id="placeholderTitre" class="labelLoginAdm col s12 m6" name="titre">Titre</label> <br>
                     <input class ="inputLoginAdm col s12 m6" id="titreInput" name="titre" type="text" placeholder="titre">
@@ -17,31 +36,31 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12 l6">
-                        <input id="dateArticleAAjouter" type="dateCreation" class="ajouterActuFormInput ajouterActuFormLabel">
+                        <input id="dateArticleAAjouter" name="dateCreation" type="date" class="ajouterActuFormInput ajouterActuFormLabel">
                     </div>
                 </div>
                 <div class="row">
                     <label class="ajouterActuFormLabel col s12 l3" id ="choixMedia" for="test5">Choisir un média</label>
                     <div id ="choixFile" class="input-field col s12 l3">
-                        <input type="file" name="image">
+                        <input id="cheminDossier" type="file" name="image">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 l6">
-                        <a id="boutonAnnuler" class="waves-effect waves-light btn">Annuler</a>
+                <div id="buttons" class="row">
+                    <div class="col s12 l4">
+                        <a href="" id="boutonAnnuler" class="waves-effect waves-light btn">Annuler</a>
                     </div>
-                    <div class="col s12 l6">
+                    <div class="col s12 l4">
                         <a href="#!" id="boutonAjouter" class="waves-effect waves-light btn">Terminer</a>
                     </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
                 </div>
             </form>
         </div>
 
         <div id ="visualisationArticle" class="row">
-            <div id="actualiteInfos" class="col s12 m6">
-                <h2 id="titreAjouterActu">
-                    Ajouter une actualité
-                </h2>
+            <div id="actualiteInfos" class="col s12">
                 <nav id="breadcrumbs" class="row">
                     <div class="nav-wrapper">
                         <div>
@@ -60,13 +79,13 @@
                     </div>
                 </div>
             </div>
-            <div id="articleAVisualise" class="col s12 m6">
+            <div id="articleAVisualise" class="col s12">
                 <article>
                     <h1 id="titreVisualisation">Visualisation de l'article</h1>
-                    <img src="">
-                    <h2>titre</h2>
-                    <p>description</p>
-                    <p>date</p>
+                    <img id="imageForm" src="">
+                    <h2 id="titreForm"></h2>
+                    <div><p id="descriptionForm"></p></div>
+                    <div><p id="dateForm"></p></div>
                 </article>
             </div>
         </div>
