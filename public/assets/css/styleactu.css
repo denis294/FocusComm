@@ -17,9 +17,12 @@ Card Actualité
     padding: 20px;
     
 }*/
+
+
+
 body{
-    background-image: none !important;
-     background-color: #ecf0f1 !important;
+  background-image: none !important;
+  background-color: #ecf0f1 !important;
 }
 
 .card .card-content p{
@@ -61,6 +64,10 @@ body{
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover{
     color:#0580a3 !important;
+}
+
+.container.foot{
+    height: initial !important;
 }
 
 /*******************************
@@ -122,13 +129,6 @@ Actualité
     
 }
 
-.articleliee{
-    padding-top:10px;
-    margin-top: 20px;
-    border-top: grey solid 1px;
-    height:auto;
-    background-size: 30px;
-}
 
 .footerActu{
     padding-top:10px;

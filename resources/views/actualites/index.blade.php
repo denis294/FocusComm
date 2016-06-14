@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('title', 'Actualités')
+@section('page', 'Actualités')
 <link rel="stylesheet" href="{{asset('assets/css/styleactu.css')}}">
 @section('content')
 
@@ -7,7 +8,6 @@
 var NEWS = {!! $news !!};
 </script>
 <script src="{{asset('assets/js/tp/mainActu.js')}}"></script>
-<script src="{{asset('assets/js/test.js')}}"></script>
 
 <section id ="news">
     <div class="container">
