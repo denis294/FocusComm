@@ -1,20 +1,10 @@
 $(function (){
 
 
-//-------------------affichage categorie Quiz--------------------------
-    var categories = new ModelCategories(CATEGORIES);
-
-    var v_categories = new ViewCategories({
-        collection: categories
-    });
-
-
-    var dom = v_categories.renderListCategorieQuiz();
-    $("#liensCatQ").append(dom);
 
 //------affichage quizs---------
 
-    var quizs = new ModelQuizs(quizz);
+    var quizs = new ModelQuizs(QUIZ);
 
     var v_quizs = new ViewQuizs({
         collection: quizs
