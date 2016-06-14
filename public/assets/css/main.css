@@ -20,12 +20,6 @@ body, html {
   font-style: normal;
 }
 
-/*suppression de la marge en bat des .row*/
-
-.row{
-  margin-bottom: 0 !important;
-}
-
 .categories{
 margin-left: 17%;
 }
