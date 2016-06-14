@@ -27,7 +27,7 @@ class ActualiteController extends Controller
    
 	public function create()
   {
-    return view ('admin/actualite/formulaire');
+    return view('admin/actualite/formulaire')->with('categories', Categorie::all());
   }
     
     // Enregistre une actualité dans la base de données
