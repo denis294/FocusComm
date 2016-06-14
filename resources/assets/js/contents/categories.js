@@ -1,7 +1,7 @@
 var CATEGORIES = [
 
     {
-        "titre": "Stress",
+        "nom": "Stress",
         "img": "stress.png",
         "id": "1",
         "icon": "f100",
@@ -14,7 +14,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Estime de soi",
+        "nom": "Estime de soi",
         "img": "estime.png",
         "id": "2",
         "icon": "f10C",
@@ -31,7 +31,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Sexualité",
+        "nom": "Sexualité",
         "img": "sexualite.png",
         "id": "3",
         "icon": "f107",
@@ -58,7 +58,7 @@ var CATEGORIES = [
         ]
     },
         {
-        "titre": "Boire, fumer, se droguer",
+        "nom": "Boire, fumer, se droguer",
         "img": "boire.png",
         "id": "4",
         "icon": "f10A",
@@ -71,7 +71,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Santé",
+        "nom": "Santé",
         "img": "sante.png",
         "id": "5",
         "icon": "f105",
@@ -84,7 +84,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Manger-bouger",
+        "nom": "Manger-bouger",
         "img": "manger.png",
         "id": "6",
         "icon": "f108",
@@ -97,7 +97,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Moi, toi et les autres",
+        "nom": "Moi, toi et les autres",
         "img": "moi.png",
         "id": "7",
         "icon": "f10D",
@@ -110,7 +110,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Violences",
+        "nom": "Violences",
         "img": "violences.png",
         "id": "8",
         "icon": "f10E",
@@ -124,7 +124,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Formation et travail",
+        "nom": "Formation et travail",
         "img": "formation.png",
         "id": "9",
         "icon": "f103",
@@ -137,7 +137,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Argent",
+        "nom": "Argent",
         "img": "argent.png",
         "id": "10",
         "icon": "f106",
@@ -150,7 +150,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Religion et croyances",
+        "nom": "Religion et croyances",
         "img": "religion.png",
         "id": "11",
         "icon": "f102",
@@ -163,7 +163,7 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Discrimination et racisme",
+        "nom": "Discrimination et racisme",
        "img": "racisme.png",
         "id": "12",
         "icon": "f101",
