@@ -48,13 +48,13 @@ header("Content-type: application/javascript");
         'views/actualiteAdm.js',
         'views/actualitesAdm.js',
 
-        // TP
-        'tp/mainActu.js',
-        'tp/main.js',
-        //'tp/mainAdm.js',
-        //'tp/actionActu.js',
-        'tp/mainQuiz.js',
-        'tp/mainQuestion.js',
+         // TP
+          'tp/mainActu.js',
+         //'tp/main.js',
+         //'tp/mainAdm.js',
+         //'tp/actionActu.js',
+         'tp/main.js',
+         'tp/mainAdm.js',
 
         // AUTRES
         'contents/categories.js',
