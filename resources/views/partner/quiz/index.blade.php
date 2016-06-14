@@ -11,8 +11,27 @@
 
       </div>
 
-      <a class="waves-effect waves-light btn BtnBackHome"><i class="material-icons left">call_missed</i>Back Home</a>
-
 </section>
+<table class="stripped">
+<h3>Vos quizz</h3>
+<thead>
+	<tr>
+		<th>Titre</th>
+		<th>date création</th>
+		<th>Etat</th>
+		<th>Catégorie</th>
+	</tr>
+</thead>
+<tbody>
+	@foreach ($quizzs as $quizz)
+		<tr>
+			<td>{{$quizz->titre}}</td>
+			<td>{{$quizz->date}}</td>
+			<td>{{$quizz->etat}}</td>
+			<td>{{$quizz->categorie->nom}}</td>
+		</tr>
+	@endforeach
+</tbody>
+</table>
 </main>
 @endsection

@@ -22,7 +22,12 @@ class QuizzController extends Controller
     $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
     return view('quizz/index')->with('quizz', $quizz);
   }
-
+  public function MyQuizz(){
+    $user_id = Session::get('user_id');
+    $user = User::find($user_id);
+    $quizzs = $user->quizzs()->with('categorie')->get();
+    return view('/partner/quiz/index')->with('quizzs', $quizzs);
+  }
   public function categoriesHasQuizz(){
     $cat = [];
     $categories = Categorie::has('quizzs')->with('categorieParent')->get();
@@ -119,7 +124,7 @@ class QuizzController extends Controller
             $q->reponses()->save($rep);
           }
        }
-       return $quizz;
+       return redirect()->action('QuizzController@MyQuizz');
        
     }
 	
