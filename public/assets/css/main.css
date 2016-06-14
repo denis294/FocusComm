@@ -20,8 +20,33 @@ body, html {
   font-weight: normal;
   font-style: normal;
 }
+
+header{
+  margin-bottom: 100px;
+  position: fixed;
+  background:#0580a3;
+  color:white;
+  width:100%;
+    top:0;
+    padding: 0;
+    height:120px;
+    z-index: 998;
+
+}
+footer{
+  color:#ecf0f1;
+}
+.android{
+  padding-top: 20px !important;
+}
+.android img{
+  height:80px;
+}
+
+
+
 /*footer collé*/
-  body {
+  /*body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -29,7 +54,7 @@ body, html {
 
   main {
     flex: 1 0 auto;
-  }
+  }*/
 
 /*suppression de la marge en bat des .row*/
 
@@ -116,28 +141,7 @@ body{
 }
 
 
-header{
-  margin-bottom: 100px;
-  position: fixed;
-  background:#0580a3;
-  color:white;
-  width:100%;
-    top:0;
-    padding: 0;
-    height:120px;
-    z-index: 998;
 
-}
-footer{
-  margin-bottom: 0%;
-  width: 100%;
-  bottom:0;
-  position: relative;
-  padding-top: 10px;
-  color:white;
-  height: auto;
-  z-index: 1;
-}
 
 #intro{
 
