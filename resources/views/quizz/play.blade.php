@@ -14,10 +14,12 @@ var questions = {!! json_encode($questions)!!};
 </script>
 
 <section id ="question">
-    <h1>Quizz</h1>
+    <a href="/quizzs/"><h1>Quiz</h1></a>
+
 
 
 
 </section>
 
+<a href="/quizzs/"><p id="backLink">Retour aux quizs</p></a>
 @endsection

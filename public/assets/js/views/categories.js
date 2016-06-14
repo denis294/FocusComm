@@ -31,7 +31,7 @@ var ViewCategories = Pclia.ViewCollection.extend({
         _.each(this.collection.models, function (model) {
             var view = new ViewCategorie({model: model});
             var dom = view.renderListCategorieQuiz();
-            $("#listeLiens", container).append(dom);
+            $(".categoriesList", container).append(dom);
         });
         return container;
     }

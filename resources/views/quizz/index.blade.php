@@ -3,17 +3,19 @@
 
 @section('content')
 <script src="{{asset('assets/js/tp/mainCatQuiz.js')}}"></script>
-<link rel="stylesheet" href="{{asset('assets/css/main_quiz.css')}}">
-<h1>Quizz</h1>
-
-
+<link rel="stylesheet" href="{{asset('assets/css/main_quiz_index.css')}}">
 <script>
 var categories = {!! $categories !!};
 </script>
 
 
-<div id="liensCatQ">
 
+<div class="contain2">
+    <h1 class="titleq">Quizz</h1>
+
+
+<div id="liensCatQ" class="row" "categories">
+</div>
 </div>
 
 @endsection

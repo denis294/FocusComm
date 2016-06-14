@@ -10,10 +10,14 @@ var quizz = {!! $quizz !!};
 </script>
 
 
+<section id="contain">
 
 <div id="quizozo">
 
+<a href="/quizzs/"><h1 id="titleq">Quiz</h1></a>
+<p id="choixQ">Choisis ton quiz</p>
 
 </div>
 
+</section>
 @endsection
