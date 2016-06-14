@@ -9,7 +9,7 @@
 
 
 <script>
-var quizz = {!! $quizz !!};
+var categories = {!! $categories !!};
 </script>
 
 <div id="liensCatQ">
