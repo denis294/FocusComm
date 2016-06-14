@@ -1,0 +1,40 @@
+ body {
+    background-image: none !important;
+     background-color: #ecf0f1 !important;
+  }
+
+  #sidenav .side-nav{
+    position: fixed;
+    float: left;
+    margin:0;
+    height: 100%;
+    top:120px !important;
+    bottom:0;
+    margin-right: 10em;
+
+  } 
+
+
+.side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a{
+    padding-left: 20px;
+}
+.side-nav .collapsible-body li.active a, .side-nav.fixed .collapsible-body li.active a{
+    color:#444;
+}
+
+
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
+    padding-left:10px;
+    font-size: 11pt;
+    font-weight: bold;
+}
+.side-nav .collapsible-body, .side-nav.fixed .collapsible-header {
+    font-size: 10pt;
+}
+.side-nav .collapsible-body ul {
+    line-height: 30px;
+}
+.side-nav a {
+    line-height: 30px;
+    height: 64px;
+}
