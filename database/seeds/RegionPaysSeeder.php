@@ -13,6 +13,7 @@ use App\Models\Badge;
 use App\Models\Quizz;
 use App\Models\Question;
 use App\Models\Reponse;
+use App\Models\Page;
 
 class RegionPaysSeeder extends Seeder
 {
@@ -204,7 +205,17 @@ class RegionPaysSeeder extends Seeder
         	'nom' => 'Les revenus',
         	'categorieParente_id' => $budget->id,
         ]);
-
+         
+         /**
+		 * Seeding Page
+         */
+        $page = Page::create([
+            'titre' => 'Piercing sans risque, possible?',
+            'contenu' => 'Contenu HTML',
+            'categorie_id' => $sante->id,
+        ]);
+        
+		// Actualités
         $actu1 = new Actualite([
         	'titre' => 'Le sida en régression',
         	'dateCreation' => date('Y-m-d H:i:s'),
