@@ -28,7 +28,13 @@ var ViewQuestion = Pclia.View.extend({
     },
 
     next: function() {
-        //this.$el.hide();
+        $(".questionsQ", this.$el).hide();
+        if (this.$el.next().length == 0) {
+            $("#quizzEnd").show();
+        } else {
+            $(".questionsQ", this.$el.next()).show();
+        }
+
     }
 
 });
