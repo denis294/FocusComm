@@ -33,6 +33,11 @@ class User extends Model
     {
         return $this->hasMany('App\Models\Quizz');
     }
+    
+    public function pages()
+    {
+        return $this->hasMany('App\Models\Page');
+    }
 
     public function quizzsParticipations(){
         return $this->belongsToMany('App\Models\Quizz', 'user_quizz');
