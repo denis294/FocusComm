@@ -68,15 +68,16 @@ class QuizzController extends Controller
     public function store()
     {
        $fields = Request::all();
+       $fields['date'] = date('Y-m-d');
+       $fields['etat'] = 'cache';
         $validate = Quizz::validate($fields);
        if ($validate->fails()) {
           return redirect()->back()->withInput()->withErrors($validate);
        }
        
        // Vérifie la non existance du quizz
-       $titreInput = Request::only('titre');
-       $dateInput = Request::only('date');
-       
+       $titreInput = $fields['titre'];
+       $dateInput = $fields['date'];
        $quizz = DB::table('quizzs')
         	->where('titre', '=', $titreInput)
         	->where('date', '=', $dateInput)
@@ -95,12 +96,14 @@ class QuizzController extends Controller
        }
        
        // Vérifie que le badge spécifié existe
-       $badge = Badge::find($fields['badge_id']);
-       if (!empty($badge)){
-       		if (!isset($badge)){
-      			Message::error('badge.missing');
-      			return redirect()->back()->withInput();
-       		}
+       if(isset($fields['badge_id'])){
+          $badge = Badge::find($fields['badge_id']);
+          if (!empty($badge)){
+            if (!isset($badge)){
+              Message::error('badge.missing');
+              return redirect()->back()->withInput();
+            }
+          }
        }
        
        $quizz = new Quizz($fields);

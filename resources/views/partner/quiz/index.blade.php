@@ -1,11 +1,12 @@
-@extends('layouts.masterPartner')
+@extends('layouts.masterAdmin')
 @section('title', 'ListeQuiz')
 
 @section('content')
+ <link rel="stylesheet" href="{{asset('assets/css/partner.css')}}">
 <main class="main">
 <section id="listQuiz">
 
-      <a class="btn-floating btn-large waves-effect waves-light green" id="boutonAjouterQuiz"><i class="material-icons">add</i></a>
+      <a href="/partner/quizz/create/" class="btn-floating btn-large waves-effect waves-light green" id="boutonAjouterQuiz"><i class="material-icons">add</i></a>
       <div id="quizList">
 
       </div>

@@ -10,17 +10,20 @@ class Quizz extends Model
         'date' => 'date|date_format:Y-m-d',
         'etat' => 'in:publie,cache,aValider',
         'badge_id' => 'integer|min:1',
-        'categorie_id' => 'integer|min:1',
+        'categorie_id' => 'required|integer|min:1',
         'question.0.texte' => ['required','string', 'min:3'],
         'question.0.illustration' => ['string'],
+        'question.0.texteFaux' => 'required|string',
+        'question.0.texteJuste' => 'required|string',
         'question.0.reponse.0.texte' => ['required','string','min:2'],
         'question.0.reponse.0.estJuste' => ['required','string'],
         'question.*.texte' => ['required','string', 'min:3'],
         'question.*.illustration' => ['string'],
-        'question.*.reponse.0.texte' => ['required','string','min:2'],
-        'question.*.reponse.0.estJuste' => ['required','string'],
+        'question.*.texteFaux' => 'required|string',
+        'question.*.texteJuste' => 'required|string',
+        'question.*.reponse.*.texte' => ['required','string','min:2'],
+        'question.*.reponse.*.estJuste' => ['required','string'],
     ];
-    
     public function users()
     {
     	return $this->belongsTo('App\Models\User');
