@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Mathias
- * Date: 03.03.2016
- * Time: 16:19
+ * User: Guillaume
+ * Date: 14.06.2016
+ * Time: 13:32
  */
 
 return [
@@ -31,6 +31,7 @@ return [
     'categorie' => [
         'missing' => "La catégorie spécifiée n'existe pas.",
         'sousCategorieMissing' => "Aucun sous catégorie pour la catégorie spécifiée.",
+        'noPages' => "Aucune page pour cette catégorie.",
     ],
     'quizz' => [
         'alreadyExists' => "Le quizz est déja existant.",
@@ -46,5 +47,8 @@ return [
     ],
     'region' => [
         'missing' => "La région spécifiée n'existe pas.",
+    ],
+    'page' => [
+        'missing' => "La page spécifiée n'existe pas.",
     ],
 ];

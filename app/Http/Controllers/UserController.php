@@ -18,7 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::all();
+    	$user = User::all();
+    	$user = json_encode($user, JSON_UNESCAPED_UNICODE);
+    	return view('admin/users/index')->with('user', $user);
     }
 
     public function monCompte(){

@@ -27,12 +27,14 @@
                 </div>
             </article>
         </div>
-        <div class="c col m4" id="utilisateursDiv">
-            <article class="ategoriesAdmList categorieAdm" id="utilisateurs">
+        <div class="col m4" id="utilisateursDiv">
+            <a href="/admin/users/">
+            <article class="categoriesAdmList categorieAdm" id="utilisateurs">
                 <div class="boite">
                     <h1 class="titreCategorieAdm">Utilisateurs</h1>
                 </div>
             </article>
+            </a>
         </div>
         <div class="col m4" id="compteDiv">
             <article class="categoriesAdmList categorieAdm" id="compte">
