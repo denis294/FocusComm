@@ -24,7 +24,6 @@ class QuizzController extends Controller
   }
 
   public function categoriesHasQuizz(){
-    echo '<pre>';
     $cat = [];
     $categories = Categorie::has('quizzs')->with('categorieParent')->get();
     foreach ($categories as $categorie){
