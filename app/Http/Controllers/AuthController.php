@@ -98,4 +98,31 @@ class AuthController extends Controller
       Session::forget('group');
       return Redirect::to('admin')->with('success','Déconnexion réussie');
   }
+  public function loginPartner(){
+    $fields = Request::only('pseudo', 'motDePasse');
+    $user = User::where('pseudo',$fields['pseudo'])->first();
+    if (!isset($user)) {
+      Message::error('user.missing');
+      return redirect()->back()->withInput();
+    }
+    // Vérifie le password et le hash
+    if (!Hash::check($fields['motDePasse'], $user->motDePasse)) {
+      Message::error('user.mauvaisMDP');
+      return redirect()->back()->withInput();
+    }
+
+    $groups = $user->groups;
+    foreach ($groups as $group) {
+      if($group->nom == 'participant'){
+        Session::put('user_id', $user->id);
+        Session::put('group', $group->nom);
+        return view('partner/index');
+      }
+      else{
+        Message::error('user.noAdminAccess');
+        return redirect()->back()->withInput();
+      }
+    }
+
+  }
 }

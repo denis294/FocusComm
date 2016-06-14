@@ -4,6 +4,7 @@
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <script src="{{asset('assets/js/packJs.php')}}"></script>
+    <script src="{{asset('assets/js/tp/mainPart.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
      <!--Import Google Icon Font-->
