@@ -97,10 +97,9 @@ Actualité
 } 
 
 .actualite{
-    
     padding: 10px;
     position: absolute;
-    top: 0;
+    top: 14px
     bottom: 0;
     right:0;
     left: 0;
