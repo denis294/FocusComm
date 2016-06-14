@@ -5,7 +5,7 @@ namespace App\Models;
 class Question extends Model
 {
 	public $timestamps = false;
-	protected $fillable = ['texte','illustration','quizz_id'];
+	protected $fillable = ['texte','illustration','texteJuste','texteFaux','quizz_id'];
     public function quizz()
     {
        return $this->belongsTo('App\Models\Quizz');
