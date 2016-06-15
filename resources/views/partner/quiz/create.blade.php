@@ -3,6 +3,13 @@
 
 @section('content')
 <main class="main">
+
+  <section class="row">
+<section class=" col s2" id="ecr">
+  <h1>blabla</h1>
+</section>
+
+
 @if(count($errors) > 0)
   <ul>
   @foreach ($errors->all() as $error)
@@ -10,7 +17,7 @@
   @endforeach
   </ul>
 @endif
-<section class="FormulaireQuiz">
+<section class="FormulaireQuiz col s8">
 
     <form method="post" action="{{ url('/partner/quizz')}}" id="form">
         <h5>
@@ -74,15 +81,18 @@
    </h5>
     </form>
 </section>
+
+<section class="col s2">
+</section>
+
 <section>
 </br>
 </br>
-</section>
-<section>
-
-
 
 </section>
+</section>
+
+
 </main>
 
 @endsection
