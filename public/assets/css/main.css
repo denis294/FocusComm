@@ -1,3 +1,8 @@
+/** Clean Materialize **/
+nav, footer.page-footer{
+background-color: #0580a3;
+}
+
 body, html {
     height: 100%;
     padding-top:70px;
@@ -207,7 +212,7 @@ nav ul {
 
 }
 nav li a{
-  line-height: 74px;
+  line-height: 20px;
 }
 
 div #log{
@@ -222,6 +227,9 @@ div #log{
 #log{
   font-size: 12px;
   margin-top: 1%;
+}
+div #log input{
+height: 30px;
 }
 .logg{
 
@@ -252,18 +260,24 @@ div #log{
 
 #pseudo{
   display: inline !important;
-  width:130px;
+  width:120px;
   top:0;
   right:0;
   background-color: #0698c1;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 
 
 #mdp{
   margin-left: 4%;
   display: inline !important;
-  width:130px;
+  width:120px;
   background-color: #0698c1;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 
 #search{
@@ -274,6 +288,9 @@ div #log{
   margin-right :1.8%;
   position:absolute;
   margin-top: 1%;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 nav ul a {
 
