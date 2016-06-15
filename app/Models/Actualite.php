@@ -27,7 +27,7 @@ class Actualite extends Model
 	}
 	
 	public function categories(){
-        return $this->belongsToMany('App\Models\Categorie', 'actualite_categorie')->withTimestamps();
+        return $this->belongsToMany('App\Models\Categorie', 'actualite_categorie');
 	}
 	
 }
