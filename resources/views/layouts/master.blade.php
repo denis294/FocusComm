@@ -30,10 +30,8 @@
             <input id="search_menuMobile" type="search" placeholder=" Recherche ..."required>
             </div>
         <header class="row">
-
-             <nav class="col m8 s12">
+             <nav class="col m12 s12">
                 <div class="nav-wrapper">
-                    
                     <!--burger croix loupe gérer avec js-->
                     <span class="burger"></span>
                     <span class="loupe"></span>
@@ -50,19 +48,15 @@
                 </div>
             </nav>
             @if(!Session::has('user_id'))
-            <div id="log" class="col s4a">
-                <ul>
-                <li><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a></li>
-                <li><a href="/register">S'enregistrer</a></li>
-            </div>
+                <span class="loggEtAutre"><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a>
+                <a class="waves-effect waves-light btn" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></span>
             @else
-            <div class="col s4">
-                <p>Bonjour, {{Session::get('pseudo')}}</p>
-                <p><a class="waves-effect waves-light btn" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p>
-            </div>
+                <span class="loggEtAutre"><p>Bonjour, {{Session::get('pseudo')}}</p></br>
+                <p><a class="waves-effect waves-light btn" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
             @endif
         </header>
         @yield('sidenav')
+
         <main class="main">
         @yield('content')
         </main>
