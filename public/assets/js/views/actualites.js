@@ -26,8 +26,8 @@ var ViewActualites = Pclia.ViewCollection.extend({
         console.log($(evt.target));
         var idCurrent = $(evt.target).attr("data-actualite_id");
         var idLinked = $(evt.target).attr("data-actualiteLiee_id");
-        $("#card_"+idCurrent).hide();
-        $("#card_"+idLinked).show();
+        $("#card_"+idCurrent).fadeOut();
+        $("#card_"+idLinked).fadeIn();
         
     }
 });

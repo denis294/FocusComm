@@ -1,6 +1,6 @@
 var ViewActualite = Pclia.View.extend({
     events: {
-        "click .card-action a": "viewActu"
+        "click .card": "viewActu"
     },
     initialize: function () {
         this.listenTo(this.model, "change", this.render);
