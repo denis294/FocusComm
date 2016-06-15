@@ -19,11 +19,11 @@ class Group extends Model
     public function hasRole($role, $serapp)
     {
         if ($serapp instanceof ServiceApplicatif) {
-            $serapp = $resrc->nom;
+            $serapp = $serapp;
         }
         $servicesapplicatifs = $this->servicesapplicatifs->where('nom', $serapp);
         foreach ($servicesapplicatifs as $serviceapplicatif) {
-            if ($serviceapplicatif->pivot->roles == $role) {
+            if ($serviceapplicatif->pivot->nom === $role) {
                 return true;
             }
         }
