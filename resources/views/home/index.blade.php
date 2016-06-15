@@ -16,10 +16,17 @@
                     </nav>
                 </section>
 
-        <section class="test">
-            <div id="mavideo">
-                <video id="mavideo" controls src="{{asset('assets/img/video.mp4')}}">blablabla</video>
+        <div class="test row">
+            <div class="col s12 m7 l7" >
+                <video class="responsive-video" id="mavideo" controls>
+                <source src="{{asset('assets/img/video.mp4')}}" type="video/mp4">
+                </video>
             </div>
-        </section>
+            <div  class="col s12 m5 l5">
+            </br>
+            <div id="map-canvas"></div>
+            </div>
+
+        </div>
 
 @endsection
