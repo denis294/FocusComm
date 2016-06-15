@@ -30,7 +30,7 @@ class Quizz extends Model
     }
 	
 	public function badge(){
-    	return $this->hasOne('App\Models\Badge');
+    	return $this->belongsTo('App\Models\Badge');
 	}
 	
 	public function categorie(){

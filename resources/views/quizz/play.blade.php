@@ -11,6 +11,7 @@
 <script>
 var quizz = {!! json_encode($quizz) !!};
 var questions = {!! json_encode($questions)!!};
+var badges = {!! json_encode($badges)!!};
 </script>
 
 

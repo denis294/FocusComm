@@ -20,6 +20,7 @@ class QuizzController extends Controller
   {        
     $quizz = Quizz::all();
     $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
+    
     return view('quizz/index')->with('quizz', $quizz);
   }
   public function MyQuizz(){
@@ -185,7 +186,7 @@ class QuizzController extends Controller
       		Message::error('quizz.notPublished');
       		return redirect()->back()->withInput();
       }
-      return view ('quizz/play')->with('quizz', $quizz)->with('questions',$quizz->questions()->with('reponses')->get());
+      return view ('quizz/play')->with('quizz', $quizz)->with('badges',$quizz->badge)->with('questions',$quizz->questions()->with('reponses')->get());
     }
 
     
