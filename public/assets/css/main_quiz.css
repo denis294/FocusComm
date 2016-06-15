@@ -1,7 +1,17 @@
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+
 #question{
     margin-left: 27%;
-
-
 }
 
 #valide{
@@ -18,8 +28,17 @@ body{
 }
 
 
+.enonce{
+
+}
+
+.btnQ{
+  margin-top: 15px;
+}
+
+
 #formquiz{
-  width: 800px;
+  width: 54%;
   border:1px outset;
   padding: 10px;
   background-color: #F2F2F2;
@@ -43,15 +62,6 @@ body{
 }
 
 
-footer{
-
-  margin-bottom: 0%;
-  width: 100%;
-  bottom:0;
-  position: absolute !important;
-  padding-top: 10px;
-
-}
 
 /*.QuizList{
   margin-left: 17%;
@@ -59,16 +69,18 @@ footer{
 
 
 #quizozo{
-  padding-bottom: 10px;
-  margin-left: 42%;
+}
+
+
+.lienNoXavier{
+  display: block;
+  position: absolute;
 }
 
 #titleq{
 text-align: center;
 border-bottom: 3px solid;
 padding-bottom: 10px;
-
-
 }
 
 #lien{
@@ -77,10 +89,9 @@ padding-bottom: 10px;
 }
 
 #contain{
-  display: block;
-  position: absolute;
-  width: 800px;
-  margin-left: 20%;
+  width: 55%;
+  margin: 0 auto;
+
 }
 
 #choixQ{
@@ -93,23 +104,29 @@ padding-bottom: 6px;
 
 
 
+@media screen and (max-width: 800px) {
 
-@media (max-width: 58em), (max-device-width: 64em) {
-#quiz{
-    margin-left: 20%;
+#question{
+    background-color: #F2F2F2;
+    margin-left: 2%;
 }
 
-
-.formquiz{
-  width: 180px;
-  border:1px outset;
-  padding: 10px;
+body{
   background-color: #F2F2F2;
 }
+
+#formquiz{
+  border:0px outset;
+
+  width: 100%;
+  padding: 1px;
+  background-color: #F2F2F2;
 }
 
-
-
+.enonce{
+font-size: 2em;
+}
+}
 
 
 

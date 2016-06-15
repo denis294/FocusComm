@@ -7,7 +7,6 @@
     <script src="{{asset('assets/js/tp/mainPart.js')}}"></script>
     <script src="{{asset('assets/js/jquery.js')}}"></script>
     <script src="{{asset('assets/js/materialize.js')}}"></script>
-    <script src="{{asset('assets/js/tp/mainPart.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/partner.css')}}">

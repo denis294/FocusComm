@@ -11,9 +11,9 @@ var quizz = {!! $quizz !!};
 
 
 
-<section id="contain">
+<section id="contain" class="row">
 
-<div id="quizozo">
+<div id="quizozo" class="col s12">
 
 <a href="/quizzs/"><h1 id="titleq">Quiz</h1></a>
 <p id="choixQ">Choisis ton quiz</p>

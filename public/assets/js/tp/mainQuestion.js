@@ -2,10 +2,10 @@ $(function (){
 
 
 
-    var questions = new ModelQuestions(QUESTIONS); //questions
+    var questionsQ = new ModelQuestions(questions); //questions
 
     var v_questions = new ViewQuestions({
-        collection: questions
+        collection: questionsQ
     });
     var domNews = v_questions.render();
     $("#question").append(domNews);

@@ -2,10 +2,11 @@ $(function (){
 
 
 //-------------------affichage categorie Quiz--------------------------
-    var categories = new ModelCategories(CATEGORIES);
+
+    var categoriesQ = new ModelCategories(categories);
 
     var v_categories = new ViewCategories({
-        collection: categories
+        collection: categoriesQ
     });
 
 
