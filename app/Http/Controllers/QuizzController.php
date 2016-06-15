@@ -17,7 +17,7 @@ class QuizzController extends Controller
 {
 	// Liste tous les quizzs
   public function index()
-  {        
+  {
     $quizz = Quizz::all();
     $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
     return view('quizz/index')->with('quizz', $quizz);
@@ -28,7 +28,7 @@ class QuizzController extends Controller
     $quizzs = $user->quizzs()->with('categorie')->get();
     return view('/partner/quiz/index')->with('quizzs', $quizzs);
   }
-  public function categoriesHasQuizz(){
+ public function categoriesHasQuizz(){
     $cat = [];
     $categories = Categorie::has('quizzs')->with('categorieParent')->get();
     $c = 0;
@@ -43,16 +43,16 @@ class QuizzController extends Controller
         $cat['categories'][$c]['nom']  = $categorie->nom;
         $c++;
       }
-    } 
+    }
     $cat = json_encode($cat);
     return view('quizz/index')->with('categories', $cat);
   }
 
   public function indexAdmin()
   {
-    
+
   }
-	
+
 	//Liste tous les quizzs propres à une catégorie
 	public function indexQuizz($categorie_id){
     $categories = Categorie::find($categorie_id);
@@ -60,7 +60,7 @@ class QuizzController extends Controller
       Message::error('categorie.missing');
       return redirect()->back()->withInput();
     }
-    // File moi les quizz dont categorie_id vaut $id ou les quizz dont categorie_id fait référence à une catégorie qui a 
+    // File moi les quizz dont categorie_id vaut $id ou les quizz dont categorie_id fait référence à une catégorie qui a
     // $id en categorieParente_id
     $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
     $quizzs = json_encode($quizzs);
@@ -71,7 +71,7 @@ class QuizzController extends Controller
   {
     return view('quizz/create');
   }
-    
+
     // Enregistre un quizz dans la base de données
     public function store()
     {
@@ -82,7 +82,7 @@ class QuizzController extends Controller
        if ($validate->fails()) {
           return redirect()->back()->withInput()->withErrors($validate);
        }
-       
+
        // Vérifie la non existance du quizz
        $titreInput = $fields['titre'];
        $dateInput = $fields['date'];
@@ -90,19 +90,19 @@ class QuizzController extends Controller
         	->where('titre', '=', $titreInput)
         	->where('date', '=', $dateInput)
         	->get();
-        	
+
        if (!empty($quizz)){
       	Message::error('quizz.alreadyExists');
       	return redirect()->back()->withInput();
        }
-       
+
        // Vérifie que la catégorie spécifie existe
        $categorie = Categorie::find($fields['categorie_id']);
        if (!isset($categorie)){
       	Message::error('categorie.missing');
       	return redirect()->back()->withInput();
        }
-       
+
        // Vérifie que le badge spécifié existe
        if(isset($fields['badge_id'])){
           $badge = Badge::find($fields['badge_id']);
@@ -113,7 +113,7 @@ class QuizzController extends Controller
             }
           }
        }
-       
+
        $quizz = new Quizz($fields);
        $user = User::find(Session::get('user_id'));
 
@@ -128,9 +128,9 @@ class QuizzController extends Controller
           }
        }
        return redirect()->action('QuizzController@MyQuizz');
-       
+
     }
-	
+
 	// Affiche un quizz spécifique
     public function show($id)
     {
@@ -145,7 +145,7 @@ class QuizzController extends Controller
     {
         //
     }
-    
+
     // Met à jour un quizz
     public function update($id)
     {
@@ -162,7 +162,7 @@ class QuizzController extends Controller
        $badge->update($fields);
        return $badge;
     }
-    
+
     // Supprime un quizz
     public function destroy($id)
     {
@@ -174,7 +174,7 @@ class QuizzController extends Controller
        $quizz->delete();
        return $quizz;
     }
-    
+
     public function playQuizz($id){
       $quizz = Quizz::find($id);
       if(!isset($quizz)){
@@ -188,6 +188,6 @@ class QuizzController extends Controller
       return view ('quizz/play')->with('quizz', $quizz)->with('questions',$quizz->questions()->with('reponses')->get());
     }
 
-    
+
 }
 

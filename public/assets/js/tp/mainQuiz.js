@@ -4,10 +4,10 @@ $(function (){
 
 //------affichage quizs---------
 
-    var quizs = new ModelQuizs(QUIZ);
+    var quizsQ = new ModelQuizs(quizz);
 
     var v_quizs = new ViewQuizs({
-        collection: quizs
+        collection: quizsQ
     });
 
 
