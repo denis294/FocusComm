@@ -3,49 +3,71 @@
 
 @section('content')
 <script>
-var actu = {!! $actu !!};
+var actu = {!! $actu !!}; 
+var categories = {!! $categories !!};  
+var allActus = {!! $allActus !!};
 </script>
+<script src="//code.jquery.com/jquery-2.1.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+         $('select').material_select();
+    });
+</script>
+
 <main class="main">
 
   	@foreach(json_decode($actu, true) as $value)
-		<tr>
-    		<td>{{ $value['titre'] }} </td>
-    		<td>{{ $value['texte'] }} </td>   
-    		<td>{{ $value['actualiteLiee_id'] }} </td>
-    		<td>{{ $value['categorie_id'] }} </td> 
-		</tr>
-	@endforeach
+<!-- Titre -->
 <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
+    <div class="input-field col s6">
+      <input value="{{ $value['titre'] }}" id="titre" type="text" class="validate">
+      <label class="active" for="titre">Titre de l'actualité</label>
+      
+    </div>
+</div>
+<!-- Texte -->
       <div class="row">
         <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
+          <textarea id="textarea1" class="materialize-textarea" >{{ $value['texte'] }}</textarea>
+          <label for="textarea1">Texte</label>
         </div>
       </div>
+<!-- Image -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+          <textarea id="textarea1" class="materialize-textarea" >{{ $value['texte'] }}</textarea>
+          <label for="textarea1">Texte</label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-    </form>
-  </div>
+@endforeach
+<!-- Catégories -->
+<div class="row">
+    <div class="input-field col s12">      
+<select multiple name="categorie_id" id="categorie_id" >
+                      	@foreach(json_decode($actu, true) as $value)
+                      		<option selected disabled value="{{ $value['categorie_id'] }}">Cliquez pour changer les catégories</option>
+						@endforeach
+                      	@foreach(json_decode($categories, true) as $value)
+                      		<option value="{{ $value['id'] }}"> {{ $value['nom'] }} </option>
+						@endforeach
+</select>
+<label for="categorie_id">Catégorie(s)</label>
+</div>
+</div>
+<!-- Actualités liées-->
+<div class="row">
+    <div class="input-field col s12">      
+<select multiple name="categorie_id" id="categorie_id" >
+                      	@foreach(json_decode($actu, true) as $value)
+                      		<option selected disabled value="{{ $value['actualiteLiee_id'] }}">Cliquez pour changer les actualités liées</option>
+						@endforeach
+                      	@foreach(json_decode($allActus, true) as $value)
+                      		<option value="{{ $value['id'] }}"> {{ $value['titre'] }} </option>
+						@endforeach
+</select>
+<label for="categorie_id">Actualité(s) liée(s)</label>
+</div>
+</div>
 </main>
 @endsection

@@ -5,8 +5,11 @@
     <meta charset="utf-8">
     <script src="{{asset('assets/js/packJs.php')}}"></script>
     <script src="{{asset('assets/js/tp/mainPart.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.js')}}"></script>
+    <script src="{{asset('assets/js/materialize.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/partner.css')}}">
      <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
