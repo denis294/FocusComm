@@ -8,6 +8,7 @@ use App\Models\Actualite;
 use Session;
 use Request;
 use App\Lib\Message;
+use DB;
 
 class ActualiteController extends Controller
 {
@@ -27,7 +28,7 @@ class ActualiteController extends Controller
    
 	public function create()
   {
-    return view ('admin/actualite/formulaire');
+    return view('admin/actualite/formulaire')->with('categories', Categorie::all());
   }
     
     // Enregistre une actualité dans la base de données
@@ -59,9 +60,13 @@ class ActualiteController extends Controller
        }
        return $actus;
     }
+    // Formulaire d'édition d'actualité
     public function edit($id)
     {
-        return view('admin/actualites/edit');
+        
+    $actu = DB::table('actualites')->where('id', '=', $id)->get();
+    $actu = json_encode($actu);
+    return view('admin/actualite/edit')->with('actu', $actu)->with('allActus', Actualite::all())->with('categories', Categorie::all());
     }
     
     // Met à jour une actualité

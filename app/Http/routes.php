@@ -21,6 +21,17 @@
     	return view('home/index');
 	});
 
+	Route::post('/', 'AuthController@login');
+
+	Route::get('/stress', function () {
+    	return view('contenu/index');
+	});
+
+	Route::get('/partner', function (){
+		return view('partner/index');
+	});
+	Route::post('/partner', 'AuthController@loginPartner');
+
 	// Actualité
 	Route::get('/actualites/', 'ActualiteController@index');
 
@@ -28,6 +39,10 @@
 	Route::get('/quizzs/', 'QuizzController@categoriesHasQuizz');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
 	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
+	
+	// Page
+	Route::get('/pages/', 'PageController@index');
+	Route::get('/pages/categorie/{id}', 'PageController@indexCategorie');
 	
 
 	// Login
@@ -76,6 +91,7 @@
 		Route::get('/admin/logout', 'AuthController@logoutAdmin');
 
 		// User
+		Route::get('/admin/users/', 'UserController@index');
 		Route::delete('/user/{id}', 'UserController@destroy');
 		Route::get('/user/{id}', 'UserController@show');
 		Route::post('/user/', 'UserController@store');
@@ -89,7 +105,15 @@
 		Route::get('/admin/actualites/{id}/edit', 'ActualiteController@edit');
 		Route::put('/admin/actualites/{id}', 'ActualiteController@update');
 		Route::delete('/admin/actualites/{id}', 'ActualiteController@destroy');
-
+		
+		// Pages
+		Route::get('/admin/pages/create', 'PageController@create');
+		Route::post('/admin/pages/', 'PageController@store');
+		Route::get('/admin/pages/{id}', 'PageController@show');
+		Route::get('/admin/pages/{id}/edit', 'PageController@edit');
+		Route::put('/admin/pages/{id}', 'PageController@update');
+		Route::delete('/admin/pages/{id}', 'PageController@destroy');
+		
 		// Régions
 		Route::get('/admin/regions/', 'RegionController@index');
 		Route::get('/admin/regions/pays/{id}', 'RegionController@indexPays');
@@ -127,6 +151,14 @@
 /*
 |----------------------------------------------------------------------------------------------
 */
+Route::group(['middleware' => ['authPartner']], function () {
+	Route::get('/partner/logout', 'AuthController@logoutPartner');
+	Route::get('/partner/quizz', 'QuizzController@MyQuizz');
+	Route::get('/partner/quizz/create', function(){
+		return view('/partner/quiz/create');
+	});
+	Route::post('/partner/quizz/' ,'QuizzController@store');
 
+});
 
 

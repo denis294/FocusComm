@@ -17,9 +17,13 @@ Card Actualité
     padding: 20px;
     
 }*/
+
+
+
 body{
-    background-image: none !important;
-     background-color: #ecf0f1 !important;
+  
+  background-image: none !important;
+  background-color: #ecf0f1 !important;
 }
 
 .card .card-content p{
@@ -63,6 +67,10 @@ body{
     color:#0580a3 !important;
 }
 
+.container.foot{
+    height: initial !important;
+}
+
 /*******************************
 Actualité
 ******************************/
@@ -75,11 +83,11 @@ Actualité
     left: 0;
     z-index:3;
     padding: 10px;
-   
-}
+    }
 
 .actualite .card{
-
+overflow: auto;
+max-height: 100%;
 }
 
 
@@ -90,17 +98,18 @@ Actualité
 } 
 
 .actualite{
-    
     padding: 10px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    position: fixed;
     right:0;
     left: 0;
+    top:140px;
+    bottom: 0;
     display: block;
     z-index:4;    
     max-width:50em;
     margin: 0 auto;
+    margin-bottom: 30px;
+    
 }
 
 .contenuActu{
@@ -122,13 +131,6 @@ Actualité
     
 }
 
-.articleliee{
-    padding-top:10px;
-    margin-top: 20px;
-    border-top: grey solid 1px;
-    height:auto;
-    background-size: 30px;
-}
 
 .footerActu{
     padding-top:10px;

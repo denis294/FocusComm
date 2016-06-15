@@ -13,6 +13,7 @@ use App\Models\Badge;
 use App\Models\Quizz;
 use App\Models\Question;
 use App\Models\Reponse;
+use App\Models\Page;
 
 class RegionPaysSeeder extends Seeder
 {
@@ -54,6 +55,9 @@ class RegionPaysSeeder extends Seeder
         $groupeUser = Group::create([
             'nom' => 'user',
         ]);
+        $groupeParticipant = Group::create([
+            'nom' => 'participant',
+        ]);
          /**
 		 * Seeding User
          */
@@ -69,6 +73,14 @@ class RegionPaysSeeder extends Seeder
             'pseudo' => 'user',
             'email' => 'user@example.com',
             'motDePasse' => bcrypt('user'),
+            'dateNaissance' => '1997-04-09',
+            'sexe' => 'M',
+            'region_id' => $cantonVaud->id,
+        ]);
+           $partner = User::create([
+            'pseudo' => 'partner',
+            'email' => 'partner@example.com',
+            'motDePasse' => bcrypt('partner'),
             'dateNaissance' => '1997-04-09',
             'sexe' => 'M',
             'region_id' => $cantonVaud->id,
@@ -89,6 +101,7 @@ class RegionPaysSeeder extends Seeder
          */
         $groupeAdmin->users()->save($admin);
         $groupeUser->users()->save($user);
+        $groupeParticipant->users()->save($partner);
 
 
         // Attach Region in User
@@ -204,7 +217,17 @@ class RegionPaysSeeder extends Seeder
         	'nom' => 'Les revenus',
         	'categorieParente_id' => $budget->id,
         ]);
-
+         
+         /**
+		 * Seeding Page
+         */
+        $page = Page::create([
+            'titre' => 'Piercing sans risque, possible?',
+            'contenu' => 'Contenu HTML',
+            'categorie_id' => $sante->id,
+        ]);
+        
+		// Actualités
         $actu1 = new Actualite([
         	'titre' => 'Le sida en régression',
         	'dateCreation' => date('Y-m-d H:i:s'),
@@ -263,6 +286,8 @@ class RegionPaysSeeder extends Seeder
 		$question = Question::create([
 			'texte' => 'Une allocation familiale c\'est quoi ?',
 			'illustration' => 'quizzRevenus.jpg',
+			'texteJuste' => 'Effectivement, cette allocation est versée à tes parents. ',
+			'texteFaux' => 'Malheureusement ce n\' est pas toi qui recevra directement cette allocation ',
 			'quizz_id' => $quizz->id,
 		]);
 

@@ -1,5 +1,5 @@
 @extends('layouts.masterAdmin')
-@section('title', 'Admin')
+@section('title', 'Ciao.ch - Administration - Actualités')
 
 @section('content')
 <script>
@@ -8,6 +8,9 @@ $(document).ready(function() {
     $("#ajouterActualiteAdmForm").show();
     $("#visualisationArticle").hide();
 });
+</script>
+<script>
+var categories = {!! $categories !!};
 </script>
 <main class="main">
 @if(count($errors) > 0)
@@ -20,7 +23,7 @@ $(document).ready(function() {
 </div>
 @endif
         <div id="ajouterActualiteAdmForm">
-            <form method="POST" action="{{url('/admin/actualites')}}">
+            <form files="true" method="POST" action="{{url('/admin/actualites')}}">
                 <h2 id="titreAjouterActu">
                     Ajouter une actualité
                 </h2>
@@ -39,6 +42,14 @@ $(document).ready(function() {
                         <input id="dateArticleAAjouter" name="dateCreation" type="date" class="ajouterActuFormInput ajouterActuFormLabel">
                     </div>
                 </div>
+                <div id="categorie_id" class="loginPlateForm row">
+                    <label id="placeholderCategorie" class="labelLoginAdm col s12 m6" name="categorie_id">Categorie</label> <br>
+                    <select name="categorie_id" style="display:inline; width:300px;">
+                      	@foreach(json_decode($categories, true) as $value)
+                      		<option value="{{ $value['id'] }} "> {{ $value['nom'] }} </option>
+						@endforeach
+					</select>
+                </div>
                 <div class="row">
                     <label class="ajouterActuFormLabel col s12 l3" id ="choixMedia" for="test5">Choisir un média</label>
                     <div id ="choixFile" class="input-field col s12 l3">
@@ -48,46 +59,14 @@ $(document).ready(function() {
                 <div id="buttons" class="row">
                     <div class="col s12 l4">
                         <a href="" id="boutonAnnuler" class="waves-effect waves-light btn">Annuler</a>
-                    </div>
-                    <div class="col s12 l4">
-                        <a href="#!" id="boutonAjouter" class="waves-effect waves-light btn">Terminer</a>
-                    </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
+                    </div>
+
                 </div>
             </form>
         </div>
-
-        <div id ="visualisationArticle" class="row">
-            <div id="actualiteInfos" class="col s12">
-                <nav id="breadcrumbs" class="row">
-                    <div class="nav-wrapper">
-                        <div>
-                            <a href="liste.blade.php" id="listeArticle" class="breadcrumb">Liste articles</a>
-                            <a href="#!" id="creation" class="breadcrumb">Création</a>
-                            <a href="#!" id="confirmation" class="breadcrumb">Confirmation</a>
-                        </div>
-                    </div>
-                </nav>
-                <div class="row">
-                    <div class="col s12 l4">
-                        <a id="boutonPrecedent" class="waves-effect waves-light btn">Précédent</a>
-                    </div>
-                    <div class="col s12 l4">
-                        <a id="boutonConfirmer" class="waves-effect waves-light btn">Confirmer</a>
-                    </div>
-                </div>
-            </div>
-            <div id="articleAVisualise" class="col s12">
-                <article>
-                    <h1 id="titreVisualisation">Visualisation de l'article</h1>
-                    <img id="imageForm" src="">
-                    <h2 id="titreForm"></h2>
-                    <div><p id="descriptionForm"></p></div>
-                    <div><p id="dateForm"></p></div>
-                </article>
-            </div>
         </div>
 </main>
 @endsection
