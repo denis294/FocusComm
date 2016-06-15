@@ -1,5 +1,5 @@
 @extends('layouts.masterAdmin')
-@section('title', 'Admin')
+@section('title', 'Ciao.ch - Administration - Mon compte')
 
 @section('content')
 <script>
@@ -18,18 +18,28 @@ var region = {!! $region !!};
 	<div class="row">
       <div class="col s12 m6 l6">
       	<b>Vos informations personnelles</b>
-			<form action="/admin/compte/{{ $value['id'] }}">
+			<form action="/admin/compte/{{ $user['id'] }}">
 			<input type="hidden" name="_method" value="PUT">
 			
-			<!-- Titre -->
-<div class="row">
-    <div class="input-field col s6">
-      <input value="{{ $value['titre'] }}" id="titre" name="titre" type="text" class="validate">
-      <label class="active" for="titre">Titre de l'actualité</label>
-      
-    </div>
-</div>
-            </form>
+			<!-- Pseudo -->
+			<div class="row">
+        		<div class="input-field col s12">
+          		<input disabled value="{{ $user['pseudo'] }}" id="pseudo" type="text" class="validate" name="pseudo">
+          		<label for="pseudo">Pseudo</label>
+        	</div>
+			
+			<!-- Email -->
+			<div class="row">
+        		<div class="input-field col s12">
+          		<input value="{{ $user['email'] }}" id="email" type="text" class="validate" name="pseudo">
+          		<label for="email">E-mail</label>
+        	</div>
+        	
+		
+		
+		
+		</div>
+        </form>
 
       </div>
       <div class="col s12 m6 l6">
