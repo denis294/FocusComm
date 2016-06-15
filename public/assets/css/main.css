@@ -64,12 +64,40 @@ footer{
 
 /*suppression de la marge en bat des .row*/
 
-.row{
-  margin-bottom: 0 !important;
+
+/*CATEGORIE*/
+
+
+.block{
+    background-color: white;
+    margin-left:20% !important;
+    margin-right:20% !important;
+    height:40%!important;
+    background-color: white;
+
 }
 
+.block:hover{
+
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.6), 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+}
+.block  h1{
+    font-weight: lighter;
+    text-align: center;
+    color:white;
+    font-size: 16px !important;
+    margin-top: 16%!important;
+    font-weight: lighter;
+    line-height: 2.5em;
+    padding-top: 4%;
+}
+ 
+
 .categories{
-margin-left: 17%;
+    max-width: 80%;
+}
+#categorie{
+    margin:0 auto;
 }
 
 
@@ -86,18 +114,11 @@ font-size: 3em;
 }
 
 
-.categroriesList{
-
-  margin-left: 30%;
-}
-
-
 h1 {
     font-size: 4.2rem;
     line-height: 110%;
     margin: 4.1rem 0 0.68rem 0 !important;
 }
-
 
 
 
@@ -110,15 +131,7 @@ body{
   background-size: cover;
 }
 
-.block  h1{
-  text-align: center;
-  color:white;
-  font-size: 16px!important;
-  margin-top: 16%!important;
-  font-weight: lighter;
-  line-height: 2.5em;
-  padding-top: 4%;
-}
+
 
 .tit{
   margin-top:0;
@@ -126,11 +139,7 @@ body{
   height:5%;
 }
 
-.block{
-  width:15%;
-  height:35%;
-  background-color: white;
-}
+
 
 .hide-on-med-and-down{
   left:10%;
@@ -151,13 +160,13 @@ body{
 
 #intro{
 
-  color:black;
+  color:#FFF;
   font-weight: bold;
 }
 
 #intro h3 {
 
-  color:#1F397B;
+  color:#FFF;
   font-weight: bold;
   font-size: 25px;
 }
@@ -322,7 +331,6 @@ nav li {
   text-decoration: none;
   display:inline;
   margin-left:1%;
-  height:300px ! important;
   width:auto !important;
 }
 
@@ -438,25 +446,13 @@ text-align: center!important;
 body{
     font-family: Gill Sans, sans-serif;
 }
-.block  h1{
-    text-align: center;
-    color:white;
-    font-size: 15px;
-    margin-top: 10%;
-    font-weight: lighter;
-    line-height: 2.5em;
-}
+
 .tit{
     margin-top:0;
     background-color:#0580a3;
     height:5%;
 }
 
-
-
-#categorie{
-  margin-left: 20%
-}
 
 .row .col.s4a {
   width: 33.3333333333%;
@@ -466,22 +462,8 @@ body{
 }
 
 
-.block{
-    width:55%!important;
-    height:40%!important;
-    background-color: white;
-    margin-left:10%;
-    margin-top: 10%;
-}
 
-.block:hover{
-    width:55%!important;
-    height:40%!important;
-    background-color: white;
-    margin-left:10%;
-    margin-top: 10%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.6), 0 2px 10px 0 rgba(0, 0, 0, 0.6);
-}
+
 
 
 .s4.c{
