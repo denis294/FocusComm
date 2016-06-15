@@ -78,7 +78,7 @@ class ActualiteController extends Controller
            return redirect()->back()->withInput();
        }
        $fields = Request::all();
-        $validate = Actualite::validate($fields);
+       $validate = Actualite::validate($fields);
        if ($validate->fails()) {
           return redirect()->back()->withInput()->withErrors($validate);
        }

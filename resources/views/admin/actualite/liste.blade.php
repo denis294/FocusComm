@@ -1,5 +1,5 @@
 @extends('layouts.masterAdmin')
-@section('title', 'Administration - Utilisateurs')
+@section('title', 'Ciao.ch - Administration - Actualités')
 
 @section('content')
 <script>
@@ -26,7 +26,7 @@ var news = {!! $news !!};
   
   	@foreach(json_decode($news, true) as $value)
 		<tr>
-    		<td>{{ $value['titre'] }} </td>
+    		<td><a href="/admin/actualites/{{ $value['id'] }}/edit" title="{{ $value['titre'] }}">{{ $value['titre'] }}</a></td>
     		<td>{{ $value['dateCreation'] }} </td>   
 <td>
     		{{ str_limit($value['texte'], $limit = 100, $end = '...') }}</td>
