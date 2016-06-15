@@ -27,6 +27,9 @@ header("Content-type: application/javascript");
         'models/question.js',
         'models/questions.js',
 
+        'models/badge.js',
+        'models/badges.js',
+
         'models/actualiteAdm.js',
         'models/actualitesAdm.js',
 
@@ -44,6 +47,9 @@ header("Content-type: application/javascript");
 
         'views/question.js',
         'views/questions.js',
+
+        'views/badge.js',
+        'views/badges.js',
 
         'views/actualiteAdm.js',
         'views/actualitesAdm.js',

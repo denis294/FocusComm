@@ -20,6 +20,7 @@ var ViewQuestion = Pclia.View.extend({
 
         var scoreQ = this.$('input[name=reponse]:checked').val()
         console.log(scoreQ);
+        $(window).trigger('getAnswer');
         if (scoreQ == "true") {
             $(window).trigger('addScore');
             this.$(".messageJuste").show();
