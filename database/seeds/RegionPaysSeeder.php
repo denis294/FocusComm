@@ -272,12 +272,12 @@ class RegionPaysSeeder extends Seeder
         */
         $badge = Badge::create([
         	'titre' => 'Quizz sur les revenus',
-        	'image' => 'badgeRevenus.png',
+        	'image' => 'badgeArgent.png',
         ]);
 		$quizz = new Quizz([
 			'titre' => 'Quizz sur les revenus',
 			'date' => date('Y-m-d'),
-			'etat' => 'cache',
+			'etat' => 'publie',
 			'badge_id' => $badge->id,
 			'categorie_id' => $revenus->id,
 		]);
