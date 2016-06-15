@@ -6,15 +6,39 @@
     <script src="{{asset('assets/js/packJs.php')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    <script src="{{asset('assets/js/tp/mainResponsiv.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('assets/css/responsiv.css')}}">
 
      <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
+        <div class="bigDiv"></div>
+            <div class="menuMobile">
+                    <ul class="listeMenu">
+                        <li class=""><a href="/">Accueil</a></li>
+                        <li class=""><a href="actualites">Actualité</a></li>
+                        <li class=""><a href="#">Adresse</a></li>
+                        <li class=""><a href="#">Pose ta question</a></li>
+                        <li class=""><a href="#">Forum</a></li>
+                        <li class=""><a href="#">Urgence</a></li>
+                        <li class=""><a href="quizzs">Quizzs</a></li>
+                    </ul>
+            </div>
+            <div class="rechercheMobile">
+            <input id="search" type="search" placeholder=" Recherche ..."required>
+            </div>
         <header class="row">
 
-             <nav class="col s8">
+             <nav class="col m8 s12">
                 <div class="nav-wrapper">
+                    
+                    <!--burger croix loupe gérer avec js-->
+                    <span class="burger"></span>
+                    <span class="cross"> Fermer</span>
+                    <span class="loupe"></span
+                    
+                    
                     <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
                         <li><a class="ici" href="/">Accueil</a></li>
@@ -73,7 +97,6 @@
                 PARRAINS : Fondation Otto Beishein - Vaudoise Assurance
               </div>
             </div>
-          </div>
 </footer>
  
 </html>

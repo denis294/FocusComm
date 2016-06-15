@@ -40,6 +40,7 @@ header{
 }
 footer{
   color:#ecf0f1;
+  padding-left: 240px;
 }
 .android{
   padding-top: 20px !important;
@@ -487,6 +488,7 @@ body{
     background-color: white;
     background-image: url("");
   }
+
 
   #intro p{
 
