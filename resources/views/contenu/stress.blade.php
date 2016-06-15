@@ -7,16 +7,17 @@
 <link rel="stylesheet" href="{{asset('assets/css/sidenav.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/contenu.css')}}">
 <script src="{{asset('assets/js/materialize.js')}}"></script>
+<script src="{{asset('assets/js/contenu.js')}}"></script>
 <div id="sidenav">
   <ul class="side-nav fixed">
   <li class="no-padding">
     <ul class="collapsible collapsible-accordion">
-      <li><a href="#Stress" class="collapsible-header">Stress</a>
+      <li><a href="#" class="collapsible-header waves-effect waves-teal active">Stress</a>
           <div class="collapsible-body">
               <ul>
                   <li><a href="#questcequelestress">Qu'est-ce que le stress?</a></li>
                   <li><a href="#mecanismedustress">Mécanismes du stress</a></li>
-                  <li><a href="#!">Réponses au stress</a></li>
+                  <li><a href="#reponseaustress">Réponses au stress</a></li>
                   <li><a href="#!">Symptômes du stress</a></li>
                   <li><a href="#!">Sources du stress</a></li>
                   <li><a href="#!">Faire face au stress</a></li>
@@ -55,7 +56,7 @@
       <li><a href="#!" class="collapsible-header">Formation et travail</a></li>
       
       
-      <li><a href="#!" class="collapsible-header">Argent</a></li>
+      <li><a href="argent" class="collapsible-header">Argent</a></li>
       
       
       <li><a href="#!" class="collapsible-header">Religion et croyance</a></li>
@@ -126,7 +127,8 @@
     <li><strong>La phase d’épuisement</strong><span style="font-size: 13px;"> : l’organisme est débordé.&nbsp;<br></span><span style="font-size: 13px;">C'est le stade ultime du stress, toutes tes réserves sont consommées, tes mécanismes de défenses dépassés, résistances et tensions s’installent jusqu’à l’épuisement entrainant des problèmes de santé (envie de rien, déprime, états dépressifs…). Tu épuises tes réserves d’énergie.</span></li>
     </ol>
 
-    <h2 id="mecanismedustress">Mécanismes du stress</h2>
+    <span id="mecanismedustress"></span>
+    <h2>Mécanismes du stress</h2>
     <h3>Comprendre le stress</h3>
     <p>Comprendre les mécanismes du stress permet de le reconnaitre et de pourvoir agir pour le faire diminuer.</p>
     <p>Le stress est dû au déséquilibre entre&nbsp;:</p>
@@ -137,7 +139,72 @@
     <ul><li> tu peux essayer de diminuer les pressions (exigences extérieures, attentes)</li>
     <li>et/ou augmenter les ressources (capacités, possibilités d’agir sur la situation)</li>
     </ul><p><img class="image_centree" src="assets/img/pression_stress.png" alt="schéma explicatif pour rétablir l'équilibre: diminuer les pressions ou augmenter les ressources" width="384" height="147"></p>
+    
+    <span id="reponseaustress"></span>
+    <h2>Réponse au stress</h2>
+    <h3>Les différentes réactions au stress</h3>
+    <p>Les êtres humains comme les animaux ont une réaction psychophysiologique innée face à tout type de stress : On répond soit par le combat, soit par la fuite ou le freeze (se sentir tétanisé).<strong></strong></p>
+    <p>Quand tu es en situation de stress, très vite ton corps sécrète des hormones (adrénaline et cortisol) qui activent certaines de tes fonctions corporelles et psychiques et en diminuent d’autres, par exemple:</p>
+    <ul><li> Ton corps est prêt à être plus performant,</li>
+    <li>Ta vigilance mentale s’aiguise, </li>
+    </ul><p>mais</p>
+    <ul><li>Tu perçois moins la douleur et certains détails de ton environnement / la situation,</li>
+    <li>et ta mémoire te joue des tours : elle garde en priorité ce qu’elle juge nécessaire à ta survie&nbsp;; elle se fixe sur ces détails et t'empêche de te concentrer sur autre chose (par ex : en salle d’examen, tu te rappelles où est la porte de sortie, mais tu ne trouves plus la formule mathématique…) .</li>
+    </ul>
+    <h3> En savoir plus</h3>
+    <p>D'après les recherches en neurobiologie de MacLean, le cerveau humain, dans son évolution, s’est développé de manière séquentielle : Premièrement le cerveau reptilien, puis le limbique et enfin le neocortex (Le Cerveau Triunique<strong>, </strong>MacLean P., Neurobiologiste, 1970).</p>
+    <p><img src="assets/img/cerveau_stress.png" alt="image du cerveau représentant son évolution avec le cerveau reptilien (survie, grandes fonctions, fuite, plaisir et peur) au dessus le cerveau limbique (mémoire et émotions, premiers apprentissages d'acquisition et instinct grégaire) enfin le cortex ( intelligences, créativité, solidarité)" width="400" height="320"></p>
+    <p>On aurait en quelques sortes 2 cerveaux&nbsp;: un logique et rationnel (cortex) et un émotionnel&nbsp; (reptilien-limbique) plus primitif. Ils sont étroitement liés et s’activent ensemble pour nous permettre de fonctionner correctement et d’avoir des réponses adaptées à notre environnement. (ex&nbsp;: se couvrir quand il fait froid, rire à une blague, fuir devant un danger etc….)</p>
+    <p><a href="http://www.youtube.com/embed/CO-b5Y8jo14?rel=0" onclick="window.open(this.href,'_blank');return false;">vidéo;le cerveau émotionnel: David Servan Schreiber <img src="/midcom-serveattachmentguid-e891e60ee52511de8ab9ed5784164e474e47/new_window.png" alt="Lien externe, nouvelle fenêtre" width="12" height="12"></a></p>
+    <p>Les techniques de gestion du stress telles que la relaxation, le sport etc… tendent à renforcer l’activation de ce système « créatif » en te permettant d'imaginer des solutions nouvelles aux situations auxquelles tu fais face.</p>
 
+    
+    <span id="symptomesdustress"></span>
+    <h2>Symptômes du stress</h2>
+    <h3>Quels symptômes?</h3>
+    <p>Le stress entraine des manifestations physiques, émotionnelles ou au niveau du comportement. Reconnaitre et comprendre les messages envoyés par le stress plutôt que chercher à lutter contre peut t'aider à avoir une meilleure connaissance de toi et rester ainsi aux commandes. Peut-être détectes-tu dans les listes suivantes ce qu’il t’arrive en période de stress&nbsp;?</p>
+
+    <h3> Au niveau physique</h3>
+
+    <ul><li>Maux de ventre/boule dans l’estomac</li>
+    <li>Mains moites/transpiration</li>
+    <li>Tensions dans la nuque ou le cou/boule dans la gorge</li>
+    <li>Maux de dos</li>
+    <li>Maux de tête </li>
+    <li>Bégaiements</li>
+    <li>Nausée/vertiges</li>
+    <li>Fatigue</li>
+    <li>Problèmes de sommeil</li>
+    <li>Allergies/maladies de peau</li>
+    <li>Alimentation augmentée ou diminuée</li>
+    <li>Petites maladies à répétition </li>
+    </ul>
+
+    <h3> Au niveau émotionnel</h3>
+    <ul><li>Peur</li>
+    <li>Inquiétude ++</li>
+    <li>Impatience</li>
+    <li>Irritabilité/nerfs à fleur de peau</li>
+    <li>Agressivité/colère</li>
+    <li>Sautes d'humeur/tristesse/dépression</li>
+    <li>Anxiété/paniques</li>
+    <li>Sentiment de vide</li>
+    <li>Diminution/perte de l’estime de soi</li>
+    <li>Troubles de mémoire</li>
+    <li>Perte du sens de l’humour</li>
+    </ul>
+
+    <h3> Au niveau du comportement</h3>
+
+    <ul><li>Absentéisme /tendance à s’isoler/difficultés dans les relations</li>
+    <li>Difficulté à terminer son travail/ faire plusieurs choses à la fois</li>
+    <li>Parler trop vite, trop fort</li>
+    <li>Agitation/agressivité /consommations à risque (drogues, jeux, écrans, nourriture…) </li>
+    <li>Difficultés à décider/indécision</li>
+    <li>Idées fixes<em>/</em><em> </em>perfectionnisme</li>
+    <li>Difficultés à se concentrer </li>
+    <li>Confusion/tourbillon d’idées dans la tête</li>
+    </ul>
 
 </section>
 
