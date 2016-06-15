@@ -18,12 +18,12 @@
                     <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
                         <li><a class="ici" href="/">Accueil</a></li>
-                        <li class=""><a href="actualites">Actualité</a></li>
-                        <li class=""><a href="#">Adresse</a></li>
-                        <li class=""><a href="#">Pose ta question</a></li>
-                        <li class=""><a href="#">Forum</a></li>
-                        <li class=""><a href="#">Urgence</a></li>
-                        <li class=""><a href="quizzs">Quizzs</a></li>
+                        <li><a class="" href="actualites">Actualité</a></li>
+                        <li><a class="" href="#">Adresse</a></li>
+                        <li><a class="" href="#">Pose ta question</a></li>
+                        <li><a class="" href="#">Forum</a></li>
+                        <li><a class="" href="#">Urgence</a></li>
+                        <li><a class="" href="quizzs">Quizzs</a></li>
                     </ul>
                 </div>
             </nav>

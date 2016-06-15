@@ -312,9 +312,13 @@ nav li {
 }
 
 
-a{text-decoration: none;}
+a{
+    text-decoration: none;
+}
 
-a:hover{text-decoration: none;}
+a:hover{
+    text-decoration: none;
+}
 
 @font-face {
   font-family: "Flaticon";
@@ -483,7 +487,6 @@ text-align: justify;
 }
 
 #log{
-
   display: none;
 }
-
+}

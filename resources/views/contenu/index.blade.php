@@ -140,4 +140,19 @@
 
 
 </section>
+
+<aside>
+    <h5>Zoom sur...</h5>
+    <div class="row">
+
+          <div class="card blue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+    </div>
+</aside>
 @endsection
