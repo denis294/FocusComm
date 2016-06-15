@@ -32,7 +32,8 @@
   top:0;
   margin-top: 0px;
   width: 100%;
-  height:1000px;
+  height:40%;
+  background-color: white;
 }
 
 #mavideo {
@@ -40,10 +41,23 @@
   top: 0;
   right: 0;
   bottom: 0;
-  margin-top: -10px;
   left: 0;
+  margin-left: -13px;
+  margin-bottom: -7px;
   width:100%;
   object-fit: cover;
+}
+
+.video-container{
+  margin-left: 0px;
+}
+
+#voilaCiao{
+  font-size: 30px;
+}
+
+#iconShow{
+  font-size: 8em!important;
 }
 
 .barTest{
@@ -110,6 +124,8 @@
   font-size: 20px!important;
 
 }
+
+
 
   #intro p{
 
