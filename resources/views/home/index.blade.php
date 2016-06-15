@@ -6,10 +6,8 @@
 				<script src="{{asset('assets/js/tp/main.js')}}"></script>
 
                 <section id="categories" class="row accueil categories">
-                                        <article id="intro">
-                    <h3 id="titleIntro">Qu'est ce que Ciao.ch ?</h3>
-                    <p id="introDescription"> ciao.ch est destiné aux jeunes romands de 11 à 20 ans.</p><p>
-12 rubriques et plus de 1700 fiches d’information rédigées pour toi sur des thématiques qui t’intéressent (clique sur les onglets du menu pour y accéder).</p>
+<article id="intro">
+                    <h3 id="titleIntro">Plateforme d’information, d’aide et d’échanges pour les 11-20 ans.</h3>
                     </article>
                 </section>
 
@@ -17,5 +15,11 @@
                     <nav id ="CategorieListe">
                     </nav>
                 </section>
+
+        <section class="test">
+            <div id="mavideo">
+                <video id="mavideo" controls src="{{asset('assets/img/video.mp4')}}">blablabla</video>
+            </div>
+        </section>
 
 @endsection
