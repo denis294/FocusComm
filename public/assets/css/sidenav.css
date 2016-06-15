@@ -3,15 +3,8 @@
      background-color: #ecf0f1 !important;
   }
 
-  #sidenav .side-nav{
-    position: fixed;
-    float: left;
-    margin:0;
-    height: 100%;
+  #sidenav .side-nav{ 
     top:120px !important;
-    bottom:0;
-    margin-right: 10em;
-
   } 
 
 
