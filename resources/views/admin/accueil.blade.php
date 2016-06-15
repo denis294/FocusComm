@@ -37,11 +37,13 @@
             </a>
         </div>
         <div class="col m4" id="compteDiv">
+                    <a href="/admin/compte/">
             <article class="categoriesAdmList categorieAdm" id="compte">
                 <div class="boite">
                     <h1 class="titreCategorieAdm">Compte</h1>
                 </div>
             </article>
+            </a>
         </div>
         <div class="col m4" id="autreDiv">
             <article class="categoriesAdmList categorieAdm" id="autre">

@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Closure;
 use Session;
+use App\Models\User;
 
 class AuthenticatePartner
 {
@@ -31,6 +32,8 @@ class AuthenticatePartner
             if($group->nom === 'participant'){
                 return $next($request);
             }
-        }
-        return redirect()->route('accesInterdit');
+        }/*
+        return redirect()->route('accesInterdit');*/
+        var_dump($groups);
+    }
 }

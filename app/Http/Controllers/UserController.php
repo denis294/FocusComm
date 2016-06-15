@@ -26,7 +26,7 @@ class UserController extends Controller
     public function monCompte(){
         $user_id = Session::get('user_id');
         $user = User::find($user_id);
-        return view('user/index')->with('user',$user)->with('badges',$user->badges)->with('region', $user->region);
+        return view('admin/compte/index')->with('user',$user)->with('badges',$user->badges)->with('region', $user->region);
     }
 
     /**
