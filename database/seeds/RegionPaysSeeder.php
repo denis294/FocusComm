@@ -55,6 +55,9 @@ class RegionPaysSeeder extends Seeder
         $groupeUser = Group::create([
             'nom' => 'user',
         ]);
+        $groupeParticipant = Group::create([
+            'nom' => 'participant',
+        ]);
          /**
 		 * Seeding User
          */
@@ -70,6 +73,14 @@ class RegionPaysSeeder extends Seeder
             'pseudo' => 'user',
             'email' => 'user@example.com',
             'motDePasse' => bcrypt('user'),
+            'dateNaissance' => '1997-04-09',
+            'sexe' => 'M',
+            'region_id' => $cantonVaud->id,
+        ]);
+           $partner = User::create([
+            'pseudo' => 'partner',
+            'email' => 'partner@example.com',
+            'motDePasse' => bcrypt('partner'),
             'dateNaissance' => '1997-04-09',
             'sexe' => 'M',
             'region_id' => $cantonVaud->id,
@@ -90,6 +101,7 @@ class RegionPaysSeeder extends Seeder
          */
         $groupeAdmin->users()->save($admin);
         $groupeUser->users()->save($user);
+        $groupeParticipant->users()->save($partner);
 
 
         // Attach Region in User

@@ -1,5 +1,5 @@
 @extends('layouts.masterAdmin')
-@section('title', 'Admin')
+@section('title', 'Ciao.ch - Administration - Actualités')
 
 @section('content')
 <script>
@@ -8,6 +8,9 @@ $(document).ready(function() {
     $("#ajouterActualiteAdmForm").show();
     $("#visualisationArticle").hide();
 });
+</script>
+<script>
+var categories = {!! $categories !!};
 </script>
 <main class="main">
 @if(count($errors) > 0)
@@ -38,6 +41,14 @@ $(document).ready(function() {
                     <div class="input-field col s12 l6">
                         <input id="dateArticleAAjouter" name="dateCreation" type="date" class="ajouterActuFormInput ajouterActuFormLabel">
                     </div>
+                </div>
+                <div id="categorie_id" class="loginPlateForm row">
+                    <label id="placeholderCategorie" class="labelLoginAdm col s12 m6" name="categorie_id">Categorie</label> <br>
+                    <select name="categorie_id" style="display:inline; width:300px;">
+                      	@foreach(json_decode($categories, true) as $value)
+                      		<option value="{{ $value['id'] }} "> {{ $value['nom'] }} </option>
+						@endforeach
+					</select>
                 </div>
                 <div class="row">
                     <label class="ajouterActuFormLabel col s12 l3" id ="choixMedia" for="test5">Choisir un média</label>
