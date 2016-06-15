@@ -9,7 +9,7 @@ $(function (){
         collection: categories
     });
     //$("#categories").append(v_categories.render());
-    $("section .contents").hide()
+    //$("section .contents").hide()
     var dom = v_categories.render();
     $("#categories").append(dom);
 
@@ -18,34 +18,34 @@ $(function (){
 
 // // //------vues du contenu-------------------------------------------------------
 
-        $('.lienCat').on('click', function() {
-
-            $("#contenu").empty();
-
-            //$("#categories").hide();
-             var id = $(this).attr('id');
-
-             var contenu = new ModelContenus(window[id]);
-            var v_contenu= new ViewContenus({
-                collection: contenu
-            });
-            var dom = v_contenu.render();
-            $("#contenu").append(dom);
-            console.log("coucou");
-
-//------affichage navigation latérale qui ne marche pas-------------------------------------------------------
-
-            var v_categoriesListe = new ViewCategories({
-                collection: categories
-            });
-
-            var categorieListe = v_categoriesListe.renderListCategorie();
-            $("#CategorieListe").append(categorieListe);
-
-
-            switchSection("#contenu");
-
-        });
+//        $('.lienCat').on('click', function() {
+//
+//            $("#contenu").empty();
+//
+//            //$("#categories").hide();
+//             var id = $(this).attr('id');
+//
+//             var contenu = new ModelContenus(window[id]);
+//            var v_contenu= new ViewContenus({
+//                collection: contenu
+//            });
+//            var dom = v_contenu.render();
+//            $("#contenu").append(dom);
+//            console.log("coucou");
+//
+////------affichage navigation latérale qui ne marche pas-------------------------------------------------------
+//
+//            var v_categoriesListe = new ViewCategories({
+//                collection: categories
+//            });
+//
+//            var categorieListe = v_categoriesListe.renderListCategorie();
+//            $("#CategorieListe").append(categorieListe);
+//
+//
+//            switchSection("#contenu");
+//
+//        });
 
 
 
