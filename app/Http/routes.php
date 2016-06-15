@@ -62,6 +62,9 @@ Use App\Models\User;
 		return view('login');
 	})->name('login');
 
+	Route::get('/register', 'RegisterController@index');
+	Route::post('/register', 'UserController@store');
+
 	// Pas autorisé
 	Route::get('/accesInterdit', function(){
 		return view('nonAutorise');

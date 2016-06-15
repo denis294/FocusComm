@@ -12,6 +12,9 @@ return [
         'deconnecte' => "Vous vous êtes déconnecté avec succès.",
         'restricted' => "Veuillez vous authentifier."
     ],
+    'compte' => [
+        'created' => "Compte créé avec succès. Vous pouvez vous connecter",
+    ],
     'bd' => [
         'error' => 'Erreur technique : :error',
     ],
