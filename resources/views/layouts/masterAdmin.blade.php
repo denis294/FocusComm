@@ -18,7 +18,7 @@
             <h5 class="loginAdmTitre">Plateforme administrateur</h5>
             </a>
             <div id="boutonDeconnexion">
-                <a href="/admin/">
+                <a href="/logout">
                     <button class="btn waves-effect waves-light" type="text" name="action">Déconnexion
                     </button>
                 </a>
