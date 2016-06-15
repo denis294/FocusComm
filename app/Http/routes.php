@@ -112,10 +112,10 @@ Use App\Models\User;
 
 		// User
 		Route::get('/admin/users/', 'UserController@index');
-		Route::delete('/user/{id}', 'UserController@destroy');
-		Route::get('/user/{id}', 'UserController@show');
-		Route::post('/user/', 'UserController@store');
-		Route::put('/user/{id}', 'UserController@update');
+		Route::delete('/admin/compte/{id}', 'UserController@destroy');
+		Route::get('/admin/compte/{id}', 'UserController@show');
+		Route::post('/admin/compte/', 'UserController@store');
+		Route::put('/admin/compte/{id}', 'UserController@update');
 
 		// Actualités
 		Route::get('/admin/actualites', 'ActualiteController@indexAdmin');
@@ -143,8 +143,6 @@ Use App\Models\User;
 		Route::get('/admin/regions/{id}/edit', 'RegionController@edit');
 		Route::put('/admin/regions/{id}', 'RegionController@update');
 		Route::delete('/admin/regions/{id}', 'RegionController@destroy');
-		// Users
-		Route::get('/admin/users/', 'UserController@index');
 
 		// Badges
 		Route::get('/admin/badges/', 'BadgeController@index');

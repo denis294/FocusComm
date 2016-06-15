@@ -25,6 +25,7 @@ return [
         'mauvaisMDP' => "Le mot de passe entré n'est pas le bon.",
         'noAdminAccess' => "Vous n'avez pas accès à l'interface administrateur !",
         'notLogin' => "Vous devez être connecté pour accéder à cette page.",
+        'edited' => "Votre compte a bien été modifié."
     ],
 
     'form' => [
@@ -33,6 +34,7 @@ return [
     'actu' => [
         'missing' => "L'actualité spécifiée n'existe pas.",
         'edited' => "Actualité éditée avec succès",
+        'created' => "Actualité créée avec succès",
     ],
     'badge' => [
         'missing' => "Le badge spécifié n'existe pas.",
