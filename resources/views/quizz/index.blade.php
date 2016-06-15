@@ -11,11 +11,13 @@ var categories = {!! $categories !!};
 
 
 <div class="contain2">
-    <h1 class="titleq">Quizz</h1>
+    <h1 class="titleq">Quiz</h1>
+    <p id="choixQ">Choisis une catégorie de quiz</p>
 
 
-<div id="liensCatQ" class="row" "categories">
-</div>
+    <div class="liensCatQ row categories">
+    </div>
+
 </div>
 
 @endsection

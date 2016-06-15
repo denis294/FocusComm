@@ -1,5 +1,7 @@
 $(function (){
 
+
+
     var questions = new ModelQuestions(QUESTIONS); //questions
 
     var v_questions = new ViewQuestions({

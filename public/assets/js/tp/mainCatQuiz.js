@@ -10,6 +10,6 @@ $(function (){
 
 
     var dom = v_categories.renderListCategorieQuiz();
-    $("#liensCatQ").append(dom);
+    $(".liensCatQ").append(dom);
 
 })

@@ -104,8 +104,9 @@ width: 800px;
   width: 100%;
   margin-left: -3%;
 
-
 }
+
+
 
 #choixQ{
 text-align: center;
@@ -113,6 +114,48 @@ font-size: 1.6em;
 padding-bottom: 6px;
 
 }
+
+
+
+
+.titreCatQ{
+  font-size: 1.4em;
+  padding-bottom: 6px;
+  padding-top: 25%;
+  display: block;
+  position: relative;
+
+
+
+
+}
+
+.blockArticle{
+  height: 150px;
+  width: 200px;
+  background-color: white;
+  text-align: center;
+  margin-left: 35%;
+  display: block;
+  position: relative;
+}
+
+.blockArticle:hover {
+background-color:#0580a3;
+color: white;
+}
+
+.titreCatQ:hover {
+color: white;
+}
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 58em), (max-device-width: 64em) {
