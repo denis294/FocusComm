@@ -1,0 +1,22 @@
+ body {
+    background-image: none !important;
+     background-color: #ecf0f1 !important;
+  }
+  
+  .side-nav{
+      z-index: 900;
+  }
+
+  #sidenav .side-nav{ 
+    top:120px !important;
+  } 
+
+
+.side-nav li.active {
+    background-color: #0580a3;
+    
+}
+
+.side-nav.fixed a.active{
+    color:#ecf0f1;
+}

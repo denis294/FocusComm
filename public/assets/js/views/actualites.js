@@ -1,7 +1,8 @@
 var ViewActualites = Pclia.ViewCollection.extend({
     events: {
         "click .fondnoir": "cacherViewActu",
-        "click .articleliee": "showLinkedArticle"
+        "click .articleliee": "showLinkedArticle",
+        "click .filter": "filterClickHandler"
     },
     initialize: function () {
         this.listenTo(this.collection, "add remove", this.render);
@@ -23,8 +24,7 @@ var ViewActualites = Pclia.ViewCollection.extend({
         $('html, body').css({
             'overflow': 'auto',
         });
-    }
-    ,
+    },
     showLinkedArticle: function (evt) {
         console.log($(evt.target));
         var idCurrent = $(evt.target).attr("data-actualite_id");
@@ -32,5 +32,23 @@ var ViewActualites = Pclia.ViewCollection.extend({
         $("#card_"+idCurrent).fadeOut();
         $("#card_"+idLinked).fadeIn();
         
+    },
+    
+    filterClickHandler: function (evt){
+        
+        var cat = $(evt.target).attr("data-cat");
+        this.rendu(cat);
+    },
+    
+    rendu:function(cat){
+       $(".card").hide();
+       $(".card").each(function(){
+           if($(".card").attr("data-categorie")===cat){
+               console.log($(".card").attr("data-categorie"));
+               $(".card").show();
+           }
+       });
+        
+        console.log(cat);
     }
 });
