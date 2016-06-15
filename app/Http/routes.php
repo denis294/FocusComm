@@ -33,12 +33,12 @@ Use App\Models\User;
 	});
 
 	Route::get('/argent', function(){
-		return view('contenu/argent')
+		return view('contenu/argent');
 	});
 
 	Route::get('/generique', function(){
 		return view('contenu/generique');
-	})
+	});
 
 	Route::get('/partner','AccesController@partner');
 	Route::post('/partner', 'AuthController@loginPartner');
