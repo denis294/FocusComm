@@ -1,10 +1,10 @@
 var CATEGORIES = [
 
     {
-        "titre": "Stress",
+        "nom": "Stress",
         "img": "stress.png",
         "id": "1",
-        "icon": "f100",
+        "icone": "f100",
         "id_lien": "STRESS",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -14,10 +14,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Estime de soi",
+        "nom": "Estime de soi",
         "img": "estime.png",
         "id": "2",
-        "icon": "f10C",
+        "icone": "f10C",
         "id_lien": "ESTIME",
 
         niveau2: [
@@ -31,10 +31,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Sexualité",
+        "nom": "Sexualité",
         "img": "sexualite.png",
         "id": "3",
-        "icon": "f107",
+        "icone": "f107",
         "id_lien": "SEXUALITE",
         niveau2: [
         {"niveau2": "sous-titre"},
@@ -58,10 +58,10 @@ var CATEGORIES = [
         ]
     },
         {
-        "titre": "Boire, fumer, se droguer",
+        "nom": "Boire, fumer, se droguer",
         "img": "boire.png",
         "id": "4",
-        "icon": "f10A",
+        "icone": "f10A",
         "id_lien": "BOIRE",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -71,10 +71,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Santé",
+        "nom": "Santé",
         "img": "sante.png",
         "id": "5",
-        "icon": "f105",
+        "icone": "f105",
         "id_lien": "SANTE",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -84,10 +84,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Manger-bouger",
+        "nom": "Manger-bouger",
         "img": "manger.png",
         "id": "6",
-        "icon": "f108",
+        "icone": "f108",
         "id_lien": "MANGER",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -97,10 +97,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Moi, toi et les autres",
+        "nom": "Moi, toi et les autres",
         "img": "moi.png",
         "id": "7",
-        "icon": "f10D",
+        "icone": "f10D",
         "id_lien": "MOI",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -110,10 +110,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Violences",
+        "nom": "Violences",
         "img": "violences.png",
         "id": "8",
-        "icon": "f10E",
+        "icone": "f10E",
         "id_lien": "VIOLENCE",
 
         niveau2: [
@@ -124,10 +124,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Formation et travail",
+        "nom": "Formation et travail",
         "img": "formation.png",
         "id": "9",
-        "icon": "f103",
+        "icone": "f103",
         "id_lien": "FORMATION",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -137,10 +137,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Argent",
+        "nom": "Argent",
         "img": "argent.png",
         "id": "10",
-        "icon": "f106",
+        "icone": "f106",
         "id_lien": "ARGENT",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -150,10 +150,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Religion et croyances",
+        "nom": "Religion et croyances",
         "img": "religion.png",
         "id": "11",
-        "icon": "f102",
+        "icone": "f102",
         "id_lien": "RELIGION",
         niveau2: [
             {"niveau2": "sous-titre"},
@@ -163,10 +163,10 @@ var CATEGORIES = [
         ],
     },
         {
-        "titre": "Discrimination et racisme",
+        "nom": "Discrimination et racisme",
        "img": "racisme.png",
         "id": "12",
-        "icon": "f101",
+        "icone": "f101",
         "id_lien": "DISCRIMINATION",
         niveau2: [
             {"niveau2": "sous-titre"},

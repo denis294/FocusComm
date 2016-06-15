@@ -1,5 +1,7 @@
 $(function (){
 
+
+
     var questions = new ModelQuestions(QUESTIONS); //questions
 
     var v_questions = new ViewQuestions({
@@ -32,17 +34,26 @@ $(window).on("addScore", function(e) {
 $("#affichageScore").hide();
 
 
-$('#finish').on('click', function() {
+$(window).on('end', function() {
+
+
 
     $("#questions").hide();
     $("#finish").hide();
+
+    $("#quizzEnd").show();
 
     $("#score").empty();
     $("#score").append(score);
     $("#total").empty();
     $("#total").append(total);
     $("#affichageScore").show();
+
+    if (score == total) {
+        alert("Bravo tu as obtenu un badge !")
+    };
 });
+
 
 //  var storage_score = new JsonStorage("score");
 
