@@ -15,7 +15,7 @@ var categories = {!! $categories !!};
     <p id="choixQ">Choisis une catégorie de quiz</p>
 
 
-    <div class="liensCatQ row categories">
+    <div class="liensCatQ row">
     </div>
 
 </div>
