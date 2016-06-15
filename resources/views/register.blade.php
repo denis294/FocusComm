@@ -74,17 +74,11 @@
                                       <label for="icon_telephone">Confirmation du mot de passe</label>
                                 </div>
                                 </div>
-
-
                             </br>
                             </br>
-
                                 <button class="btn waves-effect waves-light" type="submit" name="action">S'enregistrer
                                     <i class="material-icons left">perm_identity</i>
                                 </button>
-
-
-
                             </form>
                         </div>
                 </section>
