@@ -53,7 +53,7 @@
             <div id="log" class="col s4a">
                 <ul>
                 <li><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a></li>
-                <li>S'enregistrer</li>
+                <li><a href="/register">S'enregistrer</a></li>
             </div>
             @else
             <div class="col s4">

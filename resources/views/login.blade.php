@@ -30,7 +30,7 @@
         <div class="row">
           <div class="input-field col s12 m12 l12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input id="username" type="text" name="pseudo">
+            <input id="username" type="text" name="pseudo" value="{{old('pseudo')}}">
             <label for="username" class="center-align">Pseudo</label>
           </div>
         </div>
