@@ -15,6 +15,7 @@
     <body>
         <div class="bigDiv"></div>
             <div class="menuMobile">
+                                    <span class="cross"> Fermer</span>
                     <ul class="listeMenu">
                         <li class=""><a href="/">Accueil</a></li>
                         <li class=""><a href="actualites">Actualité</a></li>
@@ -26,7 +27,7 @@
                     </ul>
             </div>
             <div class="rechercheMobile">
-            <input id="search" type="search" placeholder=" Recherche ..."required>
+            <input id="search_menuMobile" type="search" placeholder=" Recherche ..."required>
             </div>
         <header class="row">
 
@@ -35,10 +36,7 @@
                     
                     <!--burger croix loupe gérer avec js-->
                     <span class="burger"></span>
-                    <span class="cross"> Fermer</span>
-                    <span class="loupe"></span
-                    
-                    
+                    <span class="loupe"></span>
                     <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
                         <li><a class="ici" href="/">Accueil</a></li>
@@ -53,11 +51,16 @@
             </nav>
             <div id="log" class="col s4a">
 
+                        <form method="post">
                         <span><h6 class="logg">Login :</h6>
-                        <input id="pseudo" type="text" required placeholder=" Pseudo">
+                        <input class="" id="pseudo" type="text" required placeholder=" Pseudo">
                         <input id="mdp" type="text" required placeholder=" Mot de passe">
-                        <a id="btn_login"class="waves-effect waves-light btn"> login</a><br/>
-                        <a id="sign">Créer un compte</a>
+
+                        <button id="btn_login" class="btn waves-effect waves-light" type="submit" name="action">Login
+                            <i class="material-icons right"></i>
+                        </button>
+                        </form>
+                        </br><a id="sign">Créer un compte</a>
                         <input id="search" type="search" required placeholder=" Recherche"></span>
             </div>
         </header>
