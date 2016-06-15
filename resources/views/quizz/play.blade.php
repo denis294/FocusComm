@@ -24,4 +24,18 @@ var questions = {!! json_encode($questions)!!};
 </section>
 
 <a href="/quizzs/"><p id="backLink">Retour aux quizs</p></a>
+
+
+<section id="DonneesEnvoie">
+
+    <form method="post" action="traitement.php">
+        <div id="quiz_id"></div>
+
+
+
+
+    </form>
+
+</section>
+
 @endsection

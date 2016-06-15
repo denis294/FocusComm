@@ -17,10 +17,11 @@ $(function (){
 
 var score = 0;
 
-var total = questions.length;
+var total = questionsQ.length;
 
 $(".messageJuste").hide();
 $(".messageFaux").hide();
+
 
 
 
@@ -47,10 +48,18 @@ $(window).on('end', function() {
     $("#total").append(total);
     $("#affichageScore").show();
 
-    if (score == total) {
-        alert("Bravo tu as obtenu un badge !")
-    };
+    // if (score == total) {
+    //     alert("Bravo tu as obtenu un badge !")
+    // };
 });
+
+
+
+
+
+
+
+
 
 
 //  var storage_score = new JsonStorage("score");
