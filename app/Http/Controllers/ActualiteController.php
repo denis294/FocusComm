@@ -83,7 +83,8 @@ class ActualiteController extends Controller
           return redirect()->back()->withInput()->withErrors($validate);
        }
        $actu->update($fields);
-       return $actu;
+       Message::success('actu.edited');
+       return redirect('/admin/actualites');
     }
     
     // Supprime une actualité

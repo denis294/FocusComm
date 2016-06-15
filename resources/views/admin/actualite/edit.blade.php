@@ -21,7 +21,7 @@ var allActus = {!! $allActus !!};
 
 @foreach(json_decode($actu, true) as $value)
 <main class="main">
-<form action="/admin/actualites/{{ $value['id'] }}">
+<form method="POST" action="{{url('/admin/actualites/'.$value['id'])}}">
 <input type="hidden" name="_method" value="PUT">
 <!-- Titre -->
 <div class="row">
@@ -42,7 +42,7 @@ var allActus = {!! $allActus !!};
                 <div class="row">
                     <div class="input-field col s12 l6">
                         <label for"dateCreation">Date</label>
-                        <input id="dateArticleAAjouter" name="dateCreation" type="date" class="datepicker">
+                        <input id="dateArticleAAjouter" name="dateCreation" type="date" class="datepicker" value="{{$value['dateCreation']}}">
 
                     </div>
                 </div>
