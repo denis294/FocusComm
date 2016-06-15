@@ -63,9 +63,28 @@ body{
 
 
 
-/*.QuizList{
-  margin-left: 17%;
-}*/
+.Msg{
+  width: 100%;
+
+  background-color: #0580a3;
+  padding: 50px;
+  color:white;
+  margin: 0 auto;
+
+
+}
+
+.infoQuiz{
+
+  width: 54%;
+  padding: 10px;
+
+}
+
+.btnContinue{
+  color: white;
+  background-color: white;
+}
 
 
 #quizozo{

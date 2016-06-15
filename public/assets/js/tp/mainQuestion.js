@@ -2,7 +2,7 @@ $(function (){
 
 
 
-    var questionsQ = new ModelQuestions(questions); //questions
+    var questionsQ = new ModelQuestions(QUESTIONS); //questions
 
     var v_questions = new ViewQuestions({
         collection: questionsQ
@@ -13,16 +13,14 @@ $(function (){
 
 //---------------------------------------------
 
-     // $("#questions form").hide();
-
-     //this.$("#questions form").show();
-
-     // $("#questions form:first-child").show();;
 
 
 var score = 0;
 
 var total = questions.length;
+
+$(".messageJuste").hide();
+$(".messageFaux").hide();
 
 
 
