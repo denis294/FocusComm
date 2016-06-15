@@ -35,6 +35,7 @@ return [
         'missing' => "L'actualité spécifiée n'existe pas.",
         'edited' => "Actualité éditée avec succès",
         'created' => "Actualité créée avec succès",
+        'deleted' => "Actualité supprimée avec succès",
     ],
     'badge' => [
         'missing' => "Le badge spécifié n'existe pas.",

@@ -32,8 +32,7 @@ class AuthenticatePartner
             if($group->nom === 'participant'){
                 return $next($request);
             }
-        }/*
-        return redirect()->route('accesInterdit');*/
-        var_dump($groups);
+        }
+        return redirect()->route('accesInterdit');
     }
 }

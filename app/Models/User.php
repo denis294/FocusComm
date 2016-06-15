@@ -56,11 +56,11 @@ class User extends Model
     }
     public function hasRole($role, $serapp){
         if ($serapp instanceof ServiceApplicatif){
-            $serapp = $resrc->nom;
+            $serapp = $serapp->nom;
         }
-        $groups = $this->groups();
+        $groups = $this->groups;
         foreach ($groups as $group) {
-            if($group->hasRole($role, $resrc)){
+            if($group->hasRole($role, $serapp)){
                 return true;
             }
         }
