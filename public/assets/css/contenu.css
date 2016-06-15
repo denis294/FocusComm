@@ -8,8 +8,16 @@
     clear:both;
     margin: auto;
     margin-left: 300px;
-    padding:auto;
+    padding-right:20px;
     width: 70%;
+}
+
+#contenu li{
+     list-style-type: circle;
+     
+}
+#contenu ul{
+    padding-left: 50px;
 }
 
 aside{
