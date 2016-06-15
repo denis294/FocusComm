@@ -8,6 +8,7 @@ use Session;
 use Request;
 use Redirect;
 use App\Lib\Message;
+use App\Models\Group;
 
 class UserController extends Controller
 {
@@ -47,7 +48,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {       
-        $fields = Request::only('pseudo', 'email', 'motDePasse', 'age', 'sexe', 'region_id');
+        $fields = Request::only('pseudo', 'email', 'motDePasse', 'dateNaissance', 'sexe', 'region_id');
         $validate = User::validate($fields);
         if ($validate->fails()) {
           return redirect()->back()->withInput()->withErrors($validate);
@@ -59,8 +60,11 @@ class UserController extends Controller
         }
         $user = new User($fields);
         $user->motDePasse = bcrypt($user->motDePasse);
+        $group = Group::where('nom', 'user')->first();
         $user->save();
-        return $user;
+        $group->users()->save($user);
+        Message::success('compte.created');
+        return redirect()->route('login');
     }
 
     /**

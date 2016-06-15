@@ -4,12 +4,12 @@ namespace App\Models;
 
 class User extends Model
 {
-    protected $fillable = ['pseudo','email','motDePasse','age','sexe','region_id'];
+    protected $fillable = ['pseudo','email','motDePasse','dateNaissance','sexe','region_id'];
     protected static $rules = [
         'pseudo' => 'String|max:80|required',
         'email' => 'E-mail|required',
         'motDePasse' => 'String|min:6|required',
-        'age' => 'Integer|required',
+        'dateNaissance' => 'required',
         'sexe' => 'String|required|max:1',
         'region_id' => 'Integer|required',
     ];

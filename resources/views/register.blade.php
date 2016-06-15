@@ -13,39 +13,59 @@
 
                     <h3>S'inscrire sur Ciao.ch</h3>
                         <div class="row">
-                            <form class="col s12">
+                       @if (count($errors) > 0)
+                <div class="card-panel red lighten-4">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+                            <form class="col s12" method="post" id="form">
                                 <div class="partie1 row">
                                 <div class="input-field col s12 m6">
                                       <i class="material-icons prefix">account_circle</i>
-                                      <input id="icon_prefix" type="text" name="pseudo "class="validate">
+                                      <input id="icon_prefix" type="text" name="pseudo" class="validate" value="{{old('pseudo')}}">
                                       <label for="icon_prefix">Pseudo</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                       <i class="material-icons prefix">mail</i>
-                                      <input id="icon_telephone" name="email" type="tel" class="validate">
+                                      <input id="icon_telephone" name="email" type="tel" class="validate" value="{{old('email')}}">
                                       <label for="icon_telephone">Adresse email</label>
                                 </div>
                                 </div>
                             </br>
                                 <div>
                                 <label class="lab">date de naissance</label> </br>
-                                <input type="date" name="dateNaissance" class="datepicker">
+                                <input type="date" name="dateNaissance" class="datepicker" value="{{old('dateNaissance')}}" form="form">
                                 </div>
                                 <div>
                                 </br>
                                 <label class="lab">Sexe</label> </br>
                                 </br>
                                 <p class="genre">
-                                  <input name="sexe" type="radio" id="test1" />
+                                  <input name="sexe" type="radio" id="test1" value="F"/>
                                   <label for="test1">Fille</label>
-                                  <input name="sexe" type="radio" id="test2" />
+                                  <input name="sexe" type="radio" id="test2" value="M"/>
                                   <label for="test2">Garçon</label>
                                 </p>
+                                </div>
+                                 <div class="partie1 row">
+                                   <div class="input-field col s12">
+                                      <select name="region_id">
+                                        <option value="" disabled selected>Sélectionnez une région</option>
+                                        @foreach ($regions as $region)
+                                          <option value="{{$region->id}}">{{$region->nom}}</option>
+                                        @endforeach
+                                      </select>
+                                      <label>Régions</label>
+                                    </div>
                                 </div>
                                 <div class="partie1 row">
                                 <div class="input-field col s6">
                                       <i class="material-icons prefix">vpn_key</i>
-                                      <input id="icon_prefix" type="text" name="motDePasse"class="validate">
+                                      <input id="icon_prefix" type="text" name="motDePasse" class="validate" >
                                       <label for="icon_prefix">Mot de passe</label>
                                 </div>
                                 <div class="input-field col s6">
@@ -54,6 +74,7 @@
                                       <label for="icon_telephone">Confirmation du mot de passe</label>
                                 </div>
                                 </div>
+
 
                             </br>
                             </br>
