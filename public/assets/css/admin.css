@@ -111,6 +111,15 @@ cursor: pointer;
   height:200px;
   width: 200px;
 }
+.boite:hover{
+background-color: #ecf0f1;
+  height:200px;
+  width: 200px;
+}
+
+.boite:hover h1{
+  color:rgb(5,128,163);
+}
 
 .btn {
   display: inline-block;

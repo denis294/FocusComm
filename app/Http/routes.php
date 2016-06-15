@@ -1,5 +1,5 @@
 <?php
-
+Use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -18,18 +18,29 @@
 */
 	// Accueil
 	Route::get('/', function () {
+		if(!Session::has('user_id'))
     	return view('home/index');
+    	else
+    	$user = User::find(Session::get('user_id'));
+    	return view('home/index')->with('pseudo', $user->pseudo);
+
 	});
 
 	Route::post('/', 'AuthController@login');
 
 	Route::get('/stress', function () {
-    	return view('contenu/index');
+    	return view('contenu/stress');
 	});
 
-	Route::get('/partner', function (){
-		return view('partner/index');
+	Route::get('/argent', function(){
+		return view('contenu/argent');
 	});
+
+	Route::get('/generique', function(){
+		return view('contenu/generique');
+	});
+
+	Route::get('/partner','AccesController@partner');
 	Route::post('/partner', 'AuthController@loginPartner');
 
 	// Actualité
@@ -46,7 +57,15 @@
 	
 
 	// Login
-	Route::get('/login', 'AuthController@login')->name('login');
+	Route::post('/', 'AuthController@login');
+	Route::get('/login', function(){
+		return view('login');
+	})->name('login');
+
+	// Pas autorisé
+	Route::get('/accesInterdit', function(){
+		return view('nonAutorise');
+	})->name('accesInterdit');
 /*
 |------------------------------------------------------------
 */
@@ -64,9 +83,7 @@
 	});
 
 	// Administration
-	Route::get('/admin', function () {
-    	return view('admin/index');
-	});
+	Route::get('/admin','AccesController@admin');
 	Route::post('/admin', 'AuthController@loginAdmin');
 /*
 |------------------------------------------------------------

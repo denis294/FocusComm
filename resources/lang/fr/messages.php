@@ -7,6 +7,11 @@
  */
 
 return [
+    'acces' => [
+        'notLogin' => "Vous n'êtes pas connecté !",
+        'deconnecte' => "Vous vous êtes déconnecté avec succès.",
+        'restricted' => "Veuillez vous authentifier."
+    ],
     'bd' => [
         'error' => 'Erreur technique : :error',
     ],
