@@ -14,10 +14,7 @@
 		font-size:25px!important;
 }
 
-#ecr{
 
-	color:white!important;
-}
 
 .introPartner{
 
@@ -27,8 +24,7 @@
 .option{
 	position: absolute;
 	left: 0;
-	margin-left: 200px;
-	margin-bottom: 100px;
+	margin-left: 0%;
 	width:auto;
 	display:inline;
 }
@@ -79,10 +75,7 @@ th{
 .quizCategorie{
 
 	width:300px;
-	height:auto;
 }
-
-
 
 .BoutonAjtR{
 
@@ -218,74 +211,9 @@ li:before{
 	display: none;
 }
 
-.divTitre{
-	display: inline;
-	top:0;
-	position: absolute;
-	margin-left: 10px;
-	margin-top: 120px;
-}
-
-.divCat{
-	display: inline;
-	top:0;
-	position: absolute;
-	margin-left: 400px;
-	margin-top: 120px;
-	color:black!important;
-}
-
-.FormulaireQuiz label {
-
-		color:black!important;
-}
-
-.qList{
-	margin-top: 120px;
-	border-top: 1px solid #890007;
-}
-
-.txtJuste {
-
-	color:green;
-	width:100%!important;
-	height:100%!important;
-	font-size: 25px!important;
-
-}
-
-.txtFaux{
-
-	color:#890007;
-	width:100%!important;
-	height:100%!important;
-	font-size: 25px!important;
-}
-
-.j {
-
-	color:green;
-
-}
-
-.f{
-
-	color:#890007;
-}
-
-.question{
-	border-bottom: 1px solid #890007 ;
-	margin-bottom: 10px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.NomQuiz{
-	display: inline;
-}
 
 .titreQuiz{
-	width:90%!important;
+	width:30%!important;
 	height:46px!important;
 	font-size:25px!important;
 }
