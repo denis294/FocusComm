@@ -106,6 +106,7 @@ class RegionPaysSeeder extends Seeder
         $groupeAdmin->users()->save($admin);
         $groupeUser->users()->save($user);
         $groupeParticipant->users()->save($partner);
+        $groupeParticipant->users()->save($admin);
 
 
         // Attach Region in User
