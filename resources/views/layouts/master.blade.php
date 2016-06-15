@@ -6,24 +6,48 @@
     <script src="{{asset('assets/js/packJs.php')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    <script src="{{asset('assets/js/tp/mainResponsiv.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('assets/css/responsiv.css')}}">
 
      <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <header class="row">
-
-             <nav class="col s8">
-                <div class="nav-wrapper">
-                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">Sexualité</h5></a>
-                    <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a class="ici" href="/">Accueil</a></li>
+        <div class="bigDiv"></div>
+            <div class="menuMobile">
+                    <ul class="listeMenu">
+                        <li class=""><a href="/">Accueil</a></li>
                         <li class=""><a href="actualites">Actualité</a></li>
                         <li class=""><a href="#">Adresse</a></li>
                         <li class=""><a href="#">Pose ta question</a></li>
                         <li class=""><a href="#">Forum</a></li>
                         <li class=""><a href="#">Urgence</a></li>
                         <li class=""><a href="quizzs">Quizzs</a></li>
+                    </ul>
+            </div>
+            <div class="rechercheMobile">
+            <input id="search" type="search" placeholder=" Recherche ..."required>
+            </div>
+        <header class="row">
+
+             <nav class="col m8 s12">
+                <div class="nav-wrapper">
+                    
+                    <!--burger croix loupe gérer avec js-->
+                    <span class="burger"></span>
+                    <span class="cross"> Fermer</span>
+                    <span class="loupe"></span
+                    
+                    
+                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li><a class="ici" href="/">Accueil</a></li>
+                        <li><a class="" href="actualites">Actualité</a></li>
+                        <li><a class="" href="#">Adresse</a></li>
+                        <li><a class="" href="#">Pose ta question</a></li>
+                        <li><a class="" href="#">Forum</a></li>
+                        <li><a class="" href="#">Urgence</a></li>
+                        <li><a class="" href="quizzs">Quizzs</a></li>
                     </ul>
                 </div>
             </nav>
@@ -37,54 +61,42 @@
                         <input id="search" type="search" required placeholder=" Recherche"></span>
             </div>
         </header>
+        @yield('sidenav')
         <main class="main">
         @yield('content')
         </main>
+    </body>
 
-        <footer class="page-footer">
-          <div class="container foot">
+
+<footer class="page-footer">
+          <div class="container">
             <div class="row">
-            <div class=" sectionSoutien col s6b">
-            <h6 class="row">Avec le soutien de </br></br>
-            <span class="lesSoutiens col s12">
-                <span class="row" >
-                    <img class="col s4" src="{{asset('assets/img/mecenes_logo_loro.gif')}}">
-                    <img class="col s4" src="{{asset('assets/img/mecenes_logo_oakfoundation.gif')}}">
-                    <span class="col s4">
-                        <span class="row ccp" >
-                        Soutenez CIAO </br>CCP-10-5261-6
-                        </span>
-                    </span>
-                    </span>
-                </span>
-            </h6>
-            <h6 class="row parr">
-                PARRAINS : Fondation Otto Beishein - Vaudoise Assurance
-
-            </h6>
-            </div>
-              <div class="sectionDispo col s2b">
-                <h6 class="white-text">Application Ciao.ch disponible sur
-            </br></br>
-            <span class="lesSoutiens">
+              <div class="col l3 s12">
+                <h5>Soutenez CIAO</h5>
+                <p class="text-lighten-4">CCP 10-5261-6</p>
+                <img src="{{asset('assets/img/mecenes_logo_loro.gif')}}">
+                <img src="{{asset('assets/img/mecenes_logo_oakfoundation.gif')}}">
+              </div>
+              <div class="col l3 s12 android">
+                <p class="text-lighten-4">Application Ciao.ch disponible sur</p>
                 <a href="https://play.google.com/store/apps/details?id=com.BleuVert.Ciao"><img src="{{asset('assets/img/google-play-badge.png')}}"></a>
-            </span>
-              </br></h6></div>
-              <div class="col s4e">
-                <h6>
-                <span>
-                    CIAO c'est...</br>
-                    Une association</br>
-                    Un site internet créé en 1997, certifié accessible et HON</br>
-                    Une collaboration avec 15 institutions partenaires</br>
-                    Des sites partenaires : feelok.ch et tschau.ch</br>
-                    En 2015 plus de 13 000 visiteurs par semaine en moyenne, 2000 000 de pages vues et 2848 questions posées
-                </span>
-                </h6>
-
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5>CIAO c'est...</h5>
+                <ul>
+                  <li><a class="white-text text-lighten-3" href="http://association.ciao.ch/">Une association</a></li>
+                  <li><a class="white-text text-lighten-3" href="#!">Une collaboration avec 15 institutions partenaires
+                  </a></li>
+                  <li>Des sites partenaires : <a class="grey-text text-lighten-3" href="http://www.feelok.ch/">feelok.ch</a> et <a class="grey-text text-lighten-3" href="http://www.tschau.ch/">tschau.ch</a></li>
+                </ul>
               </div>
             </div>
           </div>
-        </footer>
-    </body>
+            <div class="footer-copyright">
+              <div class="container">
+                PARRAINS : Fondation Otto Beishein - Vaudoise Assurance
+              </div>
+            </div>
+</footer>
+ 
 </html>

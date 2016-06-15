@@ -17,9 +17,12 @@ Card Actualité
     padding: 20px;
     
 }*/
+
+
+
 body{
-    background-image: none !important;
-     background-color: #ecf0f1 !important;
+  background-image: none !important;
+  background-color: #ecf0f1 !important;
 }
 
 .card .card-content p{
@@ -94,10 +97,9 @@ Actualité
 } 
 
 .actualite{
-    
     padding: 10px;
     position: absolute;
-    top: 0;
+    top:140px;
     bottom: 0;
     right:0;
     left: 0;

@@ -30,7 +30,8 @@ var ViewQuestion = Pclia.View.extend({
     next: function() {
         $(".questionsQ", this.$el).hide();
         if (this.$el.next().length == 0) {
-            $("#quizzEnd").show();
+
+            $(window).trigger('end');
         } else {
             $(".questionsQ", this.$el.next()).show();
         }

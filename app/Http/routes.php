@@ -25,6 +25,11 @@
     	return view('contenu/index');
 	});
 
+	Route::get('/partner', function (){
+		return view('partner/index');
+	});
+	Route::post('/partner', 'AuthController@loginPartner');
+
 	// Actualité
 	Route::get('/actualites/', 'ActualiteController@index');
 
@@ -84,6 +89,7 @@
 		Route::get('/admin/logout', 'AuthController@logoutAdmin');
 
 		// User
+		Route::get('/admin/users/', 'UserController@index');
 		Route::delete('/user/{id}', 'UserController@destroy');
 		Route::get('/user/{id}', 'UserController@show');
 		Route::post('/user/', 'UserController@store');
@@ -143,6 +149,14 @@
 /*
 |----------------------------------------------------------------------------------------------
 */
+Route::group(['middleware' => ['authPartner']], function () {
+	Route::get('/partner/logout', 'AuthController@logoutPartner');
+	Route::get('/partner/quizz', 'QuizzController@MyQuizz');
+	Route::get('/partner/quizz/create', function(){
+		return view('/partner/quiz/create');
+	});
+	Route::post('/partner/quizz/' ,'QuizzController@store');
 
+});
 
 

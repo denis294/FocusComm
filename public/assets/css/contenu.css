@@ -1,0 +1,19 @@
+#contenu, aside{
+    display:inline-block;
+    vertical-align: top;
+}
+
+#contenu {
+    border-right: #666 solid 1px;
+    clear:both;
+    margin: auto;
+    margin-left: 300px;
+    padding:auto;
+    width: 70%;
+}
+
+aside{
+    position: fixed;
+    padding-left: 30px;
+    margin: auto;
+}

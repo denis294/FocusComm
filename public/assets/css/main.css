@@ -1,5 +1,11 @@
+/** Clean Materialize **/
+nav, footer.page-footer{
+background-color: #0580a3;
+}
+
 body, html {
     height: 100%;
+    padding-top:70px;
 }
 
 * {
@@ -19,6 +25,42 @@ body, html {
   font-weight: normal;
   font-style: normal;
 }
+
+header{
+  margin-bottom: 100px;
+  position: fixed;
+  background:#0580a3;
+  color:white;
+  width:100%;
+    top:0;
+    padding: 0;
+    height:120px;
+    z-index: 998;
+
+}
+footer{
+  color:#ecf0f1;
+  padding-left: 240px;
+}
+.android{
+  padding-top: 20px !important;
+}
+.android img{
+  height:80px;
+}
+
+
+
+/*footer collé*/
+  /*body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }*/
 
 /*suppression de la marge en bat des .row*/
 
@@ -43,70 +85,12 @@ font-size: 3em;
   text-align: center;
 }
 
-.row.parr{
-
-  margin-top: -10%;
-  height:1em;
-}
-
-.container.foot{
-
-  height: 100%;
-  background-color: #0580a2;
-}
 
 .categroriesList{
 
   margin-left: 30%;
 }
 
-.sectionSoutien{
-border-right: solid 1px white ;
-height: auto;
-margin-top: -11px;
-}
-
-.sectionDispo{
-
-border-right: solid 1px white ;
-margin-top: -11px;
-
-}
-
-.sectionDispo img{
-
-width:200px;
-height:100px;
-display: inline;
-}
-
-.finan{
-
-  margin-top: -10%;
-}
-.s6b{
-  left:0;
-  margin-left: 2%;
-  position: absolute;
-  color:white;
-  width:30%;
-
-}
-
-.s2b{
-
-  width:30%;
-
-}
-
-.s4e{
-
-  width:42%;
-  margin-top: -10px;
-  position: absolute;
-  right: 0;
-
-}
 
 h1 {
     font-size: 4.2rem;
@@ -114,46 +98,7 @@ h1 {
     margin: 4.1rem 0 0.68rem 0 !important;
 }
 
-.s4e h6{
-font-size: 13px!important;
-}
 
-.financeSoutien{
-
-  height:10px;
-}
-
-.lesSoutiens{
-
-  display: inline;
-  margin-top: 10px;
-  position: relative;
-}
-
-.soutien{
-
-  display: inline;
-}
-
-.sb5 img{
-
-  display: inline;
-}
-
-.s2b{
-
-  margin-left: 30%;
-}
-
-.s2b img{
-
-  display: inline;
-}
-
-.container .row{
-
-margin-left: 0rem !important; 
-}
 
 
 body{
@@ -202,24 +147,7 @@ body{
 }
 
 
-header{
-  background:#0580a3;
-  color:white;
-  width:100%;
-    margin-top:0%;
-    padding: 0;
-    height:120px;
-}
 
-footer{
-
-  margin-bottom: 0%;
-  width: 100%;
-  bottom:0;
-  position: relative;
-  padding-top: 10px;
-
-}
 
 #intro{
 
@@ -285,7 +213,7 @@ nav ul {
 
 }
 nav li a{
-  line-height: 74px;
+  line-height: 20px;
 }
 
 div #log{
@@ -300,6 +228,9 @@ div #log{
 #log{
   font-size: 12px;
   margin-top: 1%;
+}
+div #log input{
+height: 30px;
 }
 .logg{
 
@@ -330,18 +261,24 @@ div #log{
 
 #pseudo{
   display: inline !important;
-  width:130px;
+  width:120px;
   top:0;
   right:0;
   background-color: #0698c1;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 
 
 #mdp{
   margin-left: 4%;
   display: inline !important;
-  width:130px;
+  width:120px;
   background-color: #0698c1;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 
 #search{
@@ -352,6 +289,9 @@ div #log{
   margin-right :1.8%;
   position:absolute;
   margin-top: 1%;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
 }
 nav ul a {
 
@@ -390,9 +330,13 @@ nav li {
 }
 
 
-a{text-decoration: none;}
+a{
+    text-decoration: none;
+}
 
-a:hover{text-decoration: none;}
+a:hover{
+    text-decoration: none;
+}
 
 @font-face {
   font-family: "Flaticon";
@@ -501,13 +445,7 @@ body{
     height:5%;
 }
 
-footer{
 
-  color:white;
-  height: auto;
-  z-index: 1;
-  bottom:0;
-}
 
 #categorie{
   margin-left: 20%
@@ -551,6 +489,7 @@ footer{
     background-image: url("");
   }
 
+
   #intro p{
 
 width:80%;
@@ -567,8 +506,6 @@ text-align: justify;
 }
 
 #log{
-
   display: none;
 }
-
 }
