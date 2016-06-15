@@ -18,6 +18,16 @@ Card Actualité
     
 }*/
 
+/* body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }*/
+
 
 
 body{
@@ -81,7 +91,7 @@ Actualité
     bottom: 0;
     right:0;
     left: 0;
-    z-index:3;
+    z-index:903;
     padding: 10px;
     }
 
@@ -105,7 +115,7 @@ max-height: 100%;
     top:140px;
     bottom: 0;
     display: block;
-    z-index:4;    
+    z-index:904;    
     max-width:50em;
     margin: 0 auto;
     margin-bottom: 30px;
