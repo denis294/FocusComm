@@ -28,7 +28,7 @@ class ActualiteController extends Controller
    
 	public function create()
   {
-    return view('admin/actualite/formulaire')->with('categories', Categorie::all());
+    return view('admin/actualite/formulaire')->with('categories', Categorie::all())->with('news', Actualite::all());
   }
     
     // Enregistre une actualité dans la base de données
@@ -47,7 +47,8 @@ class ActualiteController extends Controller
        $actu = new Actualite($fields);
        $user = User::find(Session::get('user_id'));
        $user->actualites()->save($actu);
-       return $actu;
+       Message::success('actu.created');
+       return redirect('/admin/actualites');
     }
 	
 	// Affiche une actualité précise
