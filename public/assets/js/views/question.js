@@ -1,7 +1,9 @@
 var ViewQuestion = Pclia.View.extend({
     events: {
         "click .buttonQ": "validate",
-        "click #continue": "next"
+        // "click #continue": "next",
+        "click .GetMessage": "next"
+
     },
     initialize: function () {
         this.listenTo(this.model, "change", this.render);
@@ -20,14 +22,21 @@ var ViewQuestion = Pclia.View.extend({
         console.log(scoreQ);
         if (scoreQ == "true") {
             $(window).trigger('addScore');
-            alert("Bonne réponse !")
+            this.$(".messageJuste").show();
+            //alert("Bonne réponse !")
         } else {
-            alert("Mauvaise réponse :( ")
+            this.$(".messageFaux").show();
+            //alert("Mauvaise réponse :( ")
         };
+        $(".questionsQ").hide();
 
     },
 
     next: function() {
+
+        $(".messageJuste").hide();
+        $(".messageFaux").hide();
+
         $(".questionsQ", this.$el).hide();
         if (this.$el.next().length == 0) {
 
