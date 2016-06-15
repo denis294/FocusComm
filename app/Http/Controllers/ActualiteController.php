@@ -60,13 +60,13 @@ class ActualiteController extends Controller
        }
        return $actus;
     }
+    // Formulaire d'édition d'actualité
     public function edit($id)
     {
-
         
-            $actu = DB::table('actualites')->where('id', '=', $id)->get();
+    $actu = DB::table('actualites')->where('id', '=', $id)->get();
     $actu = json_encode($actu);
-    return view('admin/actualite/edit')->with('actu', $actu);
+    return view('admin/actualite/edit')->with('actu', $actu)->with('allActus', Actualite::all())->with('categories', Categorie::all());
     }
     
     // Met à jour une actualité

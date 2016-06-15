@@ -45,7 +45,7 @@
             <a class="btn-floating btn-large waves-effect waves-light green BoutonAjtR boutonAjouterReponse" id="boutonAjouterReponse1" data-cmptTitre="1" ><i class="material-icons">add</i></a>
             </br></br>
             <div class="row">
-                <label class="label_txtSi">Texte si réponse juste</label>
+                <label class="label_txtSi">Texte si réponse <span class="j"> juste<span></label>
                   <div class="row">
                     <div class="input-field col s6">
                       <i class="material-icons prefix">mode_edit</i>
@@ -56,7 +56,7 @@
                 </form>
               </div>
             <div class="row">
-                <label class="label_txtSi">Texte si réponse fausse</label>
+                <label class="label_txtSi">Texte si réponse<span class="f"> fausse<span></label>
                   <div class="row">
                     <div class="input-field col s6">
                       <i class="material-icons prefix">mode_edit</i>
@@ -71,10 +71,9 @@
         <span class="option">
 
             <a class="waves-effect waves-light btn" id="boutonAjouterQuestion"><i class="material-icons left" type="submit">done</i>ajouer une question</a>
-             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+             </br><button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
-            <a class="waves-effect waves-light btn BtnBackQuiz"><i class="material-icons left">call_missed</i>retour</a>
 
         </span>
         
