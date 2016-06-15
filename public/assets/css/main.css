@@ -322,6 +322,7 @@ nav li {
   text-decoration: none;
   display:inline;
   margin-left:1%;
+  height:300px ! important;
   width:auto !important;
 }
 
