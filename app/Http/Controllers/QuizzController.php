@@ -188,7 +188,29 @@ class QuizzController extends Controller
       }
       return view ('quizz/play')->with('quizz', $quizz)->with('badges',$quizz->badge)->with('questions',$quizz->questions()->with('reponses')->get());
     }
-
+	
+	// Débloque un badge
+	public function debloqueBadge($id){
+    	
+    	// Obtient le user id de l'User connecté
+    	$user_id = Session::get('user_id');
+    	$user = User::find($user_id);
+    	
+    	// Obtient le quizz en question
+    	$quizz = Quizz::find($id);
+    	
+    	// Obtient le badge lié au quizz
+    	$badge = DB::table('badge')->where('id', '=', $quizz->id)->get();
+    	
+       	// Condition de débloquage
+      	if (!isset($user)) {
+      		return view('quizz/index');
+       	}
+       	else{
+    		$badge = json_encode($badge);
+    		return view('quizz/play')->with('quizz', $quizz)->with('badge',$badge);
+       	}
+	}
     
 }
 
