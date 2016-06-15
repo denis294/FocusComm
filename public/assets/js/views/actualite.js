@@ -18,7 +18,11 @@ var ViewActualite = Pclia.View.extend({
         
     },
     viewActu: function(){
+        
         $(".fondnoir").fadeIn();
         $(".actualite", this.$el).fadeIn();
+        $('html, body').css({
+            'overflow': 'hidden',
+        });
     }
 });

@@ -20,6 +20,9 @@ var ViewActualites = Pclia.ViewCollection.extend({
     cacherViewActu: function(){
         $(".fondnoir").fadeOut();
         $(".actualite").fadeOut();
+        $('html, body').css({
+            'overflow': 'auto',
+        });
     }
     ,
     showLinkedArticle: function (evt) {
