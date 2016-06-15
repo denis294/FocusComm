@@ -172,11 +172,10 @@ Use App\Models\User;
 Route::group(['middleware' => ['authPartner']], function () {
 	Route::get('/partner/logout', 'AuthController@logoutPartner');
 	Route::get('/partner/quizz', 'QuizzController@MyQuizz');
-	Route::get('/partner/quizz/create', function(){
-		return view('/partner/quiz/create');
-	});
+	Route::get('/partner/quizz/create', 'QuizzController@create');
 	Route::post('/partner/quizz/' ,'QuizzController@store');
-
+	Route::get('/partner/quizz/{id}/edit', 'QuizzController@edit');
+	Route::put('/partner/quizz/{id}', 'CategorieController@update');
 });
 
 
