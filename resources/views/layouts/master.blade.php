@@ -49,20 +49,18 @@
                     </ul>
                 </div>
             </nav>
+            @if(!Session::has('user_id'))
             <div id="log" class="col s4a">
-
-                        <form method="post">
-                        <span><h6 class="logg">Login :</h6>
-                        <input class="" id="pseudo" type="text" required placeholder=" Pseudo">
-                        <input id="mdp" type="text" required placeholder=" Mot de passe">
-
-                        <button id="btn_login" class="btn waves-effect waves-light" type="submit" name="action">Login
-                            <i class="material-icons right"></i>
-                        </button>
-                        </form>
-                        </br><a id="sign">Créer un compte</a>
-                        <input id="search" type="search" required placeholder=" Recherche"></span>
+                <ul>
+                <li><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a></li>
+                <li>S'enregistrer</li>
             </div>
+            @else
+            <div class="col s4">
+                <p>Bonjour, {{Session::get('pseudo')}}</p>
+                <p><a class="waves-effect waves-light btn" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p>
+            </div>
+            @endif
         </header>
         @yield('sidenav')
         <main class="main">

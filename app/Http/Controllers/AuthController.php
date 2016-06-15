@@ -13,6 +13,7 @@ use App\Lib\Message;
 class AuthController extends Controller
 {
 	public function login(){
+
   		$password = Request::input('motDePasse', '');
   		$email = Request::input('email', '');
   		$pseudo = Request::input('pseudo', '');
@@ -25,8 +26,9 @@ class AuthController extends Controller
   			// Vérifie que le pseudo existe dans la BD
   			if (!isset($user)) {
   			   Message::error('user.missing');
-          		return redirect()->back()->withInput();
+          return redirect()->back()->withInput();
   			}
+
   			
   			// Vérifie le password et le hash
   			if (!Hash::check($password, $user->motDePasse)) {
@@ -34,6 +36,7 @@ class AuthController extends Controller
           return redirect()->back()->withInput();
   			}
   			Session::put('user_id', $user->id);
+        Session::put('pseudo', $user->pseudo);
   			return Redirect::to('/')->with('success','Connexion réussie');
        }
        
@@ -54,15 +57,16 @@ class AuthController extends Controller
           return redirect()->back()->withInput();
   			}
   			Session::put('user_id', $user->id);
+        Session::put('pseudo', $user->pseudo);
   			return Redirect::to('/')->with('success','Connexion réussie');
        }
-
 	}
 	
 	public function logout()
 	{
     	Session::forget('user_id');
-    	return 'Déconnexion réussie';
+      Message::success('acces.deconnecte');
+    	return redirect()->route('login');
 	}
   // Contrôle la connexion au panneau d'administration
   public function loginAdmin(){

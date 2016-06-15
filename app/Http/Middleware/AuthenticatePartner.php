@@ -17,22 +17,20 @@ class AuthenticatePartner
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        // On récupère la variable de session ‘user_id’
+       // On récupère la variable de session ‘user_id’
+        if(!Session::has('user_id')){
+            Message::error('acces.notLogin');
+            return redirect()->route('login');
+        }
+
         $userId = Session::get('user_id');
 
-        // On récupère la variable de session 'group'
-        $group = Session::get('group');
-
-        // Si la variable n’est pas set, alors l’accès est refusé
-        if (!isset($userId)) {
-            return response('Non autorisé', 403);
+        $user = User::find($userId);
+        $groups = $user->groups;
+        foreach ($groups as $group) {
+            if($group->nom === 'participant'){
+                return $next($request);
+            }
         }
-        if(!isset($group)){
-            return response('Non autorisé', 403);
-        }
-        if($group !== 'participant'){
-            return response('Non autorisé', 403);
-        }
-        return $next($request);
-    }
+        return redirect()->route('accesInterdit');
 }

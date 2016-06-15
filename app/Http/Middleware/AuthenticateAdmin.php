@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Closure;
 use Session;
+use App\Models\User;
+use App\Lib\Message;
 
 class AuthenticateAdmin
 {
@@ -18,19 +20,21 @@ class AuthenticateAdmin
     public function handle($request, Closure $next, $guard = null)
     {
         // On récupère la variable de session ‘user_id’
+        if(!Session::has('user_id')){
+            Message::error('acces.notLogin');
+            return redirect()->route('login');
+        }
+
         $userId = Session::get('user_id');
 
-        // On récupère la variable de session 'group'
-        $group = Session::get('group');
+        $user = User::find($userId);
+        $groups = $user->groups;
+        foreach ($groups as $group) {
+            if($group->nom === 'admin'){
+                return $next($request);
+            }
+        }
+        return redirect()->route('accesInterdit');
 
-        // Si la variable n’est pas set, alors l’accès est refusé
-        if (!isset($userId)) {
-            return response('Non autorisé', 403);
-        }
-        if(!isset($group)){
-            return response('Non autorisé', 403);
-        }
-        
-        return $next($request);
     }
 }
