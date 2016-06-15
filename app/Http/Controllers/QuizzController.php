@@ -31,14 +31,17 @@ class QuizzController extends Controller
   public function categoriesHasQuizz(){
     $cat = [];
     $categories = Categorie::has('quizzs')->with('categorieParent')->get();
+    $c = 0;
     foreach ($categories as $categorie){
       if($categorie->categorieParent !== null){
-        $cat[$categorie->categorieParent->id]['id'] = $categorie->categorieParent->id;
-        $cat[$categorie->categorieParent->id]['nom'] = $categorie->categorieParent->nom;
+        $cat['categories'][$c]['id'] = $categorie->categorieParent->id;
+        $cat['categories'][$c]['nom'] = $categorie->categorieParent->nom;
+        $c++;
       }
       else{
-        $cat[$categorie->id]['id'] = $categorie->id;
-        $cat[$categorie->id]['nom'] = $categorie->nom;
+        $cat['categories'][$c]['id'] = $categorie->id;
+        $cat['categories'][$c]['nom']  = $categorie->nom;
+        $c++;
       }
     } 
     $cat = json_encode($cat);
