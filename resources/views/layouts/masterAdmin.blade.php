@@ -4,8 +4,10 @@
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <script src="{{asset('assets/js/packJs.php')}}"></script>
+    <script src="{{asset('assets/js/tp/mainPart.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/partner.css')}}">
      <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -13,12 +15,6 @@
             <a href="#" class="brand-logo"><img class="logo"src="{{asset('assets/img/logo_ciao_rvb.png')}}">
             <h5 class="loginAdmTitre">Plateforme administrateur</h5>
             </a>
-            <div id="boutonDeconnexion">
-                <a href="/admin/">
-                    <button class="btn waves-effect waves-light" type="text" name="action">Déconnexion
-                    </button>
-                </a>
-            </div>
     </header>
         <main class="main">
         @yield('content')

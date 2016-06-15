@@ -5,7 +5,11 @@
 
 				<script src="{{asset('assets/js/tp/main.js')}}"></script>
 
-                <section id="categories" class="row accueil categories">
+<!-- DEBUT CHANGEMENT : SUPPRIMER LA CLASS CATEGORIE -->
+                <section id="categories" class="row accueil">
+<!-- FIN CHANGEMENT  -->
+
+
                                         <article id="intro">
                     <h3 id="titleIntro">Qu'est ce que Ciao.ch ?</h3>
                     <p id="introDescription"> ciao.ch est destiné aux jeunes romands de 11 à 20 ans.</p><p>

@@ -25,6 +25,11 @@
     	return view('contenu/index');
 	});
 
+	Route::get('/partner/quiz/form', function () {
+    	return view('partner/quiz/create');
+	});
+
+
 	// Actualité
 	Route::get('/actualites/', 'ActualiteController@index');
 
