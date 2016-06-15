@@ -13,6 +13,8 @@ var quizz = {!! json_encode($quizz) !!};
 var questions = {!! json_encode($questions)!!};
 </script>
 
+
+
 <section id ="question">
     <a href="/quizzs/"><h1>Quiz</h1></a>
 

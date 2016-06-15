@@ -10,6 +10,7 @@ var quizz = {!! $quizz !!};
 </script>
 
 
+
 <section id="contain">
 
 <div id="quizozo">
