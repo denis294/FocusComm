@@ -78,8 +78,8 @@ Use App\Models\User;
 		Route::get('/logout', 'AuthController@logout');
 
 		// User
-		Route::get('/compte', 'UserController@monCompte');
-		Route::put('/compte', 'UserController@updateMonCompte');
+		Route::get('/admin/compte', 'UserController@monCompte');
+		Route::put('/admin/compte', 'UserController@updateMonCompte');
 	});
 
 	// Administration
