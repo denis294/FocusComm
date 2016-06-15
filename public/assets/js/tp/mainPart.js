@@ -47,7 +47,7 @@ $(".qList").on("click",".boutonAjouterReponse",function(){
 	var RepTmpl = tmplRep.clone();
 	$(".EspaceDispo"+cmptTitre).append(RepTmpl);
 	$(".tmpl",RepTmpl).attr("name","question["+cmptQuestion+"][reponse]["+cmptRep+"][texte]");
-	$(".cachetmpl",RepTmpl).attr("name","question["+cmptQuestion+"][reponse]["+cmptRep+"][texte][estJuste]");
+	$(".cachetmpl",RepTmpl).attr("name","question["+cmptQuestion+"][reponse]["+cmptRep+"][estJuste]");
  	cmptRep ++;
  });
 

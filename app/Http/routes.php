@@ -21,6 +21,8 @@
     	return view('home/index');
 	});
 
+	Route::post('/', 'AuthController@login');
+
 	Route::get('/stress', function () {
     	return view('contenu/index');
 	});
