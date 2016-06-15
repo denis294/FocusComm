@@ -32,6 +32,7 @@ return [
     ],
     'actu' => [
         'missing' => "L'actualité spécifiée n'existe pas.",
+        'edited' => "Actualité éditée avec succès",
     ],
     'badge' => [
         'missing' => "Le badge spécifié n'existe pas.",

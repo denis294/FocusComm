@@ -11,6 +11,14 @@ var news = {!! $news !!};
             <i id="buttonAdd" class="material-icons">add</i>
         </a>
     </div>
+    @if(Session::has('success'))
+<div class="col l4 offset-l4">
+<div class="card-panel green lighten-4">
+          <span class="green-text text-darken-4">{{Session::get('success')}}
+          </span>
+</div>
+</div>
+@endif
     <table id="tableUser" class="responsive-table row">
   <thead>
     <tr>
