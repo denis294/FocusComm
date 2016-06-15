@@ -4,6 +4,7 @@
 
 @section('content')
 <script src="{{asset('assets/js/tp/mainQuestion.js')}}"></script>
+<script src="{{asset('assets/js/tp/mainBadgeQuizz.js')}}"></script>
 <link rel="stylesheet" href="{{asset('assets/css/main_quiz.css')}}">
 
 
@@ -27,16 +28,16 @@ var badges = {!! json_encode($badges)!!};
 <a href="/quizzs/"><p id="backLink">Retour aux quizs</p></a>
 
 
-<section id="DonneesEnvoie">
+<!-- <section id="DonneesEnvoie">
 
-    <form method="post" action="traitement.php">
-        <div id="quiz_id"></div>
+    <form method="post" action="">
+       <input type="boolean" name="reponse" id="pass" />
 
 
 
 
     </form>
 
-</section>
+</section> -->
 
 @endsection

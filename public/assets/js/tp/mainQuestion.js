@@ -2,7 +2,7 @@ $(function (){
 
 
 
-    var questionsQ = new ModelQuestions(QUESTIONS); //questions
+    var questionsQ = new ModelQuestions(questions); //questions
 
     var v_questions = new ViewQuestions({
         collection: questionsQ
@@ -54,26 +54,17 @@ $(window).on('end', function() {
 });
 
 
+$(window).on("getAnswer", function(e) {
+    console.log("tareponse");
+});
 
 
 
 
+//---------------Badges--------------------------
 
 
 
-
-//  var storage_score = new JsonStorage("score");
-
-
-// storage_score = 0;
-
-// console.log(storage_score);
-
-
-//---------------------------------------------
-
-// $('.buttonQ').on('click', function() {
-// //------affichage questions---------
 
 
 
