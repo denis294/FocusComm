@@ -50,11 +50,13 @@ Use App\Models\User;
 	Route::get('/quizzs/', 'QuizzController@categoriesHasQuizz');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
 	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
-	
+	Route::post('/quizzs/{id}', 'QuizzController@playQuizz');
+
+
 	// Page
 	Route::get('/pages/', 'PageController@index');
 	Route::get('/pages/categorie/{id}', 'PageController@indexCategorie');
-	
+
 
 	// Login
 	Route::post('/', 'AuthController@login');
@@ -122,7 +124,7 @@ Use App\Models\User;
 		Route::get('/admin/actualites/{id}/edit', 'ActualiteController@edit');
 		Route::put('/admin/actualites/{id}', 'ActualiteController@update');
 		Route::delete('/admin/actualites/{id}', 'ActualiteController@destroy');
-		
+
 		// Pages
 		Route::get('/admin/pages/create', 'PageController@create');
 		Route::post('/admin/pages/', 'PageController@store');
@@ -130,7 +132,7 @@ Use App\Models\User;
 		Route::get('/admin/pages/{id}/edit', 'PageController@edit');
 		Route::put('/admin/pages/{id}', 'PageController@update');
 		Route::delete('/admin/pages/{id}', 'PageController@destroy');
-		
+
 		// Régions
 		Route::get('/admin/regions/', 'RegionController@index');
 		Route::get('/admin/regions/pays/{id}', 'RegionController@indexPays');

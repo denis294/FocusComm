@@ -14,10 +14,48 @@ $(function (){
 //---------------------------------------------
 
 
+    var v_questionsID = new ViewQuestions({
+    collection: questionsQ
+    });
+
+    var tabIdQuestion = v_questionsID.getID();
+
+
+
+
+
+
+
+ //url: /quizzs/id
+    //id reponse
+    //valeur reponse
+    //id badge
+
+
+
+
+
+
+
+    // console.log(id);
+    // // $("#form_id").append(id);
+    //  $(window).trigger('addID');
+
+
+
+
+
+//---------------------------------------------
+
+
 
 var score = 0;
 
 var total = questionsQ.length;
+
+// for (i = 0; i < total; i++) {
+
+// }
 
 $(".messageJuste").hide();
 $(".messageFaux").hide();
@@ -27,7 +65,13 @@ $(".messageFaux").hide();
 
 $(window).on("addScore", function(e) {
     score++;
-    console.log(score);
+    var rep = true;
+    tabReponse.push(rep);
+});
+
+$(window).on("nope", function(e) {
+    var rep = false;
+    tabReponse.push(rep);
 });
 
 $("#affichageScore").hide();
@@ -48,20 +92,62 @@ $(window).on('end', function() {
     $("#total").append(total);
     $("#affichageScore").show();
 
+    sendDonnees();
+
     // if (score == total) {
     //     alert("Bravo tu as obtenu un badge !")
     // };
 });
 
+// $(window).on("addID", function() {
 
-$(window).on("getAnswer", function(e) {
-    console.log("tareponse");
-});
+//     console.log("sida");
+
+//     var Id = $(".infoQuiz").attr('id');
+//     console.log(Id);
+
+//     tabIdQuestion.push(Id);
+
+
+// });
+
+// $(window).on("getAnswer", function(e) {
+//     this.$('')
+// });
 
 
 
+var tabReponse = [];
 
-//---------------Badges--------------------------
+    var IDQ = $("#IdQuizzScred").text();
+
+
+
+//---------------données--------------------------
+
+
+function sendDonnees() {
+
+
+    var BadgeID = $("#idBadgeScred").text();
+
+        var tab = [tabIdQuestion,tabReponse,BadgeID];
+
+        jQuery.ajax({
+                    type: "POST",
+                    url: "/quizzs/"+IDQ,
+                    data: { tab: tab }
+                }).done(function( msg ) {
+                    alert( "Data Saved: ");
+                });
+
+}
+
+ //url: /quizzs/id
+    //id reponse
+    //valeur reponse
+    //id badge
+
 
 
 
