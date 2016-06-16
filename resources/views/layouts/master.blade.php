@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <script src="{{asset('assets/js/tp/mainResponsiv.js')}}"></script>
+    <script src="{{asset('assets/js/tp/main.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/responsiv.css')}}">
 
      <!--Import Google Icon Font-->
@@ -27,39 +28,39 @@
                     </ul>
             </div>
             <div class="rechercheMobile">
-            <input id="search_menuMobile" type="search" placeholder=" Recherche ..."required>
+            @if(!Session::has('user_id'))
+                <span class="loggMobile"><p><a class="waves-effect waves-light btn he1" id="boutondepart" href="/login"><i class="material-icons left">person</i>Se connecter</a>
+                </p><p><a class="waves-effect waves-light btn he2" id="boutondepart" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></p></span>
+            @else
+                <span class="loggMobile"><p>Bonjour,<span id="ev"> {{Session::get('pseudo')}} </span></p><p>
+                <a class="waves-effect waves-light btn deco he3" id="boutondepart2" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
+            @endif
             </div>
         <header class="row">
 
-             <nav class="col m8 s12">
+             <nav class="col s12">
                 <div class="nav-wrapper">
-                    
                     <!--burger croix loupe gérer avec js-->
                     <span class="burger"></span>
                     <span class="loupe"></span>
-                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
+                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('title')</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a class="ici" href="/">Accueil</a></li>
-                        <li><a class="" href="actualites">Actualité</a></li>
-                        <li><a class="" href="#">Adresse</a></li>
-                        <li><a class="" href="#">Pose ta question</a></li>
-                        <li><a class="" href="#">Forum</a></li>
-                        <li><a class="" href="#">Urgence</a></li>
-                        <li><a class="" href="quizzs">Quizzs</a></li>
+                        <li id="home" class=""><a href="/">Accueil</a></li>
+                        <li id="actualites" class=""><a href="actualites">Actualités</a></li>
+                        <li id="" class=""><a href="#">Adresse</a></li>
+                        <li id="" class=""><a  href="#">Pose ta question</a></li>
+                        <li id="" class=""><a href="#">Forum</a></li>
+                        <li id="" class=""><a  href="#">Urgence</a></li>
+                        <li id="quizzs" class=""><a href="quizzs">Quizzs</a></li>
                     </ul>
                 </div>
             </nav>
             @if(!Session::has('user_id'))
-            <div id="log" class="col s4a">
-                <ul>
-                <li><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a></li>
-                <li><a href="/register">S'enregistrer</a></li>
-            </div>
+                <span class="loggEtAutre"><p><a class="waves-effect waves-light btn he1" id="boutondepart" href="/login"><i class="material-icons left">person</i>Se connecter</a>
+                </p><p><a class="waves-effect waves-light btn he2" id="boutondepart" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></p></span>
             @else
-            <div class="col s4">
-                <p>Bonjour, {{Session::get('pseudo')}}</p>
-                <p><a class="waves-effect waves-light btn" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p>
-            </div>
+                <span class="loggEtAutre"><p>Bonjour,<span id="ev"> {{Session::get('pseudo')}} </span></p><p>
+                <a class="waves-effect waves-light btn deco he3" id="boutondepart2" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
             @endif
         </header>
         @yield('sidenav')
