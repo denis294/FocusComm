@@ -50,9 +50,8 @@ Use App\Models\User;
 	Route::get('/quizzs/', 'QuizzController@categoriesHasQuizz');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
 	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
-	Route::post('/quizzs/{id}', 'QuizzController@playQuizz');
-
-
+	Route::post('/quizzs/{id}', 'QuizzController@storeParticipation');
+	
 	// Page
 	Route::get('/pages/', 'PageController@index');
 	Route::get('/pages/categorie/{id}', 'PageController@indexCategorie');
@@ -174,7 +173,7 @@ Use App\Models\User;
 Route::group(['middleware' => ['authPartner']], function () {
 	Route::get('/partner/logout', 'AuthController@logoutPartner');
 	Route::get('/partner/quizz', 'QuizzController@MyQuizz');
-	Route::get('/partner/quizz/create', 'QuizzController@create');
+	Route::get('/partner/quizz/create', 'QuizzController@createPartner');
 	Route::post('/partner/quizz/' ,'QuizzController@store');
 	Route::get('/partner/quizz/{id}/edit', 'QuizzController@edit');
 	Route::put('/partner/quizz/{id}', 'CategorieController@update');
