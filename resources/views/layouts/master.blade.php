@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <script src="{{asset('assets/js/tp/mainResponsiv.js')}}"></script>
-    <script src="{{asset('assets/js/tp/main.js')}}"></script>
+
     <link rel="stylesheet" href="{{asset('assets/css/responsiv.css')}}">
 
      <!--Import Google Icon Font-->
