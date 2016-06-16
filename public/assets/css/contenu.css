@@ -1,27 +1,25 @@
-#contenu, aside{
-    display:inline-block;
-    vertical-align: top;
-}
+
 
 #contenu {
-    border-right: #666 solid 1px;
-    clear:both;
-    margin: auto;
     margin-left: 300px;
-    padding-right:20px;
-    width: 70%;
+    
 }
 
-#contenu li{
+.contenuStress li{
      list-style-type: circle;
      
 }
-#contenu ul{
+.contenuStress ul{
     padding-left: 50px;
 }
-
-aside{
+.table-of-contents{
     position: fixed;
-    padding-left: 30px;
-    margin: auto;
+}
+.table-of-contents a.active {
+    font-weight: 700 !important;
+}
+
+
+.card{
+    position:relative
 }

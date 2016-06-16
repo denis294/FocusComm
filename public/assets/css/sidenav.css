@@ -37,3 +37,12 @@
 .side-nav.fixed a.active{
     color:#ecf0f1;
 }
+
+.side-nav {
+    padding-bottom: 200px;
+}
+
+.side-nav a {
+    line-height: 40px;
+    height: initial;
+}
