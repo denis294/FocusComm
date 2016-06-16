@@ -20,7 +20,7 @@ var ViewQuestion = Pclia.View.extend({
     validate: function () {
 
         var scoreQ = this.$('input[name=reponse]:checked').val()
-        console.log(scoreQ);
+
 
 
         if (scoreQ == "true") {
