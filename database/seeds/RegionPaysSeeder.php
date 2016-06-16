@@ -308,6 +308,7 @@ La contraception (pilule, implant, etc.) et le préservatif sont les deux seules
 La journée internationale pour lutter contre le racisme commémore le jour où la police sud-africaine a tué 69 personnes lors d’une manifestation pacifique contre certaines lois imposées par l’apartheid. Le racisme ou encore la discrimination sont des phénomènes qui ont lieu partout dans le monde et tous les jours.',
         	'image' => 'actu4.jpg',
         	'categorie_id' => $discriminationRacisme->id,
+            'actualiteLiee_id' => $actu2->id,
         ]);
         $admin->actualites()->save($actu4);
         
@@ -368,7 +369,7 @@ Si ce thème t’interpelle, n’hésite pas à en parler à ton entourage: tes 
 			'date' => date('Y-m-d'),
 			'etat' => 'publie',
 			'badge_id' => $badge->id,
-			'categorie_id' => $revenus->id,
+			'categorie_id' => $argent->id,
 		]);
 		$admin->quizzs()->save($quizz);
 
@@ -396,6 +397,84 @@ Si ce thème t’interpelle, n’hésite pas à en parler à ton entourage: tes 
 			'estJuste' => false,
 			'question_id' => $question->id,
 		]);
+         $badge2 = Badge::create([
+            'titre' => "Quizz sur le cannabis",
+            'image' => 'badgeSante.png',
+        ]);
+        $quizz2 = new Quizz([
+            'titre' => "Quizz sur le cannabis",
+            'date' => date('Y-m-d'),
+            'etat' => 'publie',
+            'badge_id' => $badge2->id,
+            'categorie_id' => $bfsd->id,
+        ]);
+        $admin->quizzs()->save($quizz2);
+        $q1 = Question::create([
+            'texte' => "La substance active du cannabis est le...",
+            'illustration' => 'none.jpeg',
+            'texteJuste' => "Juste!
+
+Le THC est la substance qui perturbe le fonctionnement du cerveau quand on consomme du cannabis.",
+            'texteFaux' => "Eh bien dis donc... il vaut mieux pour toi ne pas fumer! La substance qui agit sur le cerveau est le THC et c'est cette substance que l'on peut déceler dans ton sang et tes urines jusqu'à un mois après ta consommation." ,
+            'quizz_id' => $quizz2->id,
+        ]);
+
+        $r1 = Reponse::create([
+            'texte' => 'THC',
+            'estJuste' => true,
+            'question_id' => $q1->id,
+        ]);
+        $r2 = Reponse::create([
+            'texte' => 'PVC',
+            'estJuste' => false,
+            'question_id' => $q1->id,
+        ]);
+         $r3 = Reponse::create([
+            'texte' => 'TPV',
+            'estJuste' => false,
+            'question_id' => $q1->id,
+        ]);
+
+        $q2 = Question::create([
+            'texte' => "La loi autorise désormais la consommation de cannabis",
+            'illustration' => 'none.jpeg',
+            'texteJuste' => "Tout juste.Même si des débats ont lieu, le cannabis est toujours soumis à la loi sur les stupéfiants. Depuis octobre 2013, les adultes en possession de 10 grammes ou moins de cannabis ne sont plus poursuivis pénalement mais doivent payer une amende de 100 francs.",
+            'texteFaux' => "Erreur! Même si des débats ont lieu, la loi interdit toujours la consommation, la culture et la vente de cannabis." ,
+            'quizz_id' => $quizz2->id,
+        ]);
+         $r3 = Reponse::create([
+            'texte' => 'Vrai',
+            'estJuste' => false,
+            'question_id' => $q2->id,
+        ]);
+         $r4 = Reponse::create([
+            'texte' => 'Faux',
+            'estJuste' => true,
+            'question_id' => $q2->id,
+        ]);
+          $q3 = Question::create([
+            'texte' => "A partir de 15-16 ans tous les jeunes ont déjà essayé au moins une fois de fumer un joint...",
+            'illustration' => 'none.jpeg',
+            'texteJuste' => "Et tu as raison. Même si beaucoup de jeunes sont tentés de fumer pour voir ce que c'est, ils sont une minorité à consommer du cannabis régulièrement.
+
+L'enquête sur les comportements de santé des écoliers menées en 2002 montre en effet que 41,7% des garçons et 34,1% des filles de 15-16 ans ont fumé du cannabis durant l'année précédente - ce qui ne veut pas dire qu'ils en consomment régulièrement!",
+            'texteFaux' => "Eh non, c'est une fausse perception de la réalité.
+
+Tous les jeunes n'ont pas essayé de fumer et c'est une minorité de jeunes de 15-16 ans qui fument des joints... En effet, les chiffres 2002 montrent que seulement 49,9% des garçons et 39,1% des filles ont essayé au moins une fois dans leur vie de fumer des joints.
+
+Alors si tu n'as pas essayé, tu n'es de loin pas le seul ou la seule!" ,
+            'quizz_id' => $quizz2->id,
+        ]);
+            $r5 = Reponse::create([
+            'texte' => 'Vrai',
+            'estJuste' => false,
+            'question_id' => $q3->id,
+        ]);
+         $r6 = Reponse::create([
+            'texte' => 'Faux',
+            'estJuste' => true,
+            'question_id' => $q3->id,
+        ]);
 		$admin->quizzsParticipations()->save($quizz);
 		$admin->reponses()->save($reponse2, ['estJuste' => false]);
     }
