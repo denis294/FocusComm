@@ -266,6 +266,10 @@ class QuizzController extends Controller
       }
       $user->badges()->save($badge);
       return json_encode(['quizz' => true]);
+      /** TO DO
+      Enregistrer les réponses d'un user pour le quizz 
+      Pour le moment les données reçues en AJAX ne me permettent pas de le faire
+      */
    }
 
     
