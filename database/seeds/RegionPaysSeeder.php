@@ -252,45 +252,110 @@ class RegionPaysSeeder extends Seeder
         ]);
         
 		// Actualités
+		
         $actu1 = new Actualite([
-        	'titre' => 'Le sida en régression',
+        	'titre' => 'Journée nationale sur les problèmes liés à l\'alcool',
         	'dateCreation' => date('Y-m-d H:i:s'),
-        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi.',
-        	'image' => 'media1.png',
-        	'categorie_id' => $sida->id,
-        ]);
+        	'texte' => 'Le 19 mai 2016 c’est la journée nationale sur les problèmes liés à l’alcool !
 
+Cette année la question porte sur les problèmes d’alcool et le soutien familial : comment gères-tu l’alcool ? Peux-tu parler d’alcool avec ta famille ? Comment réagissent-ils ?
+
+Environ un demi-million de personnes en Suisse ont un membre de leur famille qui a des problèmes d’alcool. Une personne qui boit beaucoup se fait souffrir et fait souffrir ses proches. Malgré une souffrance psychologique très lourde qui accompagne, les proches font très peu appel aux services d’aide disponibles. Pourquoi ? L’une des raisons peut être la honte ou des exigences très grandes envers soi. Pour cette raison, cette journée a pour but de motiver les proches à parler :).
+
+Alors n’hésite pas à t’exprimer sur le sujet et à échanger avec tes potes ou des proches !
+
+Plus d’infos sur ciao.ch ou sur le site d’Addiction Suisse.',
+        	'image' => 'actu1.jpg',
+        	'categorie_id' => $bfsd->id,
+        ]);
         $admin->actualites()->save($actu1);
+        
         $actu2 = new Actualite([
-        	'titre' => 'Le sida en Afrique',
-        	'dateCreation' => date('Y-m-d'),
-        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi. ',
-        	'image' => 'none.jpg',
-        	'actualiteLiee_id' => $actu1->id,
-        	'categorie_id' => $sida->id,
+        	'titre' => 'Journée internationale de lutte contre l’homophobie et la transphobie',
+        	'dateCreation' => date('Y-m-d H:i:s'),
+        	'texte' => 'Le 17 mai correspond à la Journée internationale de lutte contre l’homophobie et la transphobie. L’homophobie, c’est l’hostilité manifestée envers les gays et les lesbiennes, soit par des injures, des violences et/ou du rejet alors que la transphobie est l’hostilité manifestée envers les personnes transsexuelles ou transgenres.',
+        	'image' => 'actu2.jpg',
+        	'categorie_id' => $discriminationRacisme->id,
         ]);
         $admin->actualites()->save($actu2);
         
         $actu3 = new Actualite([
-        	'titre' => 'Le sida en Europe',
-        	'dateCreation' => date('Y-m-d'),
-        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi. ',
-        	'image' => 'none.jpg',
-        	'actualiteLiee_id' => $actu1->id,
-        	'categorie_id' => $sida->id,
+        	'titre' => 'Les 3 faux effets du citron',
+        	'dateCreation' => date('Y-m-d H:i:s'),
+        	'texte' => 'Le citron pour blanchir les dents.
+Tu utilises le citron pour blanchir tes dents ? Malgré son goût amer, tu fais ça plusieurs fois par jour ? Tu espères voir des effets tout bientôt.
+Stop !
+Le citron a l’effet contraire, il agresse l’émail qui protège les dents et il facilite le dépôt de couleur. Pour rendre plus blanches tes dents, rends-toi plutôt chez ton dentiste ;).
+Plus d’infos: les dents blanches
+Le citron pour maigrir.
+Tu bois du citron tous les matins pour qu’à l’arrivée de beaux jours tu sois au top de ta forme ? Tu espères que l’acidité contenue dans le citron fasse fondre les graisses de ton corps.
+Faux !
+Aucun aliment ne fait maigrir. Adopte plutôt une alimentation équilibrée qui te fait plaisir et éclate-toi aussi en faisant du sport =D.
+Le citron comme pilule.
+Tu te laves le sexe avec du citron après un rapport sexuel ? Tu penses que l’acidité contenue dans le citron peut tuer les spermatozoïdes ?
+Non, certainement pas !
+La contraception (pilule, implant, etc.) et le préservatif sont les deux seules manières d’éviter une grossesse. D’ailleurs, l’acidité du citron n’annule pas non plus l’effet de la pilule. Alors protège-toi bien !',
+        	'image' => 'actu3.jpg',
+        	'categorie_id' => $sante->id,
         ]);
         $admin->actualites()->save($actu3);
         
         $actu4 = new Actualite([
-        	'titre' => 'Le sida au Canada',
-        	'dateCreation' => date('Y-m-d'),
-        	'texte' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim odio, tincidunt et faucibus vel, faucibus a velit. Donec dapibus, tortor dignissim bibendum ultrices, odio purus bibendum felis, in mollis felis nisl vitae dolor. Mauris vehicula lorem et purus faucibus, et tempus purus congue. Suspendisse potenti. Vivamus et elit vitae diam finibus tempor nec et justo. Duis sagittis, nulla at facilisis efficitur, massa libero efficitur neque, at consectetur elit leo a mi. ',
-        	'image' => 'none.jpg',
-        	'actualiteLiee_id' => $actu1->id,
-        	'categorie_id' => $sida->id,
+        	'titre' => 'Semaine contre la discrimination',
+        	'dateCreation' => date('Y-m-d H:i:s'),
+        	'texte' => 'Cette semaine a lieu la Semaine contre le racisme. Beaucoup d’actions sont organisées en Suisse-romande pour lutter contre cette forme de discrimination. On vous fait un petit topo pour comprendre l’origine de la journée (qui est devenue «semaine») et comment combattre le racisme.
+
+La journée internationale pour lutter contre le racisme commémore le jour où la police sud-africaine a tué 69 personnes lors d’une manifestation pacifique contre certaines lois imposées par l’apartheid. Le racisme ou encore la discrimination sont des phénomènes qui ont lieu partout dans le monde et tous les jours.',
+        	'image' => 'actu4.jpg',
+        	'categorie_id' => $discriminationRacisme->id,
         ]);
         $admin->actualites()->save($actu4);
+        
+        $actu5 = new Actualite([
+        	'titre' => 'Qu’est-ce que le cancer? ',
+        	'dateCreation' => date('Y-m-d H:i:s'),
+        	'texte' => 'Le cancer est une maladie causée par une multiplication trop importante de cellules dans un tissu tout à fait normal de l’organisme. On appelle cette prolifération une tumeur.
 
+Ce processus part d’une seule cellule qui, pour différentes raisons, se met à se «cloner» créant ainsi d’autres cellules qui le feront à leur tour, etc.
+
+Risques/Causes :
+
+Les causes du cancer peuvent être extérieures à l’organisme – on dit que ces causes sont exogènes – ou alors elles peuvent venir de l’organisme lui-même – on dit qu’elles sont endogènes.
+
+Les risques internes sont d’ordre génétique. Certains cancers comme celui du sein peuvent, par exemple, avoir une composante héréditaire (transmis dans la famille). D’autres peuvent être dus à une mutation génétique, sans vraiment qu’on sache d’où vient cette mutation.
+
+Les risques externes sont aussi appelés «risques environnementaux». On y trouve des choses comme l’alimentation, le tabac ou encore les virus et les bactéries.
+
+Prévention :
+
+Comme la maladie peut être due à une cause génétique sur laquelle on ne peut pas agir, la prévention du cancer consiste à prévenir l’apparition de la maladie en agissant sur les risques environnementaux. Il s’agit donc de lutter contre le tabagisme, de diminuer l’exposition aux polluants et aux produits chimiques cancérigènes, d’éviter la surexposition au soleil, etc.
+
+La lutte contre le cancer s’appuie aussi sur rôle «protecteur» de certains aliments. On sait par exemple que les fibres, les antioxydants ou encore les vitamines ont des effets positifs sur l’apparition du cancer.
+
+Dépistage :
+
+Le dépistage vise à repérer le plus tôt possible un cancer ou des lésions précancéreuses chez des personnes qui ne présentent pas encore de symptômes évidents. Le fait de dépister le cancer avant qu’il soit visible est important, car une fois les symptômes apparus – et donc la maladie installée – le traitement à envisager est beaucoup plus lourd.
+
+Si ce thème t’interpelle, n’hésite pas à en parler à ton entourage: tes parents mais aussi l’infirmière scolaire ou encore directement sur le site!',
+        	'image' => 'actu5.jpg',
+        	'categorie_id' => $sante->id,
+        ]);
+        $admin->actualites()->save($actu5);
+        
+        $actu6 = new Actualite([
+        	'titre' => '5 conseils pour un surf plus sûr',
+        	'dateCreation' => date('Y-m-d H:i:s'),
+        	'texte' => 'Internet est un outil merveilleux, mais comme avec tout outil, il y a quelques précautions à prendre lorsqu’on l’utilise. On vous propose cinq conseils pour surfer en toute sécurité.
+        	
+        	Sur internet, vous consultez des pages, mais vous publiez aussi du contenu. Que ça soit des textes, des statuts, que vous likiez des pages ou que vous commentiez un lien, tout reste sur la toile. Faites donc attention à ne rien publier de sensible. Une fois sur la toile il est difficile de savoir où peuvent se retrouver ces éléments.
+        	
+        	Certains sites permettent de contrôler l’accessibilité de votre contenu et d’autre non. Un blog, par exemple, sera visible par tout le monde et dans la grande majorité des cas il est possible de le trouver par une recherche sur le net. Au contraire, le contenu des réseaux sociaux peut être protégé ou limité. Grâce à ces fonctions vous pouvez choisir vous-même de rendre ce contenu visible uniquement pour vos amis.
+        	',
+        	'image' => 'actu6.jpg',
+        	'categorie_id' => $mtla->id,
+        ]);
+        $admin->actualites()->save($actu4);
+        
         /**
 		* Seeding Quizz + Badge
         */
