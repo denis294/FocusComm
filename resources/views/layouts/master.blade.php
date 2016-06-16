@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/materialize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <script src="{{asset('assets/js/tp/mainResponsiv.js')}}"></script>
+    <script src="{{asset('assets/js/tp/main.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/css/responsiv.css')}}">
 
      <!--Import Google Icon Font-->
@@ -33,19 +34,18 @@
 
              <nav class="col s12">
                 <div class="nav-wrapper">
-                    
                     <!--burger croix loupe gérer avec js-->
                     <span class="burger"></span>
                     <span class="loupe"></span>
-                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
+                    <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('title')</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li id="home" class=""><a class="" href="/">Accueil</a></li>
-                        <li id="actualites"><a class="" href="actualites">Actualités</a></li>
-                        <li id="home"><a class="" href="#">Adresse</a></li>
-                        <li id="home"><a class="" href="#">Pose ta question</a></li>
-                        <li id="home"><a class="" href="#">Forum</a></li>
-                        <li id="home"><a class="" href="#">Urgence</a></li>
-                        <li id="quizzs"><a class="" href="quizzs">Quizzs</a></li>
+                        <li id="home" class=""><a href="/">Accueil</a></li>
+                        <li id="actualites" class=""><a href="actualites">Actualités</a></li>
+                        <li id="" class=""><a href="#">Adresse</a></li>
+                        <li id="" class=""><a  href="#">Pose ta question</a></li>
+                        <li id="" class=""><a href="#">Forum</a></li>
+                        <li id="" class=""><a  href="#">Urgence</a></li>
+                        <li id="quizzs" class=""><a href="quizzs">Quizzs</a></li>
                     </ul>
                 </div>
             </nav>

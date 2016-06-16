@@ -8,7 +8,6 @@ if(url == "") {
     $("#home").addClass("active");
 }else {
     $("#"+url).addClass("active");
-
 }
 
 var figure = $(".test").hover( hoverVideo, hideVideo );
