@@ -11,7 +11,6 @@ if (window.matchMedia("(min-width: 600px)").matches) {
 } else {
   /* L'affichage est inférieur à 600px de large */
   $(".page-footer").hide();
-  $(".loggEtAutre").hide();
 }
 
 

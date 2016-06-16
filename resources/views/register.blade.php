@@ -77,7 +77,7 @@
                             </br>
                             </br>
                                 <button class="btn waves-effect waves-light" type="submit" name="action">S'enregistrer
-                                    <i class="material-icons left">perm_identity</i>
+                                    <i class="material-icons left">person_pin</i>
                                 </button>
                             </form>
                         </div>

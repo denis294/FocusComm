@@ -1,5 +1,24 @@
 $(function (){
 
+var  url = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
+
+console.log(url);
+
+if(url == "") {
+    $("#home").addClass("active");
+}else {
+    $("#"+url).addClass("active");
+
+}
+
+var figure = $(".test").hover( hoverVideo, hideVideo );
+
+
+
+
+// $(".nav-mobile li a").on("click",function(){
+//     $(".active").removeClass("active");
+// });
 
 //------vues des categories-----------------
 
@@ -12,6 +31,7 @@ $(function (){
     //$("section .contents").hide()
     var dom = v_categories.render();
     $("#categories").append(dom);
+
 
 
 
@@ -105,6 +125,10 @@ $(function (){
 
 
 
+
+
+
+
 });
 
 
@@ -115,8 +139,8 @@ function switchSection(section) {
     $(window).trigger('popstate');
 }
 
-
-
+function hoverVideo(e) { $('video', this).get(0).play(); }
+function hideVideo(e) { $('video', this).get(0).pause(); }
 
 
 
