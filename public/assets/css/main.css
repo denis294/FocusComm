@@ -63,6 +63,10 @@ footer{
   }*/
 
 /*CATEGORIE*/
+h2#icon{
+    font-size: 6rem;
+}
+
 #intro{
 
   color:#FFF;
@@ -78,8 +82,8 @@ footer{
 
 .block{
     background-color: white;
-    margin-left:20% !important;
-    margin-right:20% !important;
+    margin-left:5% !important;
+    margin-right:5% !important;
     height:40%!important;
     background-color: white;
 
@@ -316,7 +320,6 @@ nav li {
   text-decoration: none;
   display:inline;
   margin-left:1%;
-  height:300px ! important;
   width:auto !important;
 }
 

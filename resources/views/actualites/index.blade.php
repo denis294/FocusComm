@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'Actualités')
 @section('page', 'Actualités')
+@section('sidenav')
+<link rel="stylesheet" href="{{asset('assets/css/sidefilter.css')}}">
+<script src="{{asset('assets/js/materialize.js')}}"></script>
+
+@endsection
 <link rel="stylesheet" href="{{asset('assets/css/styleactu.css')}}">
 @section('content')
 

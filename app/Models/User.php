@@ -4,12 +4,12 @@ namespace App\Models;
 
 class User extends Model
 {
-    protected $fillable = ['pseudo','email','motDePasse','age','sexe','region_id'];
+    protected $fillable = ['pseudo','email','motDePasse','dateNaissance','sexe','region_id'];
     protected static $rules = [
         'pseudo' => 'String|max:80|required',
         'email' => 'E-mail|required',
         'motDePasse' => 'String|min:6|required',
-        'age' => 'Integer|required',
+        'dateNaissance' => 'required',
         'sexe' => 'String|required|max:1',
         'region_id' => 'Integer|required',
     ];
@@ -56,11 +56,11 @@ class User extends Model
     }
     public function hasRole($role, $serapp){
         if ($serapp instanceof ServiceApplicatif){
-            $serapp = $resrc->nom;
+            $serapp = $serapp->nom;
         }
-        $groups = $this->groups();
+        $groups = $this->groups;
         foreach ($groups as $group) {
-            if($group->hasRole($role, $resrc)){
+            if($group->hasRole($role, $serapp)){
                 return true;
             }
         }

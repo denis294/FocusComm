@@ -12,7 +12,6 @@
 
 
 .introPartner{
-
 	text-align: center;
 }
 
@@ -27,8 +26,6 @@
 
 
 .boitePartner{
-
-
 	  background-color:#0580a3;
 	  height:250px;
 	  width: 250px;
@@ -156,7 +153,6 @@ z-index: 1;}
     font-weight: normal;
     font-style: normal;
 }
-
 #ecr{
 
 	color:white!important;
@@ -320,7 +316,6 @@ z-index: 1;}
 .btn, .btn-large {
     text-decoration: none;
     color: #fff;
-    background-color: #168345;
     text-align: center;
     letter-spacing: .5px;
     transition: .2s ease-out;
@@ -345,7 +340,9 @@ margin-top: 20px;
 }
 
 
-li:before{
+
+
+.listeError:before{
 	content: "\ea0e ";
 	font-family: "icomoon"; 
 	color:#890007;

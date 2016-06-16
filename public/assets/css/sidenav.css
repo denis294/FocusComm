@@ -11,10 +11,6 @@
 .side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a{
     padding-left: 20px;
 }
-.side-nav .collapsible-body li.active a, .side-nav.fixed .collapsible-body li.active a{
-    color:#444;
-}
-
 
 .side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
     padding-left:10px;
@@ -28,6 +24,25 @@
     line-height: 30px;
 }
 .side-nav a {
-    line-height: 30px;
-    height: 64px;
+    line-height: 25px;
+    height: 45px;
+}
+
+
+.side-nav li.active {
+    background-color: #0580a3;
+    
+}
+
+.side-nav.fixed a.active{
+    color:#ecf0f1;
+}
+
+.side-nav {
+    padding-bottom: 200px;
+}
+
+.side-nav a {
+    line-height: 40px;
+    height: initial;
 }

@@ -3,7 +3,7 @@
 
 @section('content')
 <script>
-var news = [];
+var news = {!! $news !!};
 var categories = {!! $categories !!};
 </script>
 <script src="//code.jquery.com/jquery-2.1.2.min.js"></script>
@@ -56,17 +56,28 @@ $('.datepicker').pickadate({
                     </div>
                 </div>
                 
-                <!-- Selection de la catégorie -->
+<!-- Catégories -->
                 <div class="row">
-                    <div class="input-field col s12 l6">
-                    <label id="placeholderCategorie" class="labelLoginAdm col s12 m6" name="categorie_id">Categorie</label> <br>
-                    <select name="categorie_id">
+                    <div class="input-field col s12 l6">   
+<select multiple name="categorie_id" id="categorie_id" >
                       	@foreach(json_decode($categories, true) as $value)
-                      		<option value="{{ $value['id'] }} "> {{ $value['nom'] }} </option>
+                      		<option value="{{ $value['id'] }}"> {{ $value['nom'] }} </option>
 						@endforeach
-					</select>
-                    </div>
-                </div>
+</select>
+<label for="categorie_id">Catégorie(s)</label>
+</div>
+</div> 
+<!-- Actualités liées-->
+                <div class="row">
+                    <div class="input-field col s12 l6">    
+<select multiple name="actualiteLiee_id">
+                      	@foreach(json_decode($news, true) as $value)
+                      		<option value="{{ $value['id'] }}" name="actualiteLiee_id"> {{ $value['titre'] }} </option>
+						@endforeach
+</select>
+<label for="categorie_id">Actualité(s) liée(s)</label>
+</div>
+</div>  
                 <div class="row">
                     <label class="ajouterActuFormLabel col s12 l3" id ="choixMedia" for="test5">Choisir un média</label>
                     <div id ="choixFile" class="input-field col s12 l3">
@@ -76,11 +87,10 @@ $('.datepicker').pickadate({
                 <div id="buttons" class="row">
                     <div class="col s12 l4">
                         <a href="" id="boutonAnnuler" class="waves-effect waves-light btn">Annuler</a>
-                                            <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
+                       <button class="btn waves-effect waves-light" type="submit" name="action">Enregistrer
     <i class="material-icons">done</i>
   </button>
                     </div>
-
                 </div>
             </form>
         </div>

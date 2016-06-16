@@ -8,6 +8,7 @@ use Session;
 use Request;
 use Redirect;
 use App\Lib\Message;
+use App\Models\Group;
 
 class UserController extends Controller
 {
@@ -26,7 +27,7 @@ class UserController extends Controller
     public function monCompte(){
         $user_id = Session::get('user_id');
         $user = User::find($user_id);
-        return view('admin/compte/index')->with('user',$user)->with('badges',$user->badges)->with('region', $user->region);
+        return view('admin/compte/edit')->with('user',$user)->with('badges',$user->badges)->with('region', $user->region)->with('regions', Region::All());
     }
 
     /**
@@ -47,7 +48,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {       
-        $fields = Request::only('pseudo', 'email', 'motDePasse', 'age', 'sexe', 'region_id');
+        $fields = Request::only('pseudo', 'email', 'motDePasse', 'dateNaissance', 'sexe', 'region_id');
         $validate = User::validate($fields);
         if ($validate->fails()) {
           return redirect()->back()->withInput()->withErrors($validate);
@@ -59,8 +60,11 @@ class UserController extends Controller
         }
         $user = new User($fields);
         $user->motDePasse = bcrypt($user->motDePasse);
+        $group = Group::where('nom', 'user')->first();
         $user->save();
-        return $user;
+        $group->users()->save($user);
+        Message::success('compte.created');
+        return redirect()->route('login');
     }
 
     /**
@@ -87,7 +91,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user_id = Session::get('user_id');
+        $user = User::find($user_id);
+        return view('admin/compte/edit')->with('user',$user)->with('badges',$user->badges)->with('region', $user->region)->with('regions', Region::All());
     }
 
     /**
@@ -117,7 +123,9 @@ class UserController extends Controller
         }
         $fields['motDePasse'] = bcrypt($fields['motDePasse']);
         $user->update($fields);
-        return $user;
+        
+        Message::success('user.edited');
+        return redirect('/admin/actualites');
     }
 
     public function updateMonCompte(Request $request){

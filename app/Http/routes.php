@@ -50,9 +50,8 @@ Use App\Models\User;
 	Route::get('/quizzs/', 'QuizzController@categoriesHasQuizz');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
 	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
-	Route::post('/quizzs/{id}', 'QuizzController@playQuizz');
-
-
+	Route::post('/quizzs/{id}', 'QuizzController@storeParticipation');
+	
 	// Page
 	Route::get('/pages/', 'PageController@index');
 	Route::get('/pages/categorie/{id}', 'PageController@indexCategorie');
@@ -63,6 +62,9 @@ Use App\Models\User;
 	Route::get('/login', function(){
 		return view('login');
 	})->name('login');
+
+	Route::get('/register', 'RegisterController@index');
+	Route::post('/register', 'UserController@store');
 
 	// Pas autorisé
 	Route::get('/accesInterdit', function(){
@@ -111,10 +113,10 @@ Use App\Models\User;
 
 		// User
 		Route::get('/admin/users/', 'UserController@index');
-		Route::delete('/user/{id}', 'UserController@destroy');
-		Route::get('/user/{id}', 'UserController@show');
-		Route::post('/user/', 'UserController@store');
-		Route::put('/user/{id}', 'UserController@update');
+		Route::delete('/admin/compte/{id}', 'UserController@destroy');
+		Route::get('/admin/compte/{id}', 'UserController@show');
+		Route::post('/admin/compte/', 'UserController@store');
+		Route::put('/admin/compte/{id}', 'UserController@update');
 
 		// Actualités
 		Route::get('/admin/actualites', 'ActualiteController@indexAdmin');
@@ -142,8 +144,6 @@ Use App\Models\User;
 		Route::get('/admin/regions/{id}/edit', 'RegionController@edit');
 		Route::put('/admin/regions/{id}', 'RegionController@update');
 		Route::delete('/admin/regions/{id}', 'RegionController@destroy');
-		// Users
-		Route::get('/admin/users/', 'UserController@index');
 
 		// Badges
 		Route::get('/admin/badges/', 'BadgeController@index');
@@ -173,11 +173,10 @@ Use App\Models\User;
 Route::group(['middleware' => ['authPartner']], function () {
 	Route::get('/partner/logout', 'AuthController@logoutPartner');
 	Route::get('/partner/quizz', 'QuizzController@MyQuizz');
-	Route::get('/partner/quizz/create', function(){
-		return view('/partner/quiz/create');
-	});
+	Route::get('/partner/quizz/create', 'QuizzController@createPartner');
 	Route::post('/partner/quizz/' ,'QuizzController@store');
-
+	Route::get('/partner/quizz/{id}/edit', 'QuizzController@edit');
+	Route::put('/partner/quizz/{id}', 'CategorieController@update');
 });
 
 

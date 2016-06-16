@@ -8,6 +8,7 @@ use App\Models\Actualite;
 use Session;
 use Request;
 use App\Lib\Message;
+use Illuminate\Support\Facades\Response;
 use DB;
 
 class ActualiteController extends Controller
@@ -28,12 +29,22 @@ class ActualiteController extends Controller
    
 	public function create()
   {
-    return view('admin/actualite/formulaire')->with('categories', Categorie::all());
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'actualites')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer des actualités"], 403);
+      }
+    return view('admin/actualite/formulaire')->with('categories', Categorie::all())->with('news', Actualite::all());
   }
     
     // Enregistre une actualité dans la base de données
     public function store()
     {
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'actualites')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer des actualités"], 403);
+      }
        $fields = Request::only('titre', 'dateCreation', 'texte', 'image', 'actualiteLiee_id', 'categorie_id');
        $validate = Actualite::validate($fields);
        if ($validate->fails()) {
@@ -47,7 +58,8 @@ class ActualiteController extends Controller
        $actu = new Actualite($fields);
        $user = User::find(Session::get('user_id'));
        $user->actualites()->save($actu);
-       return $actu;
+       Message::success('actu.created');
+       return redirect('/admin/actualites');
     }
 	
 	// Affiche une actualité précise
@@ -63,15 +75,24 @@ class ActualiteController extends Controller
     // Formulaire d'édition d'actualité
     public function edit($id)
     {
-        
-    $actu = DB::table('actualites')->where('id', '=', $id)->get();
-    $actu = json_encode($actu);
-    return view('admin/actualite/edit')->with('actu', $actu)->with('allActus', Actualite::all())->with('categories', Categorie::all());
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('update', 'actualites')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour mettre à jour les actualites"], 403);
+      }
+      $actu = DB::table('actualites')->where('id', '=', $id)->get();
+      $actu = json_encode($actu);
+      return view('admin/actualite/edit')->with('actu', $actu)->with('allActus', Actualite::all())->with('categories',Categorie::all());
     }
     
     // Met à jour une actualité
     public function update($id)
     {
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('update', 'actualites')){
+        return Response::view('errors.403',['url' => '/admin/actualites','message'=>"Vous n'avez pas les droits pour à jour les actualités"], 403);
+      }
        $actu = Actualite::find($id);
        if (!isset($actu)) {
            Message::error('actu.missing');
@@ -83,19 +104,26 @@ class ActualiteController extends Controller
           return redirect()->back()->withInput()->withErrors($validate);
        }
        $actu->update($fields);
-       return $actu;
+       Message::success('actu.edited');
+       return redirect('/admin/actualites');
     }
     
     // Supprime une actualité
     public function destroy($id)
     {
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('delete', 'actualites')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour supprimer les actualites"], 403);
+      }
        $actu = Actualite::find($id);
        if (!isset($actu)) {
            Message::error('actu.missing');
            return redirect()->back()->withInput();
        }
        $actu->delete();
-       return $actu;
+        Message::success('actu.deleted');
+       return redirect('/admin/actualites');
     }
     
 

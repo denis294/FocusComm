@@ -14,7 +14,7 @@ class CreateRolesTable extends Migration
     {       
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('nom', ['create', 'update', 'delete', 'read'])->unique();
+            $table->enum('nom', ['create', 'update', 'delete', 'read']);
             $table->integer('group_id')->unsigned();
             $table->integer('serviceApplicatif_id')->unsigned();
             $table->foreign('serviceApplicatif_id')->references('id')->on('serviceapplicatifs');
