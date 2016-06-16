@@ -40,7 +40,7 @@
                     <div class="card-action">
                         <div class="row">
                             <div class="input-field col s12">
-                              <input placeholder="utile" id="first_name2" type="text" class="validate">
+                              <input placeholder="Utile" id="first_name2" type="text" class="validate">
                               <label class="active" for="first_name2">Impression</label>
                             </div>
                         </div>

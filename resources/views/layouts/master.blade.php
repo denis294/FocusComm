@@ -28,7 +28,13 @@
                     </ul>
             </div>
             <div class="rechercheMobile">
-            <input id="search_menuMobile" type="search" placeholder=" Recherche ..."required>
+            @if(!Session::has('user_id'))
+                <span class="loggMobile"><p><a class="waves-effect waves-light btn he1" id="boutondepart" href="/login"><i class="material-icons left">person</i>Se connecter</a>
+                </p><p><a class="waves-effect waves-light btn he2" id="boutondepart" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></p></span>
+            @else
+                <span class="loggMobile"><p>Bonjour,<span id="ev"> {{Session::get('pseudo')}} </span></p><p>
+                <a class="waves-effect waves-light btn deco he3" id="boutondepart2" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
+            @endif
             </div>
         <header class="row">
 
