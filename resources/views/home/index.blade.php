@@ -35,7 +35,7 @@
                   <div class="card white darken-1 cartIntro">
                     <div class="card-content black-text">
                       <span class="card-title">Une <span id="ev">Impression</span>  </span>
-                      <p>Donne-nous <span id="ev">UN</span> mot, adjectif ou verbe qui te viens à l'ésprit lorsque tu pense à <span id="ev">Ciao.ch</span></p>
+                      <p>Donne-nous<span id="ev">UN</span> mot, adjectif ou verbe qui te vient à l'esprit lorsque tu penses à <span id="ev">Ciao.ch</span></p>
                     </div>
                     <div class="card-action">
                         <div class="row">
