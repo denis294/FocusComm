@@ -1,15 +1,33 @@
 
+.texteContenu h2{
+ border-top: 2px #ea4a4f solid;
+ color: #0580a3 !important;
+ font-size: 2.5rem;
+}
+
+.texteContenu h3{
+ color: #34495e !important;
+ font-size: 2rem;
+ font-stretch: condensed;
+}
+
+.texteContenu h4{
+ color: #ea4a4f !important;
+ font-size: 1.2rem;
+
+}
+
 
 #contenu {
     margin-left: 300px;
     
 }
 
-.contenuStress li{
+.texteContenu li{
      list-style-type: circle;
      
 }
-.contenuStress ul{
+.texteContenu ul{
     padding-left: 50px;
 }
 .table-of-contents{
@@ -18,7 +36,6 @@
 .table-of-contents a.active {
     font-weight: 700 !important;
 }
-
 
 .card{
     position:relative
