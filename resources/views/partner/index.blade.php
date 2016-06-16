@@ -1,10 +1,11 @@
 @extends('layouts.masterAdmin')
-@section('title', 'Admin')
+@section('title', 'Partner')
 
 @section('content')
 <main class="main">
     <section id="accueilEspaceAdm" class="row">
-        <div class=" col m4" id="quizDiv">
+        <div class=" col m3"></div>
+        <div class=" col m3" id="quizDiv">
         <a href="/partner/quizz">
             <article class="categoriesAdmList categorieAdm" id="quiz">
                 <div class="boite">
@@ -12,7 +13,7 @@
                 </div>
             </article></a>
         </div>
-        <div class="col m4" id="compteDiv">
+        <div class="col m3" id="compteDiv">
                     <a href="/partner/compte/">
             <article class="categoriesAdmList categorieAdm" id="compte">
                 <div class="boite">
@@ -21,6 +22,7 @@
             </article>
             </a>
         </div>
+        <div class=" col m3"></div>
     </section>
 </main>
 @endsection
