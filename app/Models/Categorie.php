@@ -23,7 +23,7 @@ class Categorie extends Model
 	}
 	
 	public function actualites(){
-        return $this->belongsToMany('App\Models\Actualite', 'actualite_categorie')->withTimestamps();
+        return $this->belongsToMany('App\Models\Actualite', 'actualite_categorie');
 	}
 	
 	public function quizzs(){

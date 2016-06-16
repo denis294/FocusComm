@@ -12,14 +12,16 @@ use Session;
 use Request;
 use DB;
 use App\Lib\Message;
+use Illuminate\Support\Facades\Response;
 
 class QuizzController extends Controller
 {
 	// Liste tous les quizzs
   public function index()
-  {
+  {        
     $quizz = Quizz::all();
     $quizz = json_encode($quizz, JSON_UNESCAPED_UNICODE);
+    
     return view('quizz/index')->with('quizz', $quizz);
   }
   public function MyQuizz(){
@@ -28,7 +30,7 @@ class QuizzController extends Controller
     $quizzs = $user->quizzs()->with('categorie')->get();
     return view('/partner/quiz/index')->with('quizzs', $quizzs);
   }
- public function categoriesHasQuizz(){
+  public function categoriesHasQuizz(){
     $cat = [];
     $categories = Categorie::has('quizzs')->with('categorieParent')->get();
     $c = 0;
@@ -43,16 +45,16 @@ class QuizzController extends Controller
         $cat['categories'][$c]['nom']  = $categorie->nom;
         $c++;
       }
-    }
+    } 
     $cat = json_encode($cat);
     return view('quizz/index')->with('categories', $cat);
   }
 
   public function indexAdmin()
   {
-
+    
   }
-
+	
 	//Liste tous les quizzs propres à une catégorie
 	public function indexQuizz($categorie_id){
     $categories = Categorie::find($categorie_id);
@@ -60,7 +62,7 @@ class QuizzController extends Controller
       Message::error('categorie.missing');
       return redirect()->back()->withInput();
     }
-    // File moi les quizz dont categorie_id vaut $id ou les quizz dont categorie_id fait référence à une catégorie qui a
+    // File moi les quizz dont categorie_id vaut $id ou les quizz dont categorie_id fait référence à une catégorie qui a 
     // $id en categorieParente_id
     $quizzs = DB::table('quizzs')->where('categorie_id', '=', $categorie_id)->get();
     $quizzs = json_encode($quizzs);
@@ -69,12 +71,31 @@ class QuizzController extends Controller
 
 	public function create()
   {
-    return view('quizz/create');
+    $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'quizzs')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer un quizz"], 403);
+      }
+    return view('/admin/quizz/create');
   }
-
+  public function createPartner()
+  {
+    $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'quizzs')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer un quizz"], 403);
+      }
+    return view('partner/quiz/create');
+  }
+    
     // Enregistre un quizz dans la base de données
     public function store()
     {
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'quizzs')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer un quizz"], 403);
+      }
        $fields = Request::all();
        $fields['date'] = date('Y-m-d');
        $fields['etat'] = 'cache';
@@ -82,7 +103,7 @@ class QuizzController extends Controller
        if ($validate->fails()) {
           return redirect()->back()->withInput()->withErrors($validate);
        }
-
+       
        // Vérifie la non existance du quizz
        $titreInput = $fields['titre'];
        $dateInput = $fields['date'];
@@ -90,19 +111,19 @@ class QuizzController extends Controller
         	->where('titre', '=', $titreInput)
         	->where('date', '=', $dateInput)
         	->get();
-
+        	
        if (!empty($quizz)){
       	Message::error('quizz.alreadyExists');
       	return redirect()->back()->withInput();
        }
-
+       
        // Vérifie que la catégorie spécifie existe
        $categorie = Categorie::find($fields['categorie_id']);
        if (!isset($categorie)){
       	Message::error('categorie.missing');
       	return redirect()->back()->withInput();
        }
-
+       
        // Vérifie que le badge spécifié existe
        if(isset($fields['badge_id'])){
           $badge = Badge::find($fields['badge_id']);
@@ -113,7 +134,7 @@ class QuizzController extends Controller
             }
           }
        }
-
+       
        $quizz = new Quizz($fields);
        $user = User::find(Session::get('user_id'));
 
@@ -128,9 +149,9 @@ class QuizzController extends Controller
           }
        }
        return redirect()->action('QuizzController@MyQuizz');
-
+       
     }
-
+	
 	// Affiche un quizz spécifique
     public function show($id)
     {
@@ -143,12 +164,21 @@ class QuizzController extends Controller
     }
     public function edit($id)
     {
-        //
+         $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'quizzs')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour éditer un quizz"], 403);
+      }
     }
-
+    
     // Met à jour un quizz
     public function update($id)
     {
+        $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('update', 'quizzs')){
+        return Response::view('errors.403',['url' => '/partner/quizz','message'=>"Vous n'avez pas les droits pour mettre à jour un quizz"], 403);
+      }
        $badge = Quizz::find($id);
        if (!isset($badge)) {
       	Message::error('quizz.missing');
@@ -162,10 +192,15 @@ class QuizzController extends Controller
        $badge->update($fields);
        return $badge;
     }
-
+    
     // Supprime un quizz
     public function destroy($id)
     {
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('delete', 'quizzs')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour supprimer un quizz"], 403);
+      }
        $quizz = Quizz::find($id);
        if (!isset($quizz)) {
       		Message::error('quizz.missing');
@@ -174,7 +209,7 @@ class QuizzController extends Controller
        $quizz->delete();
        return $quizz;
     }
-
+    
     public function playQuizz($id){
       $quizz = Quizz::find($id);
       if(!isset($quizz)){
@@ -185,9 +220,54 @@ class QuizzController extends Controller
       		Message::error('quizz.notPublished');
       		return redirect()->back()->withInput();
       }
-      return view ('quizz/play')->with('quizz', $quizz)->with('questions',$quizz->questions()->with('reponses')->get());
+      return view ('quizz/play')->with('quizz', $quizz)->with('badges',$quizz->badge)->with('questions',$quizz->questions()->with('reponses')->get());
     }
+    // Débloque un badge
+   public function debloqueBadge($id){
+       
+       // Obtient le user id de l'User connecté
+       $user_id = Session::get('user_id');
+       $user = User::find($user_id);
+       
+       // Obtient le quizz en question
+       $quizz = Quizz::find($id);
+       
+       // Obtient le badge lié au quizz
+       $badge = DB::table('badge')->where('id', '=', $quizz->id)->get();
+       
+         // Condition de débloquage
+         if (!isset($user)) {
+           return view('quizz/index');
+         }
+         else{
+         $badge = json_encode($badge);
+         return view('quizz/play')->with('quizz', $quizz)->with('badge',$badge);
+         }
+   }
 
+   public function storeParticipation($id){
+      $data = Request::input('tab');
+      $quizz = Quizz::find($id);
+      if(!Session::has('user_id')){
+        return json_encode(['login' => false]);
+      }
 
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+
+      $user->quizzsParticipations()->save($quizz);
+
+      $badge = Badge::find($data[2]);
+      $badges = $user->badges;
+      foreach ($badges as $b) {
+        if($b->id === $badge->id){
+          return json_encode(['badge' => true]);
+        }
+      }
+      $user->badges()->save($badge);
+      return json_encode(['quizz' => true]);
+   }
+
+    
 }
 

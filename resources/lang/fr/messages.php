@@ -7,6 +7,14 @@
  */
 
 return [
+    'acces' => [
+        'notLogin' => "Vous n'êtes pas connecté !",
+        'deconnecte' => "Vous vous êtes déconnecté avec succès.",
+        'restricted' => "Veuillez vous authentifier."
+    ],
+    'compte' => [
+        'created' => "Compte créé avec succès. Vous pouvez vous connecter",
+    ],
     'bd' => [
         'error' => 'Erreur technique : :error',
     ],
@@ -17,6 +25,7 @@ return [
         'mauvaisMDP' => "Le mot de passe entré n'est pas le bon.",
         'noAdminAccess' => "Vous n'avez pas accès à l'interface administrateur !",
         'notLogin' => "Vous devez être connecté pour accéder à cette page.",
+        'edited' => "Votre compte a bien été modifié."
     ],
 
     'form' => [
@@ -24,6 +33,9 @@ return [
     ],
     'actu' => [
         'missing' => "L'actualité spécifiée n'existe pas.",
+        'edited' => "Actualité éditée avec succès",
+        'created' => "Actualité créée avec succès",
+        'deleted' => "Actualité supprimée avec succès",
     ],
     'badge' => [
         'missing' => "Le badge spécifié n'existe pas.",

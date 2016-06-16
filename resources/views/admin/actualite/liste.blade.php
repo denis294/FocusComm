@@ -1,5 +1,5 @@
 @extends('layouts.masterAdmin')
-@section('title', 'Administration - Utilisateurs')
+@section('title', 'Ciao.ch - Administration - Actualités')
 
 @section('content')
 <script>
@@ -11,6 +11,14 @@ var news = {!! $news !!};
             <i id="buttonAdd" class="material-icons">add</i>
         </a>
     </div>
+    @if(Session::has('success'))
+<div class="col l4 offset-l4">
+<div class="card-panel green lighten-4">
+          <span class="green-text text-darken-4">{{Session::get('success')}}
+          </span>
+</div>
+</div>
+@endif
     <table id="tableUser" class="responsive-table row">
   <thead>
     <tr>
@@ -26,7 +34,7 @@ var news = {!! $news !!};
   
   	@foreach(json_decode($news, true) as $value)
 		<tr>
-    		<td>{{ $value['titre'] }} </td>
+    		<td><a href="/admin/actualites/{{ $value['id'] }}/edit" title="{{ $value['titre'] }}">{{ $value['titre'] }}</a></td>
     		<td>{{ $value['dateCreation'] }} </td>   
 <td>
     		{{ str_limit($value['texte'], $limit = 100, $end = '...') }}</td>

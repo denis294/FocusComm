@@ -14,7 +14,7 @@ class Badge extends Model
 	
     public function quizz()
     {
-      return $this->belongsTo('App\Models\Quizz');
+      return $this->hasOne('App\Models\Quizz');
     }
     
     public function users()

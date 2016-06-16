@@ -1,5 +1,5 @@
 <?php
-
+Use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -18,18 +18,29 @@
 */
 	// Accueil
 	Route::get('/', function () {
+		if(!Session::has('user_id'))
     	return view('home/index');
+    	else
+    	$user = User::find(Session::get('user_id'));
+    	return view('home/index')->with('pseudo', $user->pseudo);
+
 	});
 
 	Route::post('/', 'AuthController@login');
 
 	Route::get('/stress', function () {
-    	return view('contenu/index');
+    	return view('contenu/stress');
 	});
 
-	Route::get('/partner', function (){
-		return view('partner/index');
+	Route::get('/argent', function(){
+		return view('contenu/argent');
 	});
+
+	Route::get('/generique', function(){
+		return view('contenu/generique');
+	});
+
+	Route::get('/partner','AccesController@partner');
 	Route::post('/partner', 'AuthController@loginPartner');
 
 	// Actualité
@@ -39,14 +50,26 @@
 	Route::get('/quizzs/', 'QuizzController@categoriesHasQuizz');
 	Route::get('/quizzs/categorie/{id}', 'QuizzController@indexQuizz');
 	Route::get('/quizzs/{id}', 'QuizzController@playQuizz');
+	Route::post('/quizzs/{id}', 'QuizzController@storeParticipation');
 	
 	// Page
 	Route::get('/pages/', 'PageController@index');
 	Route::get('/pages/categorie/{id}', 'PageController@indexCategorie');
-	
+
 
 	// Login
-	Route::get('/login', 'AuthController@login')->name('login');
+	Route::post('/', 'AuthController@login');
+	Route::get('/login', function(){
+		return view('login');
+	})->name('login');
+
+	Route::get('/register', 'RegisterController@index');
+	Route::post('/register', 'UserController@store');
+
+	// Pas autorisé
+	Route::get('/accesInterdit', function(){
+		return view('nonAutorise');
+	})->name('accesInterdit');
 /*
 |------------------------------------------------------------
 */
@@ -59,14 +82,12 @@
 		Route::get('/logout', 'AuthController@logout');
 
 		// User
-		Route::get('/compte', 'UserController@monCompte');
-		Route::put('/compte', 'UserController@updateMonCompte');
+		Route::get('/admin/compte', 'UserController@monCompte');
+		Route::put('/admin/compte', 'UserController@updateMonCompte');
 	});
 
 	// Administration
-	Route::get('/admin', function () {
-    	return view('admin/index');
-	});
+	Route::get('/admin','AccesController@admin');
 	Route::post('/admin', 'AuthController@loginAdmin');
 /*
 |------------------------------------------------------------
@@ -92,10 +113,10 @@
 
 		// User
 		Route::get('/admin/users/', 'UserController@index');
-		Route::delete('/user/{id}', 'UserController@destroy');
-		Route::get('/user/{id}', 'UserController@show');
-		Route::post('/user/', 'UserController@store');
-		Route::put('/user/{id}', 'UserController@update');
+		Route::delete('/admin/compte/{id}', 'UserController@destroy');
+		Route::get('/admin/compte/{id}', 'UserController@show');
+		Route::post('/admin/compte/', 'UserController@store');
+		Route::put('/admin/compte/{id}', 'UserController@update');
 
 		// Actualités
 		Route::get('/admin/actualites', 'ActualiteController@indexAdmin');
@@ -105,7 +126,7 @@
 		Route::get('/admin/actualites/{id}/edit', 'ActualiteController@edit');
 		Route::put('/admin/actualites/{id}', 'ActualiteController@update');
 		Route::delete('/admin/actualites/{id}', 'ActualiteController@destroy');
-		
+
 		// Pages
 		Route::get('/admin/pages/create', 'PageController@create');
 		Route::post('/admin/pages/', 'PageController@store');
@@ -113,7 +134,7 @@
 		Route::get('/admin/pages/{id}/edit', 'PageController@edit');
 		Route::put('/admin/pages/{id}', 'PageController@update');
 		Route::delete('/admin/pages/{id}', 'PageController@destroy');
-		
+
 		// Régions
 		Route::get('/admin/regions/', 'RegionController@index');
 		Route::get('/admin/regions/pays/{id}', 'RegionController@indexPays');
@@ -123,8 +144,6 @@
 		Route::get('/admin/regions/{id}/edit', 'RegionController@edit');
 		Route::put('/admin/regions/{id}', 'RegionController@update');
 		Route::delete('/admin/regions/{id}', 'RegionController@destroy');
-		// Users
-		Route::get('/admin/users/', 'UserController@index');
 
 		// Badges
 		Route::get('/admin/badges/', 'BadgeController@index');
@@ -154,11 +173,10 @@
 Route::group(['middleware' => ['authPartner']], function () {
 	Route::get('/partner/logout', 'AuthController@logoutPartner');
 	Route::get('/partner/quizz', 'QuizzController@MyQuizz');
-	Route::get('/partner/quizz/create', function(){
-		return view('/partner/quiz/create');
-	});
+	Route::get('/partner/quizz/create', 'QuizzController@createPartner');
 	Route::post('/partner/quizz/' ,'QuizzController@store');
-
+	Route::get('/partner/quizz/{id}/edit', 'QuizzController@edit');
+	Route::put('/partner/quizz/{id}', 'CategorieController@update');
 });
 
 

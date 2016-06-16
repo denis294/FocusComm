@@ -1,19 +1,42 @@
-#contenu, aside{
-    display:inline-block;
-    vertical-align: top;
+
+.texteContenu h2{
+ border-top: 2px #ea4a4f solid;
+ color: #0580a3 !important;
+ font-size: 2.5rem;
 }
+
+.texteContenu h3{
+ color: #34495e !important;
+ font-size: 2rem;
+ font-stretch: condensed;
+}
+
+.texteContenu h4{
+ color: #ea4a4f !important;
+ font-size: 1.2rem;
+
+}
+
 
 #contenu {
-    border-right: #666 solid 1px;
-    clear:both;
-    margin: auto;
     margin-left: 300px;
-    padding:auto;
-    width: 70%;
+    
 }
 
-aside{
+.texteContenu li{
+     list-style-type: circle;
+     
+}
+.texteContenu ul{
+    padding-left: 50px;
+}
+.table-of-contents{
     position: fixed;
-    padding-left: 30px;
-    margin: auto;
+}
+.table-of-contents a.active {
+    font-weight: 700 !important;
+}
+
+.card{
+    position:relative
 }

@@ -1,6 +1,7 @@
 /** Clean Materialize **/
 nav, footer.page-footer{
 background-color: #0580a3;
+padding-top: 0px;
 }
 
 body, html {
@@ -12,7 +13,7 @@ body, html {
   box-sizing: border-box;
   margin: 0;
   padding:0 ;
-  font-family:Arial;
+  font-family: open sans,arial;
 }
 
 @font-face {
@@ -50,9 +51,8 @@ footer{
 }
 
 
-
 /*footer collé*/
-  /*body {
+  body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -60,20 +60,63 @@ footer{
 
   main {
     flex: 1 0 auto;
-  }*/
+  }
 
-/*suppression de la marge en bat des .row*/
-
-.row{
-  margin-bottom: 0 !important;
+/*CATEGORIE*/
+h2#icon{
+    font-size: 6rem;
 }
+
+#intro{
+
+  color:#FFF;
+  font-weight: bold;
+}
+
+#intro h3 {
+
+  color:#FFF;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.block{
+    background-color: white;
+    margin-left:5% !important;
+    margin-right:5% !important;
+    height:40%!important;
+    background-color: white;
+
+}
+
+.block:hover{
+
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.6), 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+}
+.block  h1{
+    font-weight: lighter;
+    text-align: center;
+    color:white;
+    font-size: 16px !important;
+    margin-top: 16%!important;
+    font-weight: lighter;
+    line-height: 2.5em;
+    padding-top: 4%;
+}
+
+ footer.page-footer .footer-copyright {
+  background-color:rgba(51,51,51,0)!important;
+ }
 
 .categories{
-margin-left: 17%;
+    max-width: 80%;
+    padding-bottom: 80px;
+}
+#categorie{
+    margin:0 auto;
 }
 
-
- .icon:before{
+.icon:before{
 content: '\f105';
 font-family: "Flaticon";
 color:#123552;
@@ -85,21 +128,11 @@ font-size: 3em;
   text-align: center;
 }
 
-
-.categroriesList{
-
-  margin-left: 30%;
-}
-
-
 h1 {
     font-size: 4.2rem;
     line-height: 110%;
     margin: 4.1rem 0 0.68rem 0 !important;
 }
-
-
-
 
 body{
   font-family: Gill Sans, sans-serif;
@@ -110,26 +143,11 @@ body{
   background-size: cover;
 }
 
-.block  h1{
-  text-align: center;
-  color:white;
-  font-size: 16px!important;
-  margin-top: 16%!important;
-  font-weight: lighter;
-  line-height: 2.5em;
-  padding-top: 4%;
-}
 
 .tit{
   margin-top:0;
   background-color:#0580a3;
   height:5%;
-}
-
-.block{
-  width:15%;
-  height:35%;
-  background-color: white;
 }
 
 .hide-on-med-and-down{
@@ -144,22 +162,6 @@ body{
 .brand-logo{
 
   left:2%;
-}
-
-
-
-
-#intro{
-
-  color:black;
-  font-weight: bold;
-}
-
-#intro h3 {
-
-  color:#1F397B;
-  font-weight: bold;
-  font-size: 25px;
 }
 
 .logo{
@@ -309,6 +311,7 @@ nav ul a {
 .donde{
 position: absolute;
 bottom:0;
+margin-left: 18px;
 margin-bottom: 3%;
 }
 
@@ -322,7 +325,6 @@ nav li {
   text-decoration: none;
   display:inline;
   margin-left:1%;
-  height:300px ! important;
   width:auto !important;
 }
 
@@ -435,52 +437,11 @@ text-align: center!important;
 #icon{
     text-align: center!important;
 }
-body{
-    font-family: Gill Sans, sans-serif;
-}
-.block  h1{
-    text-align: center;
-    color:white;
-    font-size: 15px;
-    margin-top: 10%;
-    font-weight: lighter;
-    line-height: 2.5em;
-}
-.tit{
-    margin-top:0;
-    background-color:#0580a3;
-    height:5%;
-}
-
-
-
-#categorie{
-  margin-left: 20%
-}
-
 .row .col.s4a {
   width: 33.3333333333%;
   margin-left: auto;
   left: auto;
   right: auto;
-}
-
-
-.block{
-    width:55%!important;
-    height:40%!important;
-    background-color: white;
-    margin-left:10%;
-    margin-top: 10%;
-}
-
-.block:hover{
-    width:55%!important;
-    height:40%!important;
-    background-color: white;
-    margin-left:10%;
-    margin-top: 10%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.6), 0 2px 10px 0 rgba(0, 0, 0, 0.6);
 }
 
 
