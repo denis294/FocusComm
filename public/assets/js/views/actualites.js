@@ -39,11 +39,13 @@ var ViewActualites = Pclia.ViewCollection.extend({
 //    récupère la catégorie voulu pour filtrer
     filterClickHandler: function (evt){
         console.log(cat);
+        
         if($(evt.target)!==cat){
             var cat = $(evt.target).attr("data-cat");
             var selected = $(evt.target)
             this.rendu(cat, selected);
         }
+        
     },
 //    affiche que les actu selectionner
     rendu:function(cat, selected){
@@ -51,27 +53,29 @@ var ViewActualites = Pclia.ViewCollection.extend({
        $(".noresult").fadeOut();
        $(".card").fadeOut();
        
+       // tout voir
        if(cat==0){
         $(".card").fadeIn();
         selected.addClass("active");
 
        }
        else{
-            $(".card").each(function(){
-                if($(".card").attr("data-categorie")===cat && cat!==0){
-                    console.log($(".card").attr("data-categorie"));
-                    
-                    $(".card").fadeIn();
+           var i = 0;
+            $(".card").each(function(){ 
+                
+                if($(this).attr("data-categorie")===cat){
+//                    console.log($(".card").attr("data-categorie"));
+                    $(this).fadeIn();
                     selected.addClass("active");
-
-                   
+                    i++;
                 }
-            
-                else{
-                    $(".noresult").fadeIn();
-                    selected.addClass("active");
-                }
+                
            });
+           console.log(i);
+           if(i==0){
+               $(".noresult").fadeIn();
+                selected.addClass("active");
+           }
         }
     }
 });
