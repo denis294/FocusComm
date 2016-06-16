@@ -28,16 +28,15 @@ var badges = {!! json_encode($badges)!!};
 <a href="/quizzs/"><p id="backLink">Retour aux quizs</p></a>
 
 
+<p id="idBadgeScred" style="display:none"></p>
+
+
 <!-- <section id="DonneesEnvoie">
-
-    <form method="post" action="">
-       <input type="boolean" name="reponse" id="pass" />
-
-
-
-
+    <form id="donnees" method="post" action="">
+       <div class="Vid">send</div>
     </form>
-
 </section> -->
+
+
 
 @endsection

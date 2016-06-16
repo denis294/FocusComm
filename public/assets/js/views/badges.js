@@ -14,5 +14,17 @@ var ViewBadges = Pclia.ViewCollection.extend({
             $("#ApparitionBadge", container).append(dom);
         });
         return container;
+    },
+
+    getIDbadge: function (){
+        var tabIdBadge = [];
+        _.each(this.collection.models, function (model) {
+
+            var idBadge = model.get("id");
+            tabId.push(idBadge);
+
+        });
+        return tabIdBadge;
+
     }
 });

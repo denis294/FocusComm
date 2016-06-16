@@ -3,6 +3,7 @@
 
 <div>
     <h4 class="enonce">{{texte}}</h4>
+    <p id="IdQuizzScred" style="display:none">{{quizz_id}}</p>
 
 
 
@@ -23,13 +24,13 @@
 </form>
 
 
-<div  class="infoQuiz">
+<div  class="infoQuiz" id="{{id}}">
 <section class="Msg messageJuste">
     Félicitation ! Tu as répondu la bonne réponse :)
     <p>{{texteJuste}}</p> <!-- Attribut à implémenter dans la base de données -->
 
 
-    <div class="GetMessage">
+    <div class="GetMessage buttonS">
     <a class="waves-effect waves-light btn btnQ btnContinue">Continuer</a>
     </div>
 </section>
@@ -38,13 +39,15 @@
     Mauvaise réponse :(
 
     <p>{{texteFaux}}</p><!-- Attribut à implémenter dans la base de données -->
-    <div class="GetMessage">
+    <div class="GetMessage buttonS">
     <a class="waves-effect waves-light btn btnQ">Continuer</a>
     </div>
 </section>
 </div>
 
 </section>
+
+
 
 
 

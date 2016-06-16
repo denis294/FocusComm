@@ -9,6 +9,7 @@ var ViewQuestion = Pclia.View.extend({
         this.listenTo(this.model, "change", this.render);
 
 
+
     },
     render: function () {
         this.$el.html(Tmpl.question(this.model.attributes));
@@ -20,16 +21,24 @@ var ViewQuestion = Pclia.View.extend({
 
         var scoreQ = this.$('input[name=reponse]:checked').val()
         console.log(scoreQ);
-        $(window).trigger('getAnswer');
+
+
         if (scoreQ == "true") {
             $(window).trigger('addScore');
             this.$(".messageJuste").show();
             //alert("Bonne réponse !")
         } else {
+            $(window).trigger('nope');
             this.$(".messageFaux").show();
             //alert("Mauvaise réponse :( ")
         };
+
         $(".questionsQ").hide();
+
+        // if (scoreQ=='') {scoreQ=false};
+        // $("#form_reponse").append(scoreQ);
+
+
 
     },
 
@@ -37,6 +46,8 @@ var ViewQuestion = Pclia.View.extend({
 
         $(".messageJuste").hide();
         $(".messageFaux").hide();
+
+        $(window).trigger('addID');
 
         $(".questionsQ", this.$el).hide();
         if (this.$el.next().length == 0) {
