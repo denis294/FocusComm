@@ -76,7 +76,16 @@ class QuizzController extends Controller
       if(!$user->hasRole('create', 'quizzs')){
         return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer un quizz"], 403);
       }
-    return view('quizz/create');
+    return view('/admin/quizz/create');
+  }
+  public function createPartner()
+  {
+    $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+      if(!$user->hasRole('create', 'quizzs')){
+        return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>"Vous n'avez pas les droits pour créer un quizz"], 403);
+      }
+    return view('partner/quiz/create');
   }
     
     // Enregistre un quizz dans la base de données
@@ -234,6 +243,29 @@ class QuizzController extends Controller
          $badge = json_encode($badge);
          return view('quizz/play')->with('quizz', $quizz)->with('badge',$badge);
          }
+   }
+
+   public function storeParticipation($id){
+      $data = Request::input('tab');
+      $quizz = Quizz::find($id);
+      if(!Session::has('user_id')){
+        return json_encode(['login' => false]);
+      }
+
+      $user_id = Session::get('user_id');
+      $user = User::find($user_id);
+
+      $user->quizzsParticipations()->save($quizz);
+
+      $badge = Badge::find($data[2]);
+      $badges = $user->badges;
+      foreach ($badges as $b) {
+        if($b->id === $badge->id){
+          return json_encode(['badge' => true]);
+        }
+      }
+      $user->badges()->save($badge);
+      return json_encode(['quizz' => true]);
    }
 
     
