@@ -48,6 +48,10 @@ body{
     text-align: right;
 }
 
+.buttonS{
+    text-align: right;
+}
+
 .button{
     position: relative;
     margin-left: 17%;
