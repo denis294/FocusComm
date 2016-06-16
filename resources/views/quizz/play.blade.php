@@ -39,4 +39,5 @@ var badges = {!! json_encode($badges)!!};
 
 
 
+
 @endsection

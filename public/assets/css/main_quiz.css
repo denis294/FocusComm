@@ -69,7 +69,6 @@ body{
 
 .Msg{
   width: 100%;
-
   background-color: #0580a3;
   padding: 50px;
   color:white;
@@ -125,6 +124,28 @@ padding-bottom: 6px;
 }
 
 
+#BadgeQuiz{
+
+}
+
+#ApparitionBadge{
+width: 40%;
+}
+
+.imgBadge{
+  width: 50%;
+  margin-left: 25%;
+
+}
+
+.titreBadge{
+margin-top: 13%;
+padding-bottom: 2%;
+text-align: center;
+border-bottom: 4px solid;
+border-color: #0580a3;
+}
+
 
 
 @media screen and (max-width: 800px) {
@@ -148,6 +169,38 @@ body{
 
 .enonce{
 font-size: 2em;
+}
+
+.imgBadge{
+  width: 60%;
+}
+
+#ApparitionBadge{
+width: 80%;
+}
+
+.titreBadge{
+  font-size: 1.4em;
+border-bottom: 4px solid;
+border-color: #0580a3;
+
+}
+
+.infoQuiz{
+
+  width: 90%;
+  padding: 10px;
+
+}
+
+.Msg{
+  width: 100%;
+  background-color: #0580a3;
+  padding: 10px;
+  color:white;
+  margin: 0 auto;
+
+
 }
 }
 
