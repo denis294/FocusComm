@@ -24,8 +24,12 @@
   position:absolute;
   top:0;
   right:0;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-right: 7%;
+}
+
+.cartIntro{
+  margin-right:30px;
 }
 
 .test{
@@ -43,7 +47,7 @@
   bottom: 0;
   left: 0;
   margin-left: -13px;
-  margin-bottom: -7px;
+  margin-bottom: -5px;
   width:100%;
   object-fit: cover;
 }
@@ -107,6 +111,76 @@
   display: none;
 }
 
+#boutonImpression, #boutondepart, .btn{
+
+  background-color:#AA3939!important;
+}
+
+.he1, .he2{
+
+  margin-bottom: 20px;
+}
+
+.he3{
+
+  margin-top: 5%;
+}
+
+.deco{
+
+  margin-left: 30px;
+}
+
+
+
+.iconUrgence{
+  cursor: pointer;
+}
+
+
+.iconUrgence:before{
+
+  content: "\e9a9\e9db \e9e5 \e9f1 \e9fb \ea01\ea07";
+  font-family: "icomoon";
+  font-size: 40px;
+}
+
+
+.iconUrgence:hover{
+
+color:#AA3939;
+}
+
+footer{
+
+  margin-top: 0px!important;
+}
+
+.delindex{
+margin-bottom: 0px!important;
+}
+
+#ev{
+  font-weight: bold;
+    color: #AA3939;
+}
+.slog{
+
+  font-size: 40px;
+color: #AA3939;
+margin-top: 30px;
+    font-weight: normal;
+    font-family: open sans;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.card-content, .card-action{
+
+  text-align: center!important;
+}
+
 .donde{
   position: absolute;
   top:0;
@@ -122,7 +196,22 @@
   #intro h3{
 
   font-size: 20px!important;
+  color:#AA3939!important;
+  text-shadow: 0 0 0px rgba(0,0,0,0.9);
+  font-weight: lighter;
 
+
+}
+
+.categories{
+    max-width: 80%;
+    padding-bottom: 80px;
+}
+
+
+
+.iconUrgence:before{
+  font-size: 30px;
 }
 
 
@@ -139,6 +228,8 @@ text-align: justify;
   top:0;
   margin-top: 65px;
 }
+
+
 
 
 
@@ -209,8 +300,8 @@ text-align: justify;
 
 .loupe:after{
 
-  content: "\f10b ";
-  font-family: "Flaticon";
+  content: "\e98e ";
+  font-family: "icomoon";
   font-size: 30px;
 }
 
@@ -319,8 +410,14 @@ padding-bottom: 5px;
 
 }
 
+.cartIntro{
+  margin-right:4px;
+}
 
 
+.loggEtAutre{
+  display:none;
+}
 
 
 

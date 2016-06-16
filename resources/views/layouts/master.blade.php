@@ -30,33 +30,34 @@
             <input id="search_menuMobile" type="search" placeholder=" Recherche ..."required>
             </div>
         <header class="row">
-             <nav class="col m12 s12">
+
+             <nav class="col s12">
                 <div class="nav-wrapper">
+                    
                     <!--burger croix loupe gérer avec js-->
                     <span class="burger"></span>
                     <span class="loupe"></span>
                     <a href="/" class="brand-logo"><img class="logo" src="{{asset('assets/img/logo_ciao_rvb.png')}}"> <h5 class="donde">@yield('page')</h5></a>
                     <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <li><a class="ici" href="/">Accueil</a></li>
-                        <li><a class="" href="<?php url()?>/actualites">Actualité</a></li>
-                        <li><a class="" href="#">Adresse</a></li>
-                        <li><a class="" href="#">Pose ta question</a></li>
-                        <li><a class="" href="#">Forum</a></li>
-                        <li><a class="" href="#">Urgence</a></li>
-                        <li><a class="" href="<?php url()?>/quizzs">Quizzs</a></li>
+                        <li id="home" class=""><a class="" href="/">Accueil</a></li>
+                        <li id="actualites"><a class="" href="actualites">Actualités</a></li>
+                        <li id="home"><a class="" href="#">Adresse</a></li>
+                        <li id="home"><a class="" href="#">Pose ta question</a></li>
+                        <li id="home"><a class="" href="#">Forum</a></li>
+                        <li id="home"><a class="" href="#">Urgence</a></li>
+                        <li id="quizzs"><a class="" href="quizzs">Quizzs</a></li>
                     </ul>
                 </div>
             </nav>
             @if(!Session::has('user_id'))
-                <span class="loggEtAutre"><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a>
-                <a class="waves-effect waves-light btn" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></span>
+                <span class="loggEtAutre"><p><a class="waves-effect waves-light btn he1" id="boutondepart" href="/login"><i class="material-icons left">person</i>Se connecter</a>
+                </p><p><a class="waves-effect waves-light btn he2" id="boutondepart" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></p></span>
             @else
-                <span class="loggEtAutre"><p>Bonjour, {{Session::get('pseudo')}}</p></br>
-                <p><a class="waves-effect waves-light btn" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
+                <span class="loggEtAutre"><p>Bonjour,<span id="ev"> {{Session::get('pseudo')}} </span></p><p>
+                <a class="waves-effect waves-light btn deco he3" id="boutondepart2" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
             @endif
         </header>
         @yield('sidenav')
-
         <main class="main">
         @yield('content')
         </main>
