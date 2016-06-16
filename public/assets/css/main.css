@@ -1,6 +1,7 @@
 /** Clean Materialize **/
 nav, footer.page-footer{
 background-color: #0580a3;
+padding-top: 0px;
 }
 
 body, html {
@@ -12,7 +13,7 @@ body, html {
   box-sizing: border-box;
   margin: 0;
   padding:0 ;
-  font-family:Arial;
+  font-family: open sans;
 }
 
 @font-face {
@@ -50,9 +51,8 @@ footer{
 }
 
 
-
 /*footer collé*/
-  /*body {
+  body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -60,7 +60,7 @@ footer{
 
   main {
     flex: 1 0 auto;
-  }*/
+  }
 
 /*CATEGORIE*/
 h2#icon{
@@ -103,10 +103,14 @@ h2#icon{
     line-height: 2.5em;
     padding-top: 4%;
 }
- 
+
+ footer.page-footer .footer-copyright {
+  background-color:rgba(51,51,51,0)!important;
+ }
 
 .categories{
     max-width: 80%;
+    padding-bottom: 80px;
 }
 #categorie{
     margin:0 auto;
@@ -307,6 +311,7 @@ nav ul a {
 .donde{
 position: absolute;
 bottom:0;
+margin-left: 18px;
 margin-bottom: 3%;
 }
 

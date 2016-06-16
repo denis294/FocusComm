@@ -31,7 +31,7 @@
             </div>
         <header class="row">
 
-             <nav class="col m8 s12">
+             <nav class="col s12">
                 <div class="nav-wrapper">
                     
                     <!--burger croix loupe gérer avec js-->
@@ -50,16 +50,11 @@
                 </div>
             </nav>
             @if(!Session::has('user_id'))
-            <div id="log" class="col s4a">
-                <ul>
-                <li><a class="waves-effect waves-light btn" href="/login"><i class="material-icons left">person</i>Se connecter</a></li>
-                <li><a href="/register">S'enregistrer</a></li>
-            </div>
+                <span class="loggEtAutre"><p><a class="waves-effect waves-light btn he1" id="boutondepart" href="/login"><i class="material-icons left">person</i>Se connecter</a>
+                </p><p><a class="waves-effect waves-light btn he2" id="boutondepart" href="/register"><i class="material-icons left">person_pin</i>S'enregistrer</a></p></span>
             @else
-            <div class="col s4">
-                <p>Bonjour, {{Session::get('pseudo')}}</p>
-                <p><a class="waves-effect waves-light btn" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p>
-            </div>
+                <span class="loggEtAutre"><p>Bonjour,<span id="ev"> {{Session::get('pseudo')}} </span></p><p>
+                <a class="waves-effect waves-light btn deco he3" id="boutondepart2" href="/logout"><i class="material-icons left">person</i>Déconnexion</a></p></span>
             @endif
         </header>
         @yield('sidenav')
