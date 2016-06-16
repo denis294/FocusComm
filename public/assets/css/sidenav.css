@@ -2,40 +2,21 @@
     background-image: none !important;
      background-color: #ecf0f1 !important;
   }
+  
+  .side-nav{
+      z-index: 900;
+  }
 
   #sidenav .side-nav{ 
     top:120px !important;
   } 
 
-
-.side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a{
-    padding-left: 20px;
-}
-
-.side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
-    padding-left:10px;
-    font-size: 11pt;
-    font-weight: bold;
-}
-.side-nav .collapsible-body, .side-nav.fixed .collapsible-header {
-    font-size: 10pt;
-}
-.side-nav .collapsible-body ul {
-    line-height: 30px;
-}
-.side-nav a {
-    line-height: 25px;
-    height: 45px;
-}
-
-
-.side-nav li.active {
-    background-color: #0580a3;
-    
-}
-
 .side-nav.fixed a.active{
+    background-color: #0580a3;
     color:#ecf0f1;
+}
+.noresult{
+    text-align: center;
 }
 
 .side-nav {
