@@ -18,3 +18,12 @@
 .noresult{
     text-align: center;
 }
+
+.side-nav {
+    padding-bottom: 200px;
+}
+
+.side-nav a {
+    line-height: 40px;
+    height: initial;
+}
