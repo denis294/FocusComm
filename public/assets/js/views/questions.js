@@ -36,10 +36,9 @@ var ViewQuestions = Pclia.ViewCollection.extend({
 
             var id = model.get("id");
             tabId.push(id);
-
         });
         return tabId;
-
     }
+
 });
 

@@ -69,12 +69,31 @@ body{
 
 .Msg{
   width: 100%;
-  background-color: #0580a3;
   padding: 50px;
   color:white;
   margin: 0 auto;
+}
 
+.messageFaux{
+background-color: #ea4a4f;
+}
 
+.messageJuste{
+background-color: #26A695;
+}
+
+#affichageScoreDejaBadge{
+
+}
+#affichageScorePasLoge{
+
+}
+#affichageScore{
+
+}
+
+.textFin{
+  padding: 10px;
 }
 
 .infoQuiz{
@@ -86,7 +105,7 @@ body{
 
 .btnContinue{
   color: #0580a3;
-  background-color: white;
+  background-color: white!important;
 }
 
 

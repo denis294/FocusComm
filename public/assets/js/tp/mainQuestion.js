@@ -67,57 +67,57 @@ $(window).on("addScore", function(e) {
     score++;
     var rep = true;
     tabReponse.push(rep);
+    // var IdR = this.$(".reponse").attr("id");
+    // console.log(IdR);
+    // tabIDReponse.push(IdR);
 });
 
 $(window).on("nope", function(e) {
     var rep = false;
     tabReponse.push(rep);
+    // var IdR = this.$(".reponse").attr("id");
+    // console.log(IdR);
+    // tabIDReponse.push(IdR);
 });
 
 $("#affichageScore").hide();
+$("#affichageScorePasLoge").hide();
+$("#affichageScoreDejaBadge").hide();
+
+
+
+
 
 
 $(window).on('end', function() {
 
 
 
+
     $("#questions").hide();
     $("#finish").hide();
 
-    $("#quizzEnd").show();
+    //$("#quizzEnd").show();
 
     $("#score").empty();
-    $("#score").append(score);
+    $(".score").append(score);
     $("#total").empty();
-    $("#total").append(total);
-    $("#affichageScore").show();
+    $(".total").append(total);
+
+
+    //$("#affichageScore").show();
+
 
     sendDonnees();
 
-    // if (score == total) {
-    //     alert("Bravo tu as obtenu un badge !")
-    // };
+
 });
 
-// $(window).on("addID", function() {
-
-//     console.log("sida");
-
-//     var Id = $(".infoQuiz").attr('id');
-//     console.log(Id);
-
-//     tabIdQuestion.push(Id);
-
-
-// });
-
-// $(window).on("getAnswer", function(e) {
-//     this.$('')
-// });
 
 
 
 var tabReponse = [];
+// var tabIDReponse = [];
 
     var IDQ = $("#IdQuizzScred").text();
 
@@ -129,19 +129,107 @@ var tabReponse = [];
 function sendDonnees() {
 
 
+
     var BadgeID = $("#idBadgeScred").text();
 
         var tab = [tabIdQuestion,tabReponse,BadgeID];
 
-        jQuery.ajax({
+        // var serv = jQuery.ajax({
+        //             dataType: "json",
+        //             type: "POST",
+        //             url: "/quizzs/"+IDQ,
+        //             data: { tab: tab }
+        //         }).done(function( msg ) {
+        //             alert( "Data Saved: ");
+        //         });
+
+
+
+
+            var data = jQuery.ajax({
                     type: "POST",
+                    dataType: "json",
                     url: "/quizzs/"+IDQ,
-                    data: { tab: tab }
-                }).done(function( msg ) {
-                    alert( "Data Saved: ");
+                    data: { tab: tab},
+                    success:function(data){
+                       if(data.login != null){
+                        $("#affichageScorePasLoge").show();
+                       }
+                       if(data.badge != null){
+                        $("#affichageScoreDejaBadge").show();
+                       }
+                        if(data.quizz != null){
+                             $("#affichageScore").show();
+                        }
+                    },
                 });
 
+
+
+     //    if (login==true) {
+     //        if (hasbadge==true) {
+     //            $("#affichageScoreDejaBadge").show();
+     //        }else{
+     //            $("#affichageScore").show();
+     //        }
+     //    }else{
+     //        $("#affichageScorePasLoge").show();
+     // };
+
+
+
+         // $.getJSON( "/quizzs/"+IDQ, {"responseText": login}, function( data ) {
+         //        console.log(data);
+         //            });
+
+
+// var reponse = '';
+
+// $.getJSON(urlAjax,{param},success);
+// alert(reponse);
+
+//...
+
+// function success(data, textStatus, jqXHR)
+// {
+//     if (data.erreur == 'ok')
+//     {
+//         reponse = data.rep;
+//         alert(reponse);
+//     }
+//     else
+//     {
+//         alert(data.erreur);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+                 //console.log(log);
+
+
+
+     //    var login = true;
+     //    var hasbadge=false;
+
+
+
+
+
+
+
+
 }
+
 
  //url: /quizzs/id
     //id reponse
