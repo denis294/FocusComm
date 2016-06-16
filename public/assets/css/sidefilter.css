@@ -11,12 +11,10 @@
     top:120px !important;
   } 
 
-
-.side-nav li.active {
-    background-color: #0580a3;
-    
-}
-
 .side-nav.fixed a.active{
+    background-color: #0580a3;
     color:#ecf0f1;
+}
+.noresult{
+    text-align: center;
 }

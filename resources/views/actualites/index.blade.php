@@ -6,9 +6,6 @@
 <script src="{{asset('assets/js/materialize.js')}}"></script>
 
 @endsection
-
-
-
 <link rel="stylesheet" href="{{asset('assets/css/styleactu.css')}}">
 @section('content')
 

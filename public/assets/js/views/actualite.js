@@ -1,4 +1,5 @@
 var ViewActualite = Pclia.View.extend({
+//    écoute les evenements    
     events: {
         "click .card": "viewActu"
     },
@@ -17,10 +18,11 @@ var ViewActualite = Pclia.View.extend({
         return this.$el;
         
     },
+//    affiche l'actu complète
     viewActu: function(){
-        
         $(".fondnoir").fadeIn();
         $(".actualite", this.$el).fadeIn();
+//        permet de fixer l'arrière plan quand l'actualité est affiché
         $('html, body').css({
             'overflow': 'hidden',
         });

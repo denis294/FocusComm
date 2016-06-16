@@ -18,7 +18,7 @@ Card Actualité
     
 }*/
 
-/* body {
+/*body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -31,9 +31,11 @@ Card Actualité
 
 
 body{
-  
   background-image: none !important;
   background-color: #ecf0f1 !important;
+}
+section#news{
+    padding-left: 150px;
 }
 
 .card .card-content p{
