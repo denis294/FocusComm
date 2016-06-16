@@ -1,4 +1,5 @@
 var ViewActualites = Pclia.ViewCollection.extend({
+//    écoute les evenements
     events: {
         "click .fondnoir": "cacherViewActu",
         "click .articleliee": "showLinkedArticle",
@@ -17,7 +18,7 @@ var ViewActualites = Pclia.ViewCollection.extend({
         });
         return container;
     },
-    
+//    permet de quitter l'actuaité complète
     cacherViewActu: function(){
         $(".fondnoir").fadeOut();
         $(".actualite").fadeOut();
@@ -25,6 +26,7 @@ var ViewActualites = Pclia.ViewCollection.extend({
             'overflow': 'auto',
         });
     },
+//    permet d'afficher un article lié'
     showLinkedArticle: function (evt) {
         console.log($(evt.target));
         var idCurrent = $(evt.target).attr("data-actualite_id");
@@ -34,21 +36,42 @@ var ViewActualites = Pclia.ViewCollection.extend({
         
     },
     
+//    récupère la catégorie voulu pour filtrer
     filterClickHandler: function (evt){
-        
-        var cat = $(evt.target).attr("data-cat");
-        this.rendu(cat);
-    },
-    
-    rendu:function(cat){
-       $(".card").hide();
-       $(".card").each(function(){
-           if($(".card").attr("data-categorie")===cat){
-               console.log($(".card").attr("data-categorie"));
-               $(".card").show();
-           }
-       });
-        
         console.log(cat);
+        if($(evt.target)!==cat){
+            var cat = $(evt.target).attr("data-cat");
+            var selected = $(evt.target)
+            this.rendu(cat, selected);
+        }
+    },
+//    affiche que les actu selectionner
+    rendu:function(cat, selected){
+       $("#slide-out li a").removeClass("active");
+       $(".noresult").fadeOut();
+       $(".card").fadeOut();
+       
+       if(cat==0){
+        $(".card").fadeIn();
+        selected.addClass("active");
+
+       }
+       else{
+            $(".card").each(function(){
+                if($(".card").attr("data-categorie")===cat && cat!==0){
+                    console.log($(".card").attr("data-categorie"));
+                    
+                    $(".card").fadeIn();
+                    selected.addClass("active");
+
+                   
+                }
+            
+                else{
+                    $(".noresult").fadeIn();
+                    selected.addClass("active");
+                }
+           });
+        }
     }
 });
